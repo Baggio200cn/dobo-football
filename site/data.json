@@ -3559,7 +3559,8 @@
  },
  "articles": [
   {
-   "slug": "02_第一次真实检验",
+   "slug": "post02",
+   "file": "02_第一次真实检验.md",
    "title": "预测 8 场，实际中 8 场：一次模型的真实检验，与它在何处翻车",
    "date": "2026-08-10",
    "style": "高华",
@@ -3586,7 +3587,8 @@
    "edit": "https://github.com/Baggio200cn/dobo-football/edit/main/articles/02_第一次真实检验.md"
   },
   {
-   "slug": "01_十二轮迭代八次失败",
+   "slug": "post01",
+   "file": "01_十二轮迭代八次失败.md",
    "title": "十二轮迭代，八次失败：一次对博彩市场效率的实证检验",
    "date": "2026-08-07",
    "style": "高华",

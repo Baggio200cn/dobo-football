@@ -39,8 +39,12 @@ def parse(p):
     words = len(re.sub(r"\s", "", body))
     # 小标题目录
     heads = re.findall(r"^##\s+(.+)$", body, re.M)
+    # slug 用纯 ASCII（中文文件名在部分环境需 URL 编码，易出问题）
+    num = re.match(r"^(\d+)", Path(p).stem)
+    slug = f"post{num.group(1)}" if num else re.sub(r"[^\w-]", "", Path(p).stem) or "post"
     return {
-        "slug": Path(p).stem,
+        "slug": slug,
+        "file": Path(p).name,
         "title": title,
         "date": meta.get("date", ""),
         "style": meta.get("style", ""),
@@ -52,7 +56,7 @@ def parse(p):
         "heads": heads[:8],
         "cover": f"/articles/{Path(p).stem}.png",
         "md": f"/articles/{Path(p).stem}.md",
-        "edit": f"https://github.com/{GH_REPO}/edit/main/articles/{Path(p).name}",
+        "edit": f"https://github.com/{GH_REPO}/edit/main/articles/{Path(p).name}",  # 编辑链接用原名
     }
 
 
