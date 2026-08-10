@@ -12,7 +12,7 @@ except Exception: pass
 from config import BASE
 
 ART = BASE.parent / "articles"
-SITE = Path(r"C:/Users/Zhaol/worldcup-site")
+SITE = Path(__file__).resolve().parent.parent / "site"   # 跨平台：仓库内 site/
 OUT = SITE / "articles"
 GH_REPO = "Baggio200cn/dobo-football"          # 建仓后用于「在 GitHub 编辑」
 

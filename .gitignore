@@ -2,3 +2,5 @@ engine/data/
 __pycache__/
 *.pyc
 .vercel
+engine/C:/
+engine/web_data.json

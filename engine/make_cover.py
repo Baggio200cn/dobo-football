@@ -26,11 +26,18 @@ TXT     = (233, 238, 245)
 MUT     = (141, 153, 171)
 MUT2    = (93, 104, 121)
 
-F = "C:/Windows/Fonts/"
+# 跨平台字体：Windows 用微软雅黑/华文中宋，Linux(CI) 用 Noto CJK
+FONT_DIRS = ["C:/Windows/Fonts/", "/usr/share/fonts/opentype/noto/",
+             "/usr/share/fonts/truetype/noto/", "/usr/share/fonts/truetype/dejavu/"]
+FALLBACK = {"msyhbd.ttc": ["NotoSansCJK-Bold.ttc", "NotoSansCJKsc-Bold.otf", "NotoSerifCJK-Bold.ttc"],
+            "msyh.ttc":   ["NotoSansCJK-Regular.ttc", "NotoSansCJKsc-Regular.otf"],
+            "STZHONGS.TTF":["NotoSerifCJK-Bold.ttc", "NotoSerifCJKsc-Bold.otf", "NotoSansCJK-Bold.ttc"]}
+
 def font(name, size):
-    for f in (name, "msyhbd.ttc", "msyh.ttc"):
-        try: return ImageFont.truetype(F + f, size)
-        except Exception: continue
+    for cand in [name] + FALLBACK.get(name, []):
+        for d in FONT_DIRS:
+            try: return ImageFont.truetype(d + cand, size)
+            except Exception: continue
     return ImageFont.load_default()
 
 FB   = lambda s: font("msyhbd.ttc", s)      # 粗
