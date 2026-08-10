@@ -56,27 +56,25 @@ jobs:
         working-directory: engine
         run: python -c "import data; data.update(refresh=True); m=data.load_matches(); print(f'{len(m)} 场 / {m.Div.nunique()} 联赛')"
 
-      - name: 回测 + 导出看板数据
+      - name: 生成文章封面
         working-directory: engine
-        run: |
-          python export_web.py || echo "export_web 跳过"
-          python export_sfc.py || echo "export_sfc 跳过"
+        run: python make_cover.py
 
-      - name: 生成文章封面与清单
+      - name: 构建网站数据（含预测锁定 + 文章清单）
         working-directory: engine
-        run: |
-          python make_cover.py || echo "封面跳过"
-          python build_articles.py || echo "清单跳过"
+        run: python build_web.py
 
-      - name: 同步到 site/
+      - name: 检查产出
         run: |
-          cp engine/web_data.json site/data.json 2>/dev/null || true
-          mkdir -p site/articles
-          cp articles/*.md site/articles/ 2>/dev/null || true
-          for f in articles/*.cover.png; do
-            [ -e "$f" ] && cp "$f" "site/articles/$(basename "${f%.cover.png}").png"
-          done
-          ls -la site/articles/ | head
+          echo "site/ 内容："
+          ls -la site/ site/articles/ | head -20
+          python -c "
+import json
+d=json.load(open('site/data.json',encoding='utf-8'))
+assert d.get('sfc_lock'), '❌ 缺当期预测'
+assert d.get('articles'), '❌ 缺文章清单'
+print(f\"✅ 当期 {d['sfc_lock']['期号']} · 文章 {len(d['articles'])} 篇 · 训练库 {d['lab']['dataset']['n']:,} 场\")
+" 
 
       - name: 提交变更
         run: |
