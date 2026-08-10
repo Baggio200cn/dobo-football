@@ -1,0 +1,8 @@
+pandas>=2.0
+numpy>=1.24
+scipy>=1.10
+statsmodels>=0.14
+lightgbm>=4.0
+requests>=2.31
+tabulate>=0.9
+Pillow>=10.0

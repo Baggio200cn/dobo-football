@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>DoBo 足球数据 · 五大联赛实力榜与模型预测</title>
+<meta name="description" content="欧洲五大联赛数据平台 · Elo 实力榜 · 模型预测与赛后复盘 · Elo/泊松/Dixon-Coles 样本外回测 · 仅提供数据与分析内容，不构成投注建议 · DoBo 体育 @巴老师挨扯淡" />
+<meta property="og:title" content="DoBo 足球数据 · 五大联赛" />
+<meta property="og:description" content="五大联赛 Elo 实力榜、模型预测与赛后复盘，公开真实成长曲线。" />
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="icon" href="/images/dobo-logo.png" />
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b24; --card2:#1c2330; --line:#242c3a; --line2:#2f3949;
+    --txt:#e9eef5; --mut:#8d99ab; --mut2:#5d6879;
+    --red:#e23b3b; --gold:#f5c451; --green:#22c55e; --blue:#3b82f6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.5;font-size:14px}
+  body{max-width:760px;margin:0 auto;padding-bottom:50px}
+  a{color:inherit;text-decoration:none}
+
+  /* 顶栏 */
+  .nav{background:linear-gradient(180deg,#151b26,#0f141c);border-bottom:2px solid var(--red);
+    padding:11px 14px;display:flex;align-items:center;gap:9px;position:sticky;top:0;z-index:50}
+  .nav img{height:30px;border-radius:6px}
+  .nav .bt{font-size:17px;font-weight:800;letter-spacing:.3px}
+  .nav .bt b{color:var(--gold)}
+  .nav .sub{font-size:10px;color:var(--mut2);letter-spacing:2px;margin-top:1px}
+  .nav .stat{margin-left:auto;text-align:right;font-size:10.5px;color:var(--mut2);line-height:1.5}
+  .nav .stat b{color:var(--green)}
+
+  /* 二级导航 */
+  .subnav{display:flex;background:var(--card);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+  .subnav::-webkit-scrollbar{display:none}
+  .subnav a{flex:0 0 auto;padding:10px 15px;font-size:13px;color:var(--mut);font-weight:600;border-bottom:2px solid transparent;cursor:pointer}
+  .subnav a.on{color:var(--gold);border-bottom-color:var(--gold);background:rgba(245,196,81,.06)}
+
+  .wrap{padding:0 12px}
+
+  /* 区块标题（500风格：左红条） */
+  .sec{margin:18px 0 9px;display:flex;align-items:center;gap:8px}
+  .sec .bar{width:3px;height:15px;background:var(--red);border-radius:2px}
+  .sec h2{font-size:15px;font-weight:800}
+  .sec .more{margin-left:auto;font-size:11px;color:var(--mut2)}
+
+  /* 联赛 tab */
+  .tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;margin-bottom:9px}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;padding:6px 14px;font-size:13px;font-weight:700;color:var(--mut);
+    background:var(--card2);border:1px solid var(--line);border-radius:4px;cursor:pointer}
+  .tab.on{color:#fff;background:var(--red);border-color:var(--red)}
+
+  /* 表格（500 门户密集风） */
+  .tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:13px}
+  .tbl th{background:var(--card2);color:var(--mut);font-size:11.5px;font-weight:600;padding:8px 6px;
+    border-bottom:1px solid var(--line2);white-space:nowrap}
+  .tbl td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+  .tbl tr:last-child td{border-bottom:0}
+  .tbl tr:hover td{background:rgba(255,255,255,.02)}
+  .rk{width:30px;font-weight:800;color:var(--mut2);font-variant-numeric:tabular-nums}
+  .rk.t1{color:#ffd23f}.rk.t2{color:#c9d1d9}.rk.t3{color:#cd7f32}
+  .tm{text-align:left!important;font-weight:700;padding-left:10px!important}
+  .tm small{color:var(--mut2);font-weight:400;font-size:10.5px;margin-left:5px}
+  .el{font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+  .lv{font-size:11px;padding:2px 7px;border-radius:3px;font-weight:700}
+  .lv.a{background:rgba(34,197,94,.15);color:var(--green)}
+  .lv.b{background:rgba(59,130,246,.15);color:var(--blue)}
+  .lv.c{background:rgba(141,153,171,.12);color:var(--mut)}
+
+  /* 模型对比条 */
+  .bar-row{display:flex;align-items:center;gap:9px;padding:9px 11px;border-bottom:1px solid var(--line);font-size:12.5px}
+  .bar-row:last-child{border-bottom:0}
+  .bar-row .n{width:112px;flex:0 0 auto}
+  .bar-row .t{flex:1;height:11px;background:var(--card2);border-radius:5px;overflow:hidden}
+  .bar-row .f{height:100%;border-radius:5px}
+  .bar-row .v{width:52px;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;flex:0 0 auto}
+  .box{background:var(--card);border:1px solid var(--line)}
+
+  .info{padding:11px;font-size:11.5px;color:var(--mut2);line-height:1.75;background:var(--card);border:1px solid var(--line);border-top:0}
+  .info b{color:var(--mut)}
+
+  .soon{background:var(--card);border:1px solid var(--line);padding:22px 14px;text-align:center}
+  .soon .e{font-size:28px;margin-bottom:8px}
+  .soon .t{font-size:14px;font-weight:700;margin-bottom:5px}
+  .soon .d{font-size:12px;color:var(--mut2);line-height:1.8}
+
+  .disc{margin:20px 0 0;background:#171310;border:1px solid #3a2c18;border-radius:4px;
+    padding:12px;font-size:11.5px;color:#a89372;line-height:1.75}
+  .disc b{color:var(--gold)}
+
+  .foot{margin-top:22px;padding:16px 12px;border-top:1px solid var(--line);text-align:center;
+    font-size:11.5px;color:var(--mut2);line-height:1.9}
+  .foot b{color:var(--mut)}
+
+  .pbtn{display:inline-block;font-size:12px;padding:6px 12px;border-radius:6px;border:1px solid var(--line);
+    background:var(--card2);color:var(--txt);cursor:pointer;user-select:none}
+  .pbtn:active{transform:scale(.97)}
+  .md{font-size:14px;line-height:1.9;color:var(--txt)}
+  .md h1{font-size:20px;margin:4px 0 14px;line-height:1.4}
+  .md h2{font-size:16px;margin:22px 0 10px;color:var(--gold);border-left:3px solid var(--red);padding-left:9px}
+  .md h3{font-size:14.5px;margin:16px 0 8px;color:var(--mut)}
+  .md p{margin:0 0 13px;color:#cfd7e2}
+  .md strong{color:var(--txt)}
+  .md ul,.md ol{margin:0 0 13px 20px;color:#cfd7e2}
+  .md li{margin-bottom:5px}
+  .md table{width:100%;border-collapse:collapse;font-size:12.5px;margin:0 0 15px}
+  .md th{background:var(--card2);color:var(--mut);padding:7px 6px;border:1px solid var(--line);font-weight:600}
+  .md td{padding:7px 6px;border:1px solid var(--line);text-align:center}
+  .md code{background:var(--card2);padding:2px 6px;border-radius:4px;font-size:12px;color:var(--gold)}
+  .md pre{background:var(--card2);border:1px solid var(--line);border-radius:6px;padding:11px;overflow-x:auto;margin:0 0 14px}
+  .md pre code{background:none;padding:0;color:var(--txt)}
+  .md blockquote{border-left:3px solid var(--gold);padding:8px 12px;margin:0 0 14px;background:rgba(245,196,81,.06);color:var(--mut)}
+  .md hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+  .md em{color:var(--mut2);font-style:normal;font-size:12.5px}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <img src="/images/dobo-logo.png" alt="DoBo" onerror="this.style.display='none'"/>
+  <div>
+    <div class="bt">Do<b>Bo</b> 足球数据</div>
+    <div class="sub">FIVE LEAGUES DATA</div>
+  </div>
+  <div class="stat">样本 <b id="nMatch">—</b> 场<br/>更新 <span id="upd">—</span></div>
+</div>
+
+<div class="subnav" id="subnav">
+  <a data-p="pred" class="on">预测</a>
+  <a data-p="rank">实力榜</a>
+  <a data-p="model">模型能力</a>
+  <a data-p="review">复盘</a>
+  <a data-p="post">文章</a>
+</div>
+
+<div class="wrap">
+
+  <div class="panel" data-p="pred">
+  <!-- 预测胜率 + 命中分布（核心指标，置顶） -->
+  <div id="wrBox"></div>
+
+  <!-- 胜负彩预测（置顶） -->
+  <div id="sfcBox"></div>
+
+  </div><!--/pred-->
+
+  <div class="panel" data-p="rank" hidden>
+  <!-- 实力榜 -->
+  <div class="sec"><span class="bar"></span><h2>五大联赛 · Elo 实力榜</h2><span class="more" id="spanTxt"></span></div>
+  <div class="tabs" id="tabs"></div>
+  <table class="tbl">
+    <thead><tr><th style="width:34px">排名</th><th style="text-align:left;padding-left:10px">球队</th><th style="width:70px">Elo</th><th style="width:62px">档位</th></tr></thead>
+    <tbody id="eloBody"></tbody>
+  </table>
+  <div class="info">Elo 为基于近 3 赛季全部比赛滚动计算的实力评分，<b>1500 为基准线</b>，越高越强。档位：<b>强</b> ≥1650 · <b>中上</b> ≥1550 · <b>其他</b>。</div>
+
+  </div><!--/rank-->
+
+  <div class="panel" data-p="model" hidden>
+  <!-- 模型能力 = 实验室档案 -->
+  <div class="sec"><span class="bar"></span><h2>模型能力 · 样本外回测</h2><span class="more">Brier 越低越好</span></div>
+  <div class="box" id="btBody"></div>
+  <div class="info">测试集 <b>1752 场</b>（未参与训练）。<b>市场（Bet365 去水概率）是最强基准</b>；我们最好的模型 Elo 与其差约 <b>0.019</b> Brier，持续逼近中。只公开真实差距，不宣称"稳赢"。</div>
+
+  <!-- 训练集档案 -->
+  <div class="sec"><span class="bar"></span><h2>训练集档案</h2><span class="more">数据从哪来</span></div>
+  <table class="tbl"><tbody id="dsBody"></tbody></table>
+
+  <!-- 数据源列表 -->
+  <div class="sec"><span class="bar"></span><h2>数据源清单</h2><span class="more" id="srcCnt"></span></div>
+  <div style="max-height:340px;overflow-y:auto;border:1px solid var(--line)">
+    <table class="tbl" style="border:0">
+      <thead><tr><th style="text-align:left;padding-left:10px">联赛</th><th style="width:62px">场次</th><th style="width:46px">球队</th><th style="width:96px">覆盖期</th><th style="width:42px">赔率</th></tr></thead>
+      <tbody id="srcBody"></tbody>
+    </table>
+  </div>
+  <div class="info">全部来自 <b>football-data.co.uk</b> 公开 CSV，每次运行自动重新下载 —— <b>数据实时同步</b>。</div>
+
+  <!-- 训练过程 -->
+  <div class="sec"><span class="bar"></span><h2>训练过程</h2><span class="more">五步管线</span></div>
+  <div class="box" id="pipeBody"></div>
+
+  <!-- 训练结果 -->
+  <div class="sec"><span class="bar"></span><h2>训练结果 · Elo 分布</h2><span class="more" id="trCnt"></span></div>
+  <div class="box" id="trBody"></div>
+
+  <!-- 模型清单 -->
+  <div class="sec"><span class="bar"></span><h2>模型清单</h2><span class="more">用了什么算法</span></div>
+  <table class="tbl">
+    <thead><tr><th style="text-align:left;padding-left:10px">模型</th><th style="width:120px">算法</th><th style="text-align:left">输入特征</th></tr></thead>
+    <tbody id="mdBody"></tbody>
+  </table>
+
+  <!-- 关键洞察 -->
+  <div id="insightBox"></div>
+
+  <!-- 迭代日志（核心） -->
+  <div class="sec"><span class="bar"></span><h2>迭代日志</h2><span class="more">方法如何进步</span></div>
+  <table class="tbl">
+    <thead><tr><th style="width:36px">版本</th><th style="text-align:left;padding-left:10px">改动</th><th style="width:62px">Brier</th><th style="width:70px">变化</th><th style="width:56px">结论</th></tr></thead>
+    <tbody id="itBody"></tbody>
+  </table>
+  <div class="info">这张表记录<b>每一次改动带来的真实效果</b>——包括<b>失败的尝试</b>（v3 无效我们照实记录）。诚实记录失败，比只报喜的曲线更有价值。</div>
+
+  <!-- 实验队列 -->
+  <div class="sec"><span class="bar"></span><h2>实验队列</h2><span class="more">下一步试什么</span></div>
+  <div class="box" id="qBody" style="padding:4px 0"></div>
+
+  <!-- 失败记录 -->
+  <div class="sec"><span class="bar"></span><h2>失败记录</h2><span class="more">试过但没用的</span></div>
+  <div class="box" id="fBody" style="padding:4px 0"></div>
+  <div class="info">公开失败的尝试，是这个项目最重要的部分。<b>只报成功的进步曲线不可信</b>——真实的研发过程本来就是大部分想法被数据否决。</div>
+
+  </div><!--/model-->
+
+  <div class="panel" data-p="review" hidden>
+  <!-- 预测：模型 vs 市场分歧批次 -->
+  <div class="sec"><span class="bar"></span><h2>本轮高置信预测</h2><span class="more" id="bTag">—</span></div>
+  <table class="tbl">
+    <thead><tr><th style="width:26px">#</th><th style="text-align:left;padding-left:10px">对阵</th><th style="width:48px">判断</th><th style="width:52px">模型</th><th style="width:52px">市场</th><th style="width:56px">分歧</th></tr></thead>
+    <tbody id="bBody"></tbody>
+  </table>
+  <div class="info">筛选逻辑：<b>只挑模型与市场分歧最大的场次</b>——分歧处才能检验模型是"看到了市场没看到的"，还是"自己错了"。分歧 = 模型概率 − 市场隐含概率。</div>
+
+  <!-- 复盘 -->
+  <div class="sec"><span class="bar"></span><h2>赛后复盘</h2><span class="more" id="rTag">—</span></div>
+  <table class="tbl">
+    <thead><tr><th style="text-align:left;padding-left:10px">对阵</th><th style="width:48px">判断</th><th style="width:52px">模型</th><th style="width:56px">实际</th><th style="width:44px">结果</th></tr></thead>
+    <tbody id="rBody"></tbody>
+  </table>
+
+  <!-- 成长台账 -->
+  <div class="sec"><span class="bar"></span><h2>成长台账</h2><span class="more">看趋势，不看单轮</span></div>
+  <table class="tbl">
+    <thead><tr><th style="text-align:left;padding-left:10px">轮次</th><th style="width:56px">场次</th><th style="width:56px">命中</th><th style="width:64px">命中率</th><th style="width:70px">平均分歧</th></tr></thead>
+    <tbody id="lBody"></tbody>
+  </table>
+  <div class="info">单轮命中率<b>全是噪声</b>，有意义的是这条曲线长期往哪走：模型能否持续逼近市场准确度。每轮公开预测了什么、错在哪、下轮改什么。</div>
+
+  </div><!--/review-->
+
+  <div class="panel" data-p="post" hidden>
+  <div class="sec"><span class="bar"></span><h2>自媒体文章</h2><span class="more" id="postCnt"></span></div>
+  <div id="postList"></div>
+  <div id="postView"></div>
+  </div><!--/post-->
+
+  <div class="disc">
+    ⚠️ <b>本站仅提供足球数据与分析内容</b>，公开模型预测与命中/误差记录用于交流学习；<b>不构成任何投注建议</b>，不推荐下注、不诱导参与，无任何购彩功能。请理性看待体育竞技的不确定性。
+  </div>
+</div>
+
+<div class="foot">
+  出品 · <b>DoBo 体育</b> · @巴老师挨扯淡<br/>
+  数据来源 football-data.co.uk · 模型 Elo / 泊松 / Dixon-Coles
+</div>
+
+<script>
+var D=null, CUR="英超";
+fetch("/data.json?v=1786083679").then(function(r){return r.json()}).then(function(d){
+  D=d;
+  document.getElementById("nMatch").textContent=d.matches.toLocaleString();
+  document.getElementById("upd").textContent=d.updated;
+  document.getElementById("spanTxt").textContent=d.span;
+  var ls=Object.keys(d.elo);
+  CUR=ls[0];
+  document.getElementById("tabs").innerHTML=ls.map(function(l){
+    return '<div class="tab'+(l===CUR?' on':'')+'" data-l="'+l+'">'+l+'</div>'}).join("");
+  document.querySelectorAll(".tab").forEach(function(t){
+    t.onclick=function(){CUR=t.dataset.l;
+      document.querySelectorAll(".tab").forEach(function(x){x.classList.toggle("on",x.dataset.l===CUR)});
+      renderElo();}});
+  renderWinRate(); renderSFC(); renderSources(); renderPosts(); renderPipeline(); renderTrain();
+  renderElo(); renderBt(); renderLab(); renderBatch(); renderReview(); renderLedger();
+}).catch(function(e){
+  document.getElementById("eloBody").innerHTML='<tr><td colspan="4" style="padding:18px;color:#5d6879">数据加载失败</td></tr>';
+});
+
+function renderElo(){
+  var rows=D.elo[CUR]||[];
+  document.getElementById("eloBody").innerHTML=rows.map(function(t,i){
+    var lv = t.elo>=1650?'<span class="lv a">强</span>':(t.elo>=1550?'<span class="lv b">中上</span>':'<span class="lv c">其他</span>');
+    var rc = i===0?'t1':(i===1?'t2':(i===2?'t3':''));
+    return '<tr><td class="rk '+rc+'">'+(i+1)+'</td>'+
+           '<td class="tm">'+t.name+'<small>'+t.en+'</small></td>'+
+           '<td class="el">'+t.elo+'</td><td>'+lv+'</td></tr>';
+  }).join("");
+}
+
+function renderBt(){
+  var b=D.backtest, mx=Math.max.apply(null,b.map(function(x){return x.brier})),
+      mn=Math.min.apply(null,b.map(function(x){return x.brier}));
+  document.getElementById("btBody").innerHTML=b.map(function(x){
+    var w=100*(mx-x.brier)/(mx-mn+1e-9); if(w<8)w=8;
+    var c=x.kind==="market"?"var(--green)":(x.name.indexOf("Elo")>-1?"var(--blue)":"var(--gold)");
+    return '<div class="bar-row"><div class="n">'+x.name+'</div>'+
+           '<div class="t"><div class="f" style="width:'+w.toFixed(0)+'%;background:'+c+'"></div></div>'+
+           '<div class="v">'+x.brier.toFixed(4)+'</div></div>';
+  }).join("");
+}
+
+function renderWinRate(){
+  var L=D.sfc_lock, box=document.getElementById("wrBox"); if(!L||!box) return;
+  var S=L.单式, F=L.复式16元, B=L.基准;
+
+  // 命中分布柱状图
+  var mx=Math.max.apply(null,S.分布);
+  var bars="";
+  for(var k=3;k<=13;k++){
+    var p1=S.分布[k]||0, p2=F.分布[k]||0;
+    if(p1<0.004&&p2<0.004) continue;
+    var top=(k===S.最可能命中);
+    bars+='<div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:2px">'+
+      '<div style="font-size:9px;color:'+(top?'var(--gold)':'var(--mut2)')+'">'+(p1*100).toFixed(0)+'%</div>'+
+      '<div style="width:100%;display:flex;gap:1px;align-items:flex-end;justify-content:center">'+
+        '<div style="width:44%;height:'+(p1/mx*66).toFixed(0)+'px;background:'+(top?'var(--gold)':'var(--blue)')+';border-radius:2px 2px 0 0;min-height:2px"></div>'+
+        '<div style="width:44%;height:'+(p2/mx*66).toFixed(0)+'px;background:var(--green);opacity:.75;border-radius:2px 2px 0 0;min-height:2px"></div>'+
+      '</div>'+
+      '<div style="font-size:10px;color:'+(top?'var(--gold)':'var(--mut2)')+';font-weight:'+(top?700:400)+'">'+k+'</div></div>';
+  }
+
+  var basel=[["我们的模型",S.预测胜率,"var(--gold)"],["16元复式覆盖",F.覆盖胜率,"var(--green)"],
+             ["全买主胜",B.全买主胜,"var(--blue)"],["历史主胜率",B.历史主胜率,"var(--mut)"],
+             ["随机瞎猜",B.随机,"var(--mut2)"]];
+  var bmax=Math.max.apply(null,basel.map(function(x){return x[1]}));
+  var brows=basel.map(function(x){
+    return '<div style="display:flex;align-items:center;gap:9px;padding:7px 12px;font-size:12.5px">'+
+      '<span style="width:88px;color:var(--mut)">'+x[0]+'</span>'+
+      '<div style="flex:1;height:11px;background:var(--card2);border-radius:5px;overflow:hidden">'+
+      '<div style="width:'+(x[1]/bmax*100).toFixed(0)+'%;height:100%;background:'+x[2]+'"></div></div>'+
+      '<span style="width:46px;text-align:right;font-weight:700;color:'+x[2]+'">'+(x[1]*100).toFixed(1)+'%</span></div>';
+  }).join("");
+
+  box.innerHTML=
+    '<div class="sec" style="margin-top:16px"><span class="bar"></span><h2>预测胜率 · 第'+L.期号+'期</h2>'+
+      '<span class="more">已锁定 '+L.锁定时间.slice(5,16)+'</span></div>'+
+    '<div class="box">'+
+      '<div style="display:flex;border-bottom:1px solid var(--line)">'+
+        '<div style="flex:1;padding:14px;text-align:center;border-right:1px solid var(--line)">'+
+          '<div style="font-size:11px;color:var(--mut2)">单式预测胜率</div>'+
+          '<div style="font-size:30px;font-weight:800;color:var(--gold);line-height:1.25">'+(S.预测胜率*100).toFixed(1)+'%</div>'+
+          '<div style="font-size:11px;color:var(--mut2)">期望命中 '+S.期望命中+' / 14</div></div>'+
+        '<div style="flex:1;padding:14px;text-align:center">'+
+          '<div style="font-size:11px;color:var(--mut2)">16元复式覆盖率</div>'+
+          '<div style="font-size:30px;font-weight:800;color:var(--green);line-height:1.25">'+(F.覆盖胜率*100).toFixed(1)+'%</div>'+
+          '<div style="font-size:11px;color:var(--mut2)">'+F.注数+' 注 · 期望 '+F.期望命中+' / 14</div></div>'+
+      '</div>'+
+      '<div style="padding:11px 12px 4px;font-size:11.5px;color:var(--mut2)">14 场中命中数分布'+
+        ' <span style="color:var(--gold)">■单式</span> <span style="color:var(--green)">■复式</span></div>'+
+      '<div style="display:flex;gap:3px;align-items:flex-end;padding:0 12px 10px;height:100px">'+bars+'</div>'+
+      '<div style="padding:9px 12px 3px;font-size:11.5px;color:var(--mut2);border-top:1px solid var(--line)">对照基准</div>'+
+      brows+
+      '<div style="padding:11px 12px 6px;background:var(--card2);border-top:1px solid var(--line);font-size:11.5px;color:var(--mut2)">'+
+        '<b style="color:var(--gold)">16 元复式样板</b>（每期标准）· '+F.注数+' 注 · 加保 '+F.加保场.length+' 场</div>'+
+      '<table class="tbl" style="border:0;background:var(--card2)"><thead><tr>'+
+        '<th style="width:36px">场次</th><th style="text-align:left;padding-left:10px">对阵</th>'+
+        '<th style="width:96px">选择</th><th style="width:56px">覆盖率</th></tr></thead><tbody>'+
+        F.明细.map(function(d){
+          var zh=d.选项.split("").map(function(c){
+            return c==="3"?'<span style="color:var(--green);font-weight:700">胜</span>':
+                   c==="1"?'<span style="color:var(--gold);font-weight:700">平</span>':
+                            '<span style="color:var(--red);font-weight:700">负</span>';
+          }).join('<span style="color:var(--mut2);margin:0 3px">+</span>');
+          var dbl=d.选项数>1;
+          return '<tr'+(dbl?' style="background:rgba(245,196,81,.07)"':'')+'>'+
+            '<td style="color:var(--mut2)">'+d.场次+'</td>'+
+            '<td class="tm" style="font-size:12.5px;font-weight:500">'+d.对阵+(dbl?' <span style="color:var(--gold);font-size:10px">★加保</span>':'')+'</td>'+
+            '<td>'+zh+'</td>'+
+            '<td style="color:'+(dbl?'var(--gold)':'var(--mut)')+';font-variant-numeric:tabular-nums">'+(d.覆盖概率*100).toFixed(0)+'%</td></tr>';
+        }).join("")+
+      '</tbody></table>'+
+      '<div style="padding:9px 12px;background:var(--card2);font-size:11px;color:var(--mut2);line-height:1.75;border-top:1px solid var(--line)">'+
+        '「<span style="color:var(--gold)">★加保</span>」= 该场两个结果都选，因为模型判断这两者概率接近。'+
+        '3 场加保 → 2×2×2 = '+F.注数+' 注 × 2 元 = '+F.金额+' 元。<br>'+
+        '<span style="color:var(--mut2)">彩票标准写法：胜=3 平=1 负=0，本表已转成中文避免与比分混淆。</span></div>'+
+    '</div>'+
+    '<div class="info">⚠️ <b>单期 14 场样本极小</b>，中 6 场或 10 场都在正常波动内（90% 概率落在 6–10 场）。'+
+      '真正有意义的是<b>累积 10 期以上（140+ 场）</b>后的长期胜率 —— 那才能验证模型是否真有 '+(S.预测胜率*100).toFixed(0)+'% 的水平。<br>'+
+      '本期预测已于 <b>'+L.锁定时间+'</b> 锁定（赛前），赛后将逐场对照，不可事后修改。</div>';
+}
+
+function renderSFC(){
+  var S=D.sfc, box=document.getElementById("sfcBox"); if(!S||!box) return;
+  var L=D.sfc_lock;
+  var fu = (L&&L.复式16元) ? L.复式16元.串 : null;   // 复式每场选项（"3"/"0"/"30"）
+
+  var head='<tr>'+
+    '<th style="width:30px">场次</th>'+
+    '<th style="width:52px">赛事</th>'+
+    '<th style="text-align:left;padding-left:8px">对阵</th>'+
+    '<th style="width:40px">胜3</th><th style="width:40px">平1</th><th style="width:40px">负0</th>'+
+    '<th style="width:44px;background:rgba(245,196,81,.10)">单式</th>'+
+    (fu?'<th style="width:52px;background:rgba(34,197,94,.10)">复式</th>':'')+
+    '</tr>';
+
+  var rows=S.picks.map(function(p,i){
+    var mx=Math.max(p.胜,p.平,p.负);
+    var cell=function(v,c){
+      var on=(v===mx);
+      return '<td style="font-variant-numeric:tabular-nums;color:'+(on?c:'var(--mut2)')+
+             ';font-weight:'+(on?800:400)+'">'+(v*100).toFixed(0)+'</td>';
+    };
+    var code=p.推荐码;
+    var codeColor=code==="3"?"var(--green)":(code==="1"?"var(--gold)":"var(--red)");
+    var fuSel=fu?fu[i]:null;
+    var fuDbl=fuSel&&fuSel.length>1;
+    return '<tr'+(fuDbl?' style="background:rgba(245,196,81,.06)"':'')+'>'+
+      '<td style="color:var(--mut2);font-variant-numeric:tabular-nums">'+p.场次+'</td>'+
+      '<td style="font-size:11px;color:var(--mut)">'+p.赛事+'</td>'+
+      '<td class="tm" style="font-size:12.5px;font-weight:600">'+p.主队+
+        '<span style="color:var(--mut2);font-weight:400;margin:0 4px">vs</span>'+p.客队+
+        '<div style="font-size:10px;color:var(--mut2);font-weight:400;margin-top:1px">'+p.开赛+
+        ' · Elo '+(p.Elo差>0?'+':'')+p.Elo差+' · '+p.来源+'</div></td>'+
+      cell(p.胜,'var(--green)')+cell(p.平,'var(--gold)')+cell(p.负,'var(--red)')+
+      '<td style="background:rgba(245,196,81,.08)"><span style="font-size:17px;font-weight:800;color:'+codeColor+'">'+code+'</span></td>'+
+      (fu?'<td style="background:rgba(34,197,94,.06)"><span style="font-size:16px;font-weight:800;letter-spacing:2px;color:'+
+        (fuDbl?'var(--gold)':'var(--mut)')+'">'+fuSel+'</span></td>':'')+
+      '</tr>';
+  }).join("");
+
+  var tableHTML='<div style="overflow-x:auto"><table class="tbl"><thead>'+head+'</thead><tbody>'+rows+'</tbody></table></div>';
+  box.innerHTML=
+    '<div class="sec" style="margin-top:16px"><span class="bar"></span><h2>胜负彩第 '+S.期号+' 期 · 模型预测</h2>'+
+      '<span class="more">截止 '+S.截止+'</span></div>'+
+    tableHTML+
+    '<div class="box" style="border-top:0">'+
+      '<div style="padding:12px;background:var(--card2)">'+
+        '<div style="font-size:11px;color:var(--mut2);margin-bottom:5px">模型单式（14 场连写 · 胜=3 平=1 负=0）</div>'+
+        '<div style="font-family:monospace;font-size:19px;letter-spacing:5px;color:var(--gold);font-weight:700">'+S.单式+'</div>'+
+        (S.单式全中概率?'<div style="font-size:11px;color:var(--red);margin-top:6px">⚠ 全中概率仅 '+
+          (1/S.单式全中概率).toLocaleString(undefined,{maximumFractionDigits:0})+' 分之一 —— 单式数学最优，但中奖希望渺茫</div>':'')+
+        '<div style="font-size:11px;color:var(--mut2);margin-top:7px">基于 '+S.训练库场次.toLocaleString()+' 场 / '+S.训练库联赛+' 联赛训练 · 生成于 '+S.生成时间+'</div>'+
+      '</div></div>'+
+      (S.复式方案?
+        '<div class="sec" style="margin-top:16px"><span class="bar"></span><h2>复式方案 · 覆盖不确定性</h2><span class="more">为什么不能只买单式</span></div>'+
+        '<div class="box"><table class="tbl" style="border:0">'+
+        '<thead><tr><th style="width:60px">加保场</th><th style="width:52px">注数</th><th style="width:60px">金额</th><th>全中概率</th><th style="width:56px">提升</th></tr></thead><tbody>'+
+        S.复式方案.map(function(x){
+          var on=(S.推荐方案&&x.加保===S.推荐方案.加保);
+          return '<tr'+(on?' style="background:rgba(245,196,81,.10)"':'')+'>'+
+            '<td style="'+(on?'color:var(--gold);font-weight:700':'')+'">'+x.加保+(on?' ★':'')+'</td>'+
+            '<td>'+x.注数+'</td><td>'+x.金额+' 元</td>'+
+            '<td style="font-family:monospace;font-size:11.5px">'+x.全中概率.toExponential(2)+'</td>'+
+            '<td style="color:var(--green);font-weight:700">'+x.提升.toFixed(1)+'×</td></tr>';
+        }).join("")+'</tbody></table>'+
+        (S.推荐方案?'<div style="padding:12px;background:var(--card2);border-top:1px solid var(--line)">'+
+          '<div style="font-size:11px;color:var(--mut2);margin-bottom:7px">⭐ 推荐：加保 '+S.推荐方案.加保+' 场 · '+S.推荐方案.注数+' 注 · '+S.推荐方案.金额+' 元</div>'+
+          '<div style="display:flex;flex-wrap:wrap;gap:5px">'+
+          S.推荐方案.串.map(function(sel,i){
+            var zh=sel.split("").map(function(c){return c==="3"?"胜":(c==="1"?"平":"负")}).join("+");
+            var dbl=sel.length>1;
+            return '<span style="font-size:11.5px;padding:3px 7px;border-radius:4px;border:1px solid '+
+              (dbl?'var(--gold)':'var(--line)')+';color:'+(dbl?'var(--gold)':'var(--mut)')+'">'+
+              '<span style="color:var(--mut2)">'+(i+1)+'</span> '+zh+'</span>';
+          }).join('')+'</div></div>':'')+
+        '</div>'+
+        '<div class="info">单式每场取最高概率，<b>数学上每场命中率最优</b>；但 14 场连中的概率约万分之一。'+
+        '复式对<b>「次选与首选接近」的场次</b>同时选两个结果，用成本换覆盖率 —— 这才是胜负彩的正常玩法。</div>':'')+
+      (S.平局候选?
+        '<div class="sec" style="margin-top:16px"><span class="bar"></span><h2>平局候选</h2><span class="more">真实平局率 26%</span></div>'+
+        '<div class="box">'+S.平局候选.map(function(d){
+          return '<div style="display:flex;gap:9px;align-items:center;padding:9px 12px;border-bottom:1px solid var(--line);font-size:12.5px">'+
+            '<span style="color:var(--mut2);width:18px">'+d.场次+'</span>'+
+            '<span style="flex:1">'+d.对阵+'</span>'+
+            '<span style="color:var(--mut2);font-size:11px">Elo差 '+(d.Elo差>0?'+':'')+d.Elo差+'</span>'+
+            '<span style="color:var(--gold);font-weight:700;width:42px;text-align:right">'+(d.平局概率*100).toFixed(0)+'%</span></div>';
+        }).join("")+'</div>'+
+        '<div class="info">10.6 万场统计：真实平局率 <b>26.2%</b>，14 场预期出现 <b>3.7 场</b>平局。'+
+        '但平局概率通常在 22-27% 徘徊，<b>取最大值时几乎永远选不到平局</b> —— 这是「指标正确、决策规则失效」的典型案例，'+
+        '也是复式存在的根本原因。</div>':'')+
+    '<div class="info">⚠️ 本表为<b>模型输出记录</b>，用于检验预测方法的准确度，<b>不构成任何投注建议</b>。'+
+      '标「仅Elo」的场次无官方赔率参考，不确定性更高。</div>';
+}
+
+function renderSources(){
+  var S=D.sources; if(!S) return;
+  document.getElementById("srcCnt").textContent=S.length+" 个联赛 · "+D.matches.toLocaleString()+" 场";
+  document.getElementById("srcBody").innerHTML=S.map(function(x){
+    return '<tr><td class="tm" style="font-size:12.5px">'+x.name+'<small>'+x.code+'</small></td>'+
+      '<td style="font-variant-numeric:tabular-nums">'+x.n.toLocaleString()+'</td>'+
+      '<td style="color:var(--mut2)">'+x.teams+'</td>'+
+      '<td style="font-size:10.5px;color:var(--mut2)">'+x.from.slice(2)+'~'+x.to.slice(2)+'</td>'+
+      '<td>'+(x.odds?'<span style="color:var(--green)">✓</span>':'<span style="color:var(--mut2)">—</span>')+'</td></tr>';
+  }).join("");
+}
+
+function renderPipeline(){
+  var P=D.pipeline; if(!P) return;
+  document.getElementById("pipeBody").innerHTML=P.map(function(s,i){
+    return '<div style="display:flex;gap:11px;padding:12px;border-bottom:'+(i<P.length-1?'1px solid var(--line)':'0')+'">'+
+      '<div style="width:24px;height:24px;border-radius:50%;background:var(--gold);color:var(--bg);font-weight:800;'+
+      'font-size:12px;display:flex;align-items:center;justify-content:center;flex:0 0 auto">'+s.step+'</div>'+
+      '<div style="flex:1"><div style="font-size:13.5px;font-weight:700">'+s.name+'</div>'+
+      '<div style="font-size:11.5px;color:var(--mut2);margin-top:2px">'+s.detail+'</div></div>'+
+      '<div style="font-size:12px;color:var(--gold);font-weight:700;text-align:right;white-space:nowrap">'+s.metric+'</div></div>';
+  }).join("");
+}
+
+function renderTrain(){
+  var T=D.train_result; if(!T) return;
+  document.getElementById("trCnt").textContent=T.n_teams+" 支球队";
+  var mx=Math.max.apply(null,T.hist);
+  var bars=T.hist.map(function(h,i){
+    var lo=1200+i*70;
+    return '<div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center">'+
+      '<div style="font-size:9px;color:var(--mut2)">'+h+'</div>'+
+      '<div style="width:78%;height:'+(h/mx*60).toFixed(0)+'px;background:var(--blue);border-radius:2px 2px 0 0;min-height:2px"></div>'+
+      '<div style="font-size:8.5px;color:var(--mut2);margin-top:3px">'+lo+'</div></div>';
+  }).join("");
+  var tops=T.top.slice(0,10).map(function(t,i){
+    return '<div style="display:flex;gap:8px;padding:6px 12px;font-size:12px;border-bottom:1px solid var(--line)">'+
+      '<span style="color:var(--mut2);width:18px;font-variant-numeric:tabular-nums">'+(i+1)+'</span>'+
+      '<span style="flex:1">'+t.team+'</span>'+
+      '<span style="color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums">'+t.elo+'</span></div>';
+  }).join("");
+  var lgs=T.leagues.slice(0,10).map(function(l){
+    var w=Math.max(4,(l.max-1500)/3.4);
+    return '<div style="display:flex;gap:8px;align-items:center;padding:5px 12px;font-size:12px">'+
+      '<span style="width:56px;color:var(--mut)">'+l.name+'</span>'+
+      '<div style="flex:1;height:9px;background:var(--card2);border-radius:4px;overflow:hidden">'+
+        '<div style="width:'+w.toFixed(0)+'%;height:100%;background:var(--gold)"></div></div>'+
+      '<span style="width:42px;text-align:right;color:var(--gold);font-variant-numeric:tabular-nums">'+l.max+'</span></div>';
+  }).join("");
+  document.getElementById("trBody").innerHTML=
+    '<div style="padding:12px 12px 6px;font-size:11.5px;color:var(--mut2)">Elo 分布（均值 '+T.elo_mean+' ± '+T.elo_std+'，'+T.elo_min+'~'+T.elo_max+'）</div>'+
+    '<div style="display:flex;gap:3px;align-items:flex-end;padding:0 12px 10px;height:92px">'+bars+'</div>'+
+    '<div style="padding:9px 12px 4px;font-size:11.5px;color:var(--mut2);border-top:1px solid var(--line)">全球 Top10</div>'+tops+
+    '<div style="padding:9px 12px 4px;font-size:11.5px;color:var(--mut2);border-top:1px solid var(--line)">各联赛最强球队 Elo</div>'+lgs;
+}
+
+function renderLab(){
+  var L=D.lab; if(!L) return;
+  // 训练集档案
+  var ds=L.dataset, rows=[
+    ["样本量", ds.n.toLocaleString()+" 场"],
+    ["时间跨度", ds.span],
+    ["覆盖联赛", ds.leagues],
+    ["数据字段", ds.fields],
+    ["训练/测试", ds.split],
+    ["数据来源", ds.source],
+    ["存放位置", ds.where]
+  ];
+  document.getElementById("dsBody").innerHTML=rows.map(function(r){
+    return '<tr><td style="text-align:left;padding-left:10px;color:var(--mut);width:82px;white-space:nowrap">'+r[0]+
+           '</td><td style="text-align:left;font-weight:600">'+r[1]+'</td></tr>';
+  }).join("");
+
+  // 模型清单
+  document.getElementById("mdBody").innerHTML=L.models.map(function(m){
+    var c=m.name.indexOf("市场")>-1?"var(--green)":"var(--gold)";
+    return '<tr><td class="tm" style="color:'+c+'">'+m.name+'</td>'+
+           '<td style="color:var(--mut);font-size:12px">'+m.algo+'</td>'+
+           '<td style="text-align:left;color:var(--mut);font-size:12px">'+m.feat+'</td></tr>';
+  }).join("");
+
+  // 迭代日志
+  document.getElementById("itBody").innerHTML=L.iterations.map(function(x){
+    var d="—", c="var(--mut2)", vc="var(--mut)";
+    if(x.delta!==null && x.delta!==undefined){
+      if(x.delta<0){ d="↓"+Math.abs(x.delta).toFixed(4); c="var(--green)"; vc="var(--green)"; }
+      else if(x.delta<0.0005){ d="→"+x.delta.toFixed(4); c="var(--mut)"; }
+      else { d="↑"+x.delta.toFixed(4); c="var(--red)"; vc="var(--red)"; }
+    }
+    var bv = (x.brier===null||x.brier===undefined) ? "—" : x.brier.toFixed(4);
+    return '<tr><td class="rk" style="color:var(--gold)">'+x.v+'</td>'+
+      '<td class="tm" style="font-weight:600">'+x.change+'</td>'+
+      '<td class="el">'+bv+'</td>'+
+      '<td style="color:'+c+';font-weight:700;font-size:12px">'+d+'</td>'+
+      '<td style="color:'+vc+';font-size:11px">'+x.verdict+'</td></tr>';
+  }).join("");
+
+  // 关键洞察
+  var ib=document.getElementById("insightBox");
+  if(ib && L.insight){
+    var card=function(o){return '<div style="background:linear-gradient(160deg,rgba(245,196,81,.10),rgba(245,196,81,.02));'+
+      'border:1px solid rgba(245,196,81,.3);border-radius:10px;padding:14px 15px;margin-bottom:10px">'+
+      '<div style="font-size:14px;font-weight:800;color:var(--gold);margin-bottom:7px">💡 '+o.title+'</div>'+
+      '<div style="font-size:12.5px;color:var(--mut);line-height:1.8">'+o.body+'</div></div>';};
+    ib.innerHTML='<div class="sec" style="margin-top:22px"><span class="bar"></span><h2>关键洞察</h2></div>'+
+      card(L.insight)+(L.insight2?card(L.insight2):"");
+  }
+
+  // 失败记录
+  var fb=document.getElementById("fBody");
+  if(fb && L.failed){
+    fb.innerHTML=L.failed.map(function(f){
+      return '<div style="padding:10px 12px;border-bottom:1px solid var(--line);font-size:12.5px">'+
+             '<span style="color:var(--red);margin-right:7px">✗</span>'+
+             '<b>'+f.item+'</b><div style="color:var(--mut2);font-size:11.5px;margin-top:3px;padding-left:19px">'+f.why+'</div></div>';
+    }).join("");
+  }
+
+  // 实验队列
+  document.getElementById("qBody").innerHTML=L.queue.map(function(q){
+    return '<div style="padding:9px 12px;border-bottom:1px solid var(--line);font-size:12.5px;display:flex;gap:8px;align-items:center">'+
+           '<span style="color:var(--mut2)">☐</span><span>'+q+'</span></div>';
+  }).join("");
+}
+
+function renderBatch(){
+  var el=document.getElementById("bBody"); if(!el) return;
+  if(!D.batch||!D.batch.picks||!D.batch.picks.length){
+    el.innerHTML='<tr><td colspan="6" style="padding:20px;color:var(--mut2)">新赛季开赛后生成</td></tr>'; return;}
+  document.getElementById("bTag").textContent="第 "+D.batch.period+" 期 · "+D.batch.picks.length+" 场";
+  el.innerHTML=D.batch.picks.map(function(p,i){
+    return '<tr><td class="rk">'+(i+1)+'</td>'+
+      '<td class="tm">'+p.主队+' <span style="color:var(--mut2);font-weight:400">vs</span> '+p.客队+
+      '<small>'+p.联赛+'</small></td>'+
+      '<td style="font-weight:700;color:var(--gold)">'+p.选择+'</td>'+
+      '<td class="el">'+Math.round(p.模型概率*100)+'%</td>'+
+      '<td style="color:var(--mut)">'+Math.round(p.市场概率*100)+'%</td>'+
+      '<td style="color:var(--green);font-weight:700">+'+p.偏差.toFixed(3)+'</td></tr>';
+  }).join("");
+}
+
+function renderReview(){
+  var el=document.getElementById("rBody"); if(!el) return;
+  var r=D.review||[];
+  if(!r.length){ el.innerHTML='<tr><td colspan="5" style="padding:20px;color:var(--mut2)">赛后自动生成</td></tr>'; return;}
+  var hit=r.filter(function(x){return x.命中}).length;
+  document.getElementById("rTag").textContent="命中 "+hit+"/"+r.length+" · "+Math.round(hit/r.length*100)+"%";
+  el.innerHTML=r.map(function(x){
+    return '<tr><td class="tm">'+x.主队+' <span style="color:var(--mut2);font-weight:400">vs</span> '+x.客队+
+      '<small>'+x.联赛+'</small></td>'+
+      '<td style="color:var(--gold);font-weight:700">'+x.选择+'</td>'+
+      '<td class="el">'+Math.round(x.模型概率*100)+'%</td>'+
+      '<td style="font-weight:700">'+x.实际比分+'</td>'+
+      '<td>'+(x.命中?'<span class="lv a">✓</span>':'<span class="lv c">✗</span>')+'</td></tr>';
+  }).join("");
+}
+
+function renderLedger(){
+  var el=document.getElementById("lBody"); if(!el) return;
+  var l=D.ledger||[];
+  if(!l.length){ el.innerHTML='<tr><td colspan="5" style="padding:20px;color:var(--mut2)">累积中</td></tr>'; return;}
+  el.innerHTML=l.map(function(x){
+    return '<tr><td class="tm">'+x.period+'</td><td>'+x.n+'</td><td>'+x.hit+'</td>'+
+      '<td class="el">'+Math.round(x.rate*100)+'%</td>'+
+      '<td style="color:var(--mut)">+'+x.avg_edge.toFixed(3)+'</td></tr>';
+  }).join("");
+}
+
+/* ===== 顶部分页切换 ===== */
+(function(){
+  var nav=document.getElementById("subnav");
+  if(!nav) return;
+  function show(name){
+    document.querySelectorAll(".panel").forEach(function(el){
+      el.hidden = (el.dataset.p !== name);
+    });
+    nav.querySelectorAll("a").forEach(function(a){
+      a.classList.toggle("on", a.dataset.p===name);
+    });
+    if(location.hash.slice(1)!==name) history.replaceState(null,"","#"+name);
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  nav.querySelectorAll("a").forEach(function(a){
+    a.onclick=function(){ show(a.dataset.p); };
+  });
+  var h=location.hash.slice(1);
+  show(["pred","rank","model","review"].indexOf(h)>=0 ? h : "pred");
+  window.SHOWPANEL=show;
+})();
+
+
+/* ===== 自媒体文章模块 ===== */
+function renderPosts(){
+  var A=D.articles, list=document.getElementById("postList"), view=document.getElementById("postView");
+  if(!A||!list) return;
+  document.getElementById("postCnt").textContent=A.length+" 篇 · 可编辑 / 下载";
+  list.innerHTML=A.map(function(a,i){
+    var cover=a.cover?'<img src="'+a.cover+'" style="width:100%;display:block;border-bottom:1px solid var(--line)">':'';
+    return '<div class="box" style="margin-bottom:12px;overflow:hidden;border-radius:8px">'+cover+
+      '<div style="padding:12px 13px">'+
+        '<div style="display:flex;gap:8px;align-items:center;font-size:11px;color:var(--mut2);margin-bottom:6px">'+
+          '<span>'+a.date+'</span>'+(a.style?'<span style="color:var(--gold);border:1px solid var(--line);padding:1px 6px;border-radius:3px">'+a.style+'风格</span>':'')+
+          (a.period?'<span>'+a.period+'</span>':'')+
+          '<span style="margin-left:auto">'+a.words+' 字</span></div>'+
+        '<div style="font-size:15.5px;font-weight:800;line-height:1.45;margin-bottom:6px">'+a.title+'</div>'+
+        '<div style="font-size:12.5px;color:var(--mut);line-height:1.7">'+a.lead+'…</div>'+
+        (a.heads&&a.heads.length?'<div style="margin-top:8px;font-size:11px;color:var(--mut2);line-height:1.9">'+
+          a.heads.slice(0,4).map(function(h){return '· '+h}).join('<br>')+(a.heads.length>4?'<br>· …':'')+'</div>':'')+
+        '<div style="display:flex;gap:7px;margin-top:11px;flex-wrap:wrap">'+
+          '<span class="pbtn" data-i="'+i+'" style="background:var(--gold);color:#12171f;font-weight:700">阅读全文</span>'+
+          '<a class="pbtn" href="'+a.md+'" download>下载 .md</a>'+
+          (a.cover?'<a class="pbtn" href="'+a.cover+'" download>下载封面</a>':'')+
+          '<a class="pbtn" href="'+a.edit+'" target="_blank" rel="noopener">在 GitHub 编辑</a>'+
+        '</div></div></div>';
+  }).join("");
+  list.querySelectorAll(".pbtn[data-i]").forEach(function(b){
+    b.onclick=function(){ openPost(A[+b.dataset.i]); };
+  });
+}
+
+function openPost(a){
+  var list=document.getElementById("postList"), view=document.getElementById("postView");
+  fetch(a.md).then(function(r){return r.text()}).then(function(md){
+    var body=md.replace(/^---[\s\S]*?---\n/,"");
+    list.hidden=true;
+    view.innerHTML=
+      '<div style="display:flex;gap:7px;margin-bottom:12px;flex-wrap:wrap">'+
+        '<span class="pbtn" id="pback">← 返回列表</span>'+
+        '<span class="pbtn" id="pedit">编辑</span>'+
+        '<a class="pbtn" href="'+a.md+'" download>下载 .md</a>'+
+        '<a class="pbtn" href="'+a.edit+'" target="_blank" rel="noopener">在 GitHub 保存修改</a>'+
+      '</div>'+
+      (a.cover?'<img src="'+a.cover+'" style="width:100%;border-radius:8px;margin-bottom:14px">':'')+
+      '<div class="box md" id="pbody" style="padding:16px 15px">'+marked.parse(body)+'</div>'+
+      '<textarea id="pedit-area" hidden style="width:100%;height:60vh;background:var(--card2);color:var(--txt);'+
+        'border:1px solid var(--line);border-radius:8px;padding:12px;font-family:monospace;font-size:12.5px;line-height:1.7"></textarea>'+
+      '<div id="pedit-bar" hidden style="display:flex;gap:7px;margin-top:9px">'+
+        '<span class="pbtn" id="ppreview">预览</span>'+
+        '<span class="pbtn" id="pdl" style="background:var(--green);color:#08130c;font-weight:700">下载修改后的 .md</span>'+
+        '<span style="font-size:11px;color:var(--mut2);align-self:center">网页编辑不会自动保存，需下载或去 GitHub 提交</span>'+
+      '</div>';
+    view.hidden=false; window.scrollTo({top:0,behavior:"smooth"});
+    document.getElementById("pback").onclick=function(){ view.hidden=true; list.hidden=false; };
+    var ta=document.getElementById("pedit-area"), bd=document.getElementById("pbody"), bar=document.getElementById("pedit-bar");
+    document.getElementById("pedit").onclick=function(){
+      ta.value=md; ta.hidden=false; bar.hidden=false; bd.hidden=true;
+    };
+    document.getElementById("ppreview").onclick=function(){
+      bd.innerHTML=marked.parse(ta.value.replace(/^---[\s\S]*?---\n/,"")); bd.hidden=false; ta.hidden=true;
+    };
+    document.getElementById("pdl").onclick=function(){
+      var b=new Blob([ta.value],{type:"text/markdown;charset=utf-8"});
+      var u=URL.createObjectURL(b), el=document.createElement("a");
+      el.href=u; el.download=a.slug+".md"; el.click(); URL.revokeObjectURL(u);
+    };
+  });
+}
+
+</script>
+</body>
+</html>

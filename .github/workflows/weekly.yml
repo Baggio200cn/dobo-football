@@ -1,0 +1,95 @@
+name: 每周自动预测与复盘
+
+on:
+  schedule:
+    # 北京时间 = UTC+8
+    - cron: '0 12 * * 5'   # 周五 20:00 北京 → 出预测
+    - cron: '0 2  * * 1'   # 周一 10:00 北京 → 复盘
+  workflow_dispatch:        # 允许手动触发
+    inputs:
+      task:
+        description: '手动执行哪个任务'
+        required: true
+        default: 'predict'
+        type: choice
+        options: [predict, review, both]
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 缓存比赛数据
+        uses: actions/cache@v4
+        with:
+          path: engine/data
+          key: fd-data-${{ github.run_id }}
+          restore-keys: fd-data-
+
+      - name: 判断任务类型
+        id: task
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "kind=${{ inputs.task }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.schedule }}" = "0 12 * * 5" ]; then
+            echo "kind=predict" >> $GITHUB_OUTPUT
+          else
+            echo "kind=review" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 更新数据（36 联赛）
+        working-directory: engine
+        run: python -c "import data; data.update(refresh=True); m=data.load_matches(); print(f'{len(m)} 场 / {m.Div.nunique()} 联赛')"
+
+      - name: 回测 + 导出看板数据
+        working-directory: engine
+        run: |
+          python export_web.py || echo "export_web 跳过"
+          python export_sfc.py || echo "export_sfc 跳过"
+
+      - name: 生成文章封面与清单
+        working-directory: engine
+        run: |
+          python make_cover.py || echo "封面跳过"
+          python build_articles.py || echo "清单跳过"
+
+      - name: 同步到 site/
+        run: |
+          cp engine/web_data.json site/data.json 2>/dev/null || true
+          mkdir -p site/articles
+          cp articles/*.md site/articles/ 2>/dev/null || true
+          for f in articles/*.cover.png; do
+            [ -e "$f" ] && cp "$f" "site/articles/$(basename "${f%.cover.png}").png"
+          done
+          ls -la site/articles/ | head
+
+      - name: 提交变更
+        run: |
+          git config user.name  "dobo-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "无变更"
+          else
+            git commit -m "🤖 自动更新 · ${{ steps.task.outputs.kind }} · $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M')"
+            git push
+          fi
+
+      - name: 摘要
+        run: |
+          echo "### 🤖 自动运行完成" >> $GITHUB_STEP_SUMMARY
+          echo "- 任务：${{ steps.task.outputs.kind }}" >> $GITHUB_STEP_SUMMARY
+          echo "- 时间：$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M') (北京)" >> $GITHUB_STEP_SUMMARY
+          echo "- 看板：https://worldcup-site-delta.vercel.app" >> $GITHUB_STEP_SUMMARY
