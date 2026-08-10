@@ -1,0 +1,3618 @@
+{
+ "updated": "2026-08-06",
+ "matches": 106838,
+ "span": "2012-03-02 → 2026-08-06",
+ "elo": {
+  "英超": [
+   {
+    "name": "阿森纳",
+    "en": "Arsenal",
+    "elo": 1809
+   },
+   {
+    "name": "曼城",
+    "en": "Man City",
+    "elo": 1787
+   },
+   {
+    "name": "利物浦",
+    "en": "Liverpool",
+    "elo": 1700
+   },
+   {
+    "name": "曼联",
+    "en": "Man United",
+    "elo": 1699
+   },
+   {
+    "name": "阿斯顿维拉",
+    "en": "Aston Villa",
+    "elo": 1686
+   },
+   {
+    "name": "伯恩茅斯",
+    "en": "Bournemouth",
+    "elo": 1669
+   },
+   {
+    "name": "利兹联",
+    "en": "Leeds",
+    "elo": 1645
+   },
+   {
+    "name": "布莱顿",
+    "en": "Brighton",
+    "elo": 1633
+   },
+   {
+    "name": "切尔西",
+    "en": "Chelsea",
+    "elo": 1629
+   },
+   {
+    "name": "布伦特福德",
+    "en": "Brentford",
+    "elo": 1625
+   },
+   {
+    "name": "纽卡斯尔",
+    "en": "Newcastle",
+    "elo": 1617
+   },
+   {
+    "name": "富勒姆",
+    "en": "Fulham",
+    "elo": 1607
+   },
+   {
+    "name": "诺丁汉森林",
+    "en": "Nott'm Forest",
+    "elo": 1601
+   },
+   {
+    "name": "桑德兰",
+    "en": "Sunderland",
+    "elo": 1598
+   },
+   {
+    "name": "埃弗顿",
+    "en": "Everton",
+    "elo": 1594
+   },
+   {
+    "name": "水晶宫",
+    "en": "Crystal Palace",
+    "elo": 1589
+   },
+   {
+    "name": "西汉姆联",
+    "en": "West Ham",
+    "elo": 1556
+   },
+   {
+    "name": "热刺",
+    "en": "Tottenham",
+    "elo": 1540
+   },
+   {
+    "name": "伯恩利",
+    "en": "Burnley",
+    "elo": 1511
+   },
+   {
+    "name": "狼队",
+    "en": "Wolves",
+    "elo": 1473
+   }
+  ],
+  "西甲": [
+   {
+    "name": "巴萨",
+    "en": "Barcelona",
+    "elo": 1825
+   },
+   {
+    "name": "皇马",
+    "en": "Real Madrid",
+    "elo": 1792
+   },
+   {
+    "name": "比利亚雷亚尔",
+    "en": "Villarreal",
+    "elo": 1681
+   },
+   {
+    "name": "马竞",
+    "en": "Ath Madrid",
+    "elo": 1681
+   },
+   {
+    "name": "贝蒂斯",
+    "en": "Betis",
+    "elo": 1646
+   },
+   {
+    "name": "塞尔塔",
+    "en": "Celta",
+    "elo": 1592
+   },
+   {
+    "name": "巴列卡诺",
+    "en": "Vallecano",
+    "elo": 1587
+   },
+   {
+    "name": "瓦伦西亚",
+    "en": "Valencia",
+    "elo": 1580
+   },
+   {
+    "name": "毕尔巴鄂",
+    "en": "Ath Bilbao",
+    "elo": 1571
+   },
+   {
+    "name": "莱万特",
+    "en": "Levante",
+    "elo": 1563
+   },
+   {
+    "name": "皇家社会",
+    "en": "Sociedad",
+    "elo": 1552
+   },
+   {
+    "name": "赫塔菲",
+    "en": "Getafe",
+    "elo": 1547
+   },
+   {
+    "name": "埃尔切",
+    "en": "Elche",
+    "elo": 1545
+   },
+   {
+    "name": "阿拉维斯",
+    "en": "Alaves",
+    "elo": 1537
+   },
+   {
+    "name": "赫罗纳",
+    "en": "Girona",
+    "elo": 1531
+   },
+   {
+    "name": "奥萨苏纳",
+    "en": "Osasuna",
+    "elo": 1528
+   },
+   {
+    "name": "西班牙人",
+    "en": "Espanol",
+    "elo": 1526
+   },
+   {
+    "name": "马洛卡",
+    "en": "Mallorca",
+    "elo": 1525
+   },
+   {
+    "name": "塞维利亚",
+    "en": "Sevilla",
+    "elo": 1516
+   },
+   {
+    "name": "奥维耶多",
+    "en": "Oviedo",
+    "elo": 1488
+   }
+  ],
+  "意甲": [
+   {
+    "name": "国米",
+    "en": "Inter",
+    "elo": 1817
+   },
+   {
+    "name": "那不勒斯",
+    "en": "Napoli",
+    "elo": 1736
+   },
+   {
+    "name": "罗马",
+    "en": "Roma",
+    "elo": 1718
+   },
+   {
+    "name": "尤文",
+    "en": "Juventus",
+    "elo": 1714
+   },
+   {
+    "name": "AC米兰",
+    "en": "Milan",
+    "elo": 1684
+   },
+   {
+    "name": "科莫",
+    "en": "Como",
+    "elo": 1684
+   },
+   {
+    "name": "亚特兰大",
+    "en": "Atalanta",
+    "elo": 1673
+   },
+   {
+    "name": "拉齐奥",
+    "en": "Lazio",
+    "elo": 1640
+   },
+   {
+    "name": "博洛尼亚",
+    "en": "Bologna",
+    "elo": 1633
+   },
+   {
+    "name": "佛罗伦萨",
+    "en": "Fiorentina",
+    "elo": 1607
+   },
+   {
+    "name": "萨索洛",
+    "en": "Sassuolo",
+    "elo": 1572
+   },
+   {
+    "name": "帕尔马",
+    "en": "Parma",
+    "elo": 1564
+   },
+   {
+    "name": "乌迪内斯",
+    "en": "Udinese",
+    "elo": 1559
+   },
+   {
+    "name": "都灵",
+    "en": "Torino",
+    "elo": 1555
+   },
+   {
+    "name": "热那亚",
+    "en": "Genoa",
+    "elo": 1548
+   },
+   {
+    "name": "卡利亚里",
+    "en": "Cagliari",
+    "elo": 1532
+   },
+   {
+    "name": "莱切",
+    "en": "Lecce",
+    "elo": 1508
+   },
+   {
+    "name": "克雷莫纳",
+    "en": "Cremonese",
+    "elo": 1492
+   },
+   {
+    "name": "维罗纳",
+    "en": "Verona",
+    "elo": 1431
+   },
+   {
+    "name": "比萨",
+    "en": "Pisa",
+    "elo": 1429
+   }
+  ],
+  "德甲": [
+   {
+    "name": "拜仁",
+    "en": "Bayern Munich",
+    "elo": 1838
+   },
+   {
+    "name": "多特蒙德",
+    "en": "Dortmund",
+    "elo": 1717
+   },
+   {
+    "name": "勒沃库森",
+    "en": "Leverkusen",
+    "elo": 1695
+   },
+   {
+    "name": "莱比锡",
+    "en": "RB Leipzig",
+    "elo": 1662
+   },
+   {
+    "name": "斯图加特",
+    "en": "Stuttgart",
+    "elo": 1653
+   },
+   {
+    "name": "霍芬海姆",
+    "en": "Hoffenheim",
+    "elo": 1595
+   },
+   {
+    "name": "弗赖堡",
+    "en": "Freiburg",
+    "elo": 1582
+   },
+   {
+    "name": "法兰克福",
+    "en": "Ein Frankfurt",
+    "elo": 1575
+   },
+   {
+    "name": "美因茨",
+    "en": "Mainz",
+    "elo": 1566
+   },
+   {
+    "name": "汉堡",
+    "en": "Hamburg",
+    "elo": 1546
+   },
+   {
+    "name": "奥格斯堡",
+    "en": "Augsburg",
+    "elo": 1545
+   },
+   {
+    "name": "门兴",
+    "en": "M'gladbach",
+    "elo": 1526
+   },
+   {
+    "name": "柏林联合",
+    "en": "Union Berlin",
+    "elo": 1515
+   },
+   {
+    "name": "云达不莱梅",
+    "en": "Werder Bremen",
+    "elo": 1500
+   },
+   {
+    "name": "科隆",
+    "en": "FC Koln",
+    "elo": 1492
+   },
+   {
+    "name": "沃尔夫斯堡",
+    "en": "Wolfsburg",
+    "elo": 1475
+   },
+   {
+    "name": "海登海姆",
+    "en": "Heidenheim",
+    "elo": 1457
+   },
+   {
+    "name": "圣保利",
+    "en": "St Pauli",
+    "elo": 1454
+   }
+  ],
+  "法甲": [
+   {
+    "name": "巴黎圣日耳曼",
+    "en": "Paris SG",
+    "elo": 1804
+   },
+   {
+    "name": "朗斯",
+    "en": "Lens",
+    "elo": 1695
+   },
+   {
+    "name": "里尔",
+    "en": "Lille",
+    "elo": 1691
+   },
+   {
+    "name": "里昂",
+    "en": "Lyon",
+    "elo": 1665
+   },
+   {
+    "name": "马赛",
+    "en": "Marseille",
+    "elo": 1661
+   },
+   {
+    "name": "摩纳哥",
+    "en": "Monaco",
+    "elo": 1659
+   },
+   {
+    "name": "雷恩",
+    "en": "Rennes",
+    "elo": 1638
+   },
+   {
+    "name": "斯特拉斯堡",
+    "en": "Strasbourg",
+    "elo": 1636
+   },
+   {
+    "name": "巴黎FC",
+    "en": "Paris FC",
+    "elo": 1606
+   },
+   {
+    "name": "洛里昂",
+    "en": "Lorient",
+    "elo": 1590
+   },
+   {
+    "name": "图卢兹",
+    "en": "Toulouse",
+    "elo": 1581
+   },
+   {
+    "name": "布雷斯特",
+    "en": "Brest",
+    "elo": 1564
+   },
+   {
+    "name": "尼斯",
+    "en": "Nice",
+    "elo": 1559
+   },
+   {
+    "name": "欧塞尔",
+    "en": "Auxerre",
+    "elo": 1554
+   },
+   {
+    "name": "勒阿弗尔",
+    "en": "Le Havre",
+    "elo": 1524
+   },
+   {
+    "name": "昂热",
+    "en": "Angers",
+    "elo": 1505
+   },
+   {
+    "name": "南特",
+    "en": "Nantes",
+    "elo": 1464
+   },
+   {
+    "name": "梅斯",
+    "en": "Metz",
+    "elo": 1449
+   }
+  ],
+  "荷甲": [
+   {
+    "name": "PSV Eindhoven",
+    "en": "PSV Eindhoven",
+    "elo": 1813
+   },
+   {
+    "name": "Feyenoord",
+    "en": "Feyenoord",
+    "elo": 1702
+   },
+   {
+    "name": "Ajax",
+    "en": "Ajax",
+    "elo": 1662
+   },
+   {
+    "name": "Twente",
+    "en": "Twente",
+    "elo": 1642
+   },
+   {
+    "name": "Utrecht",
+    "en": "Utrecht",
+    "elo": 1615
+   },
+   {
+    "name": "AZ Alkmaar",
+    "en": "AZ Alkmaar",
+    "elo": 1602
+   },
+   {
+    "name": "Nijmegen",
+    "en": "Nijmegen",
+    "elo": 1600
+   },
+   {
+    "name": "Heerenveen",
+    "en": "Heerenveen",
+    "elo": 1551
+   },
+   {
+    "name": "Go Ahead Eagles",
+    "en": "Go Ahead Eagles",
+    "elo": 1515
+   },
+   {
+    "name": "Sparta Rotterdam",
+    "en": "Sparta Rotterdam",
+    "elo": 1505
+   },
+   {
+    "name": "Telstar",
+    "en": "Telstar",
+    "elo": 1504
+   },
+   {
+    "name": "Groningen",
+    "en": "Groningen",
+    "elo": 1497
+   },
+   {
+    "name": "Zwolle",
+    "en": "Zwolle",
+    "elo": 1475
+   },
+   {
+    "name": "For Sittard",
+    "en": "For Sittard",
+    "elo": 1475
+   },
+   {
+    "name": "Excelsior",
+    "en": "Excelsior",
+    "elo": 1459
+   },
+   {
+    "name": "NAC Breda",
+    "en": "NAC Breda",
+    "elo": 1437
+   },
+   {
+    "name": "Vitesse",
+    "en": "Vitesse",
+    "elo": 1425
+   },
+   {
+    "name": "FC Emmen",
+    "en": "FC Emmen",
+    "elo": 1417
+   },
+   {
+    "name": "Almere City",
+    "en": "Almere City",
+    "elo": 1411
+   },
+   {
+    "name": "Volendam",
+    "en": "Volendam",
+    "elo": 1409
+   }
+  ],
+  "葡超": [
+   {
+    "name": "Sp Lisbon",
+    "en": "Sp Lisbon",
+    "elo": 1825
+   },
+   {
+    "name": "Benfica",
+    "en": "Benfica",
+    "elo": 1812
+   },
+   {
+    "name": "Porto",
+    "en": "Porto",
+    "elo": 1795
+   },
+   {
+    "name": "Sp Braga",
+    "en": "Sp Braga",
+    "elo": 1661
+   },
+   {
+    "name": "Famalicao",
+    "en": "Famalicao",
+    "elo": 1586
+   },
+   {
+    "name": "Guimaraes",
+    "en": "Guimaraes",
+    "elo": 1524
+   },
+   {
+    "name": "Arouca",
+    "en": "Arouca",
+    "elo": 1509
+   },
+   {
+    "name": "Gil Vicente",
+    "en": "Gil Vicente",
+    "elo": 1501
+   },
+   {
+    "name": "Santa Clara",
+    "en": "Santa Clara",
+    "elo": 1492
+   },
+   {
+    "name": "Alverca",
+    "en": "Alverca",
+    "elo": 1491
+   },
+   {
+    "name": "Moreirense",
+    "en": "Moreirense",
+    "elo": 1487
+   },
+   {
+    "name": "Estoril",
+    "en": "Estoril",
+    "elo": 1486
+   },
+   {
+    "name": "Rio Ave",
+    "en": "Rio Ave",
+    "elo": 1470
+   },
+   {
+    "name": "Casa Pia",
+    "en": "Casa Pia",
+    "elo": 1450
+   },
+   {
+    "name": "Nacional",
+    "en": "Nacional",
+    "elo": 1424
+   },
+   {
+    "name": "Belenenses",
+    "en": "Belenenses",
+    "elo": 1421
+   },
+   {
+    "name": "Farense",
+    "en": "Farense",
+    "elo": 1416
+   },
+   {
+    "name": "Estrela",
+    "en": "Estrela",
+    "elo": 1416
+   },
+   {
+    "name": "Portimonense",
+    "en": "Portimonense",
+    "elo": 1415
+   },
+   {
+    "name": "Chaves",
+    "en": "Chaves",
+    "elo": 1414
+   }
+  ],
+  "比甲": [
+   {
+    "name": "St. Gilloise",
+    "en": "St. Gilloise",
+    "elo": 1765
+   },
+   {
+    "name": "Club Brugge",
+    "en": "Club Brugge",
+    "elo": 1762
+   },
+   {
+    "name": "Genk",
+    "en": "Genk",
+    "elo": 1615
+   },
+   {
+    "name": "St Truiden",
+    "en": "St Truiden",
+    "elo": 1597
+   },
+   {
+    "name": "Anderlecht",
+    "en": "Anderlecht",
+    "elo": 1572
+   },
+   {
+    "name": "Gent",
+    "en": "Gent",
+    "elo": 1547
+   },
+   {
+    "name": "Standard",
+    "en": "Standard",
+    "elo": 1541
+   },
+   {
+    "name": "Charleroi",
+    "en": "Charleroi",
+    "elo": 1535
+   },
+   {
+    "name": "Mechelen",
+    "en": "Mechelen",
+    "elo": 1531
+   },
+   {
+    "name": "Antwerp",
+    "en": "Antwerp",
+    "elo": 1524
+   },
+   {
+    "name": "Westerlo",
+    "en": "Westerlo",
+    "elo": 1521
+   },
+   {
+    "name": "Cercle Brugge",
+    "en": "Cercle Brugge",
+    "elo": 1495
+   },
+   {
+    "name": "Waregem",
+    "en": "Waregem",
+    "elo": 1485
+   },
+   {
+    "name": "Oud-Heverlee Leuven",
+    "en": "Oud-Heverlee Leuven",
+    "elo": 1464
+   },
+   {
+    "name": "RAAL La Louviere",
+    "en": "RAAL La Louviere",
+    "elo": 1463
+   },
+   {
+    "name": "Mouscron",
+    "en": "Mouscron",
+    "elo": 1438
+   },
+   {
+    "name": "Kortrijk",
+    "en": "Kortrijk",
+    "elo": 1433
+   },
+   {
+    "name": "Waasland-Beveren",
+    "en": "Waasland-Beveren",
+    "elo": 1428
+   },
+   {
+    "name": "RWD Molenbeek",
+    "en": "RWD Molenbeek",
+    "elo": 1412
+   },
+   {
+    "name": "Dender",
+    "en": "Dender",
+    "elo": 1406
+   }
+  ],
+  "土超": [
+   {
+    "name": "Galatasaray",
+    "en": "Galatasaray",
+    "elo": 1810
+   },
+   {
+    "name": "Fenerbahce",
+    "en": "Fenerbahce",
+    "elo": 1780
+   },
+   {
+    "name": "Trabzonspor",
+    "en": "Trabzonspor",
+    "elo": 1656
+   },
+   {
+    "name": "Besiktas",
+    "en": "Besiktas",
+    "elo": 1632
+   },
+   {
+    "name": "Buyuksehyr",
+    "en": "Buyuksehyr",
+    "elo": 1621
+   },
+   {
+    "name": "Samsunspor",
+    "en": "Samsunspor",
+    "elo": 1589
+   },
+   {
+    "name": "Goztep",
+    "en": "Goztep",
+    "elo": 1560
+   },
+   {
+    "name": "Rizespor",
+    "en": "Rizespor",
+    "elo": 1520
+   },
+   {
+    "name": "Konyaspor",
+    "en": "Konyaspor",
+    "elo": 1512
+   },
+   {
+    "name": "Alanyaspor",
+    "en": "Alanyaspor",
+    "elo": 1508
+   },
+   {
+    "name": "Kasimpasa",
+    "en": "Kasimpasa",
+    "elo": 1507
+   },
+   {
+    "name": "Eyupspor",
+    "en": "Eyupspor",
+    "elo": 1490
+   },
+   {
+    "name": "Kocaelispor",
+    "en": "Kocaelispor",
+    "elo": 1481
+   },
+   {
+    "name": "Bodrumspor",
+    "en": "Bodrumspor",
+    "elo": 1480
+   },
+   {
+    "name": "Giresunspor",
+    "en": "Giresunspor",
+    "elo": 1479
+   },
+   {
+    "name": "Kayserispor",
+    "en": "Kayserispor",
+    "elo": 1472
+   },
+   {
+    "name": "Sivasspor",
+    "en": "Sivasspor",
+    "elo": 1470
+   },
+   {
+    "name": "Gaziantep",
+    "en": "Gaziantep",
+    "elo": 1466
+   },
+   {
+    "name": "Karagumruk",
+    "en": "Karagumruk",
+    "elo": 1466
+   },
+   {
+    "name": "Ankaragucu",
+    "en": "Ankaragucu",
+    "elo": 1465
+   }
+  ],
+  "希腊超": [
+   {
+    "name": "Olympiakos",
+    "en": "Olympiakos",
+    "elo": 1762
+   },
+   {
+    "name": "AEK",
+    "en": "AEK",
+    "elo": 1742
+   },
+   {
+    "name": "PAOK",
+    "en": "PAOK",
+    "elo": 1713
+   },
+   {
+    "name": "Panathinaikos",
+    "en": "Panathinaikos",
+    "elo": 1663
+   },
+   {
+    "name": "Aris",
+    "en": "Aris",
+    "elo": 1586
+   },
+   {
+    "name": "Levadeiakos",
+    "en": "Levadeiakos",
+    "elo": 1539
+   },
+   {
+    "name": "Atromitos",
+    "en": "Atromitos",
+    "elo": 1487
+   },
+   {
+    "name": "OFI Crete",
+    "en": "OFI Crete",
+    "elo": 1474
+   },
+   {
+    "name": "Asteras Tripolis",
+    "en": "Asteras Tripolis",
+    "elo": 1453
+   },
+   {
+    "name": "Athens Kallithea",
+    "en": "Athens Kallithea",
+    "elo": 1451
+   },
+   {
+    "name": "Kifisia",
+    "en": "Kifisia",
+    "elo": 1447
+   },
+   {
+    "name": "Ionikos",
+    "en": "Ionikos",
+    "elo": 1435
+   },
+   {
+    "name": "Panetolikos",
+    "en": "Panetolikos",
+    "elo": 1425
+   },
+   {
+    "name": "Volos NFC",
+    "en": "Volos NFC",
+    "elo": 1414
+   },
+   {
+    "name": "Larisa",
+    "en": "Larisa",
+    "elo": 1402
+   },
+   {
+    "name": "Panserraikos",
+    "en": "Panserraikos",
+    "elo": 1395
+   },
+   {
+    "name": "Giannina",
+    "en": "Giannina",
+    "elo": 1390
+   },
+   {
+    "name": "Apollon",
+    "en": "Apollon",
+    "elo": 1378
+   },
+   {
+    "name": "Lamia",
+    "en": "Lamia",
+    "elo": 1344
+   }
+  ],
+  "英冠": [
+   {
+    "name": "Coventry",
+    "en": "Coventry",
+    "elo": 1639
+   },
+   {
+    "name": "Millwall",
+    "en": "Millwall",
+    "elo": 1602
+   },
+   {
+    "name": "伊普斯维奇",
+    "en": "Ipswich",
+    "elo": 1602
+   },
+   {
+    "name": "Wrexham",
+    "en": "Wrexham",
+    "elo": 1595
+   },
+   {
+    "name": "南安普顿",
+    "en": "Southampton",
+    "elo": 1581
+   },
+   {
+    "name": "Middlesbrough",
+    "en": "Middlesbrough",
+    "elo": 1564
+   },
+   {
+    "name": "Birmingham",
+    "en": "Birmingham",
+    "elo": 1562
+   },
+   {
+    "name": "Norwich",
+    "en": "Norwich",
+    "elo": 1534
+   },
+   {
+    "name": "Derby",
+    "en": "Derby",
+    "elo": 1529
+   },
+   {
+    "name": "Swansea",
+    "en": "Swansea",
+    "elo": 1528
+   },
+   {
+    "name": "Hull",
+    "en": "Hull",
+    "elo": 1526
+   },
+   {
+    "name": "Sheffield United",
+    "en": "Sheffield United",
+    "elo": 1515
+   },
+   {
+    "name": "Bristol City",
+    "en": "Bristol City",
+    "elo": 1506
+   },
+   {
+    "name": "Portsmouth",
+    "en": "Portsmouth",
+    "elo": 1500
+   },
+   {
+    "name": "Charlton",
+    "en": "Charlton",
+    "elo": 1492
+   },
+   {
+    "name": "West Brom",
+    "en": "West Brom",
+    "elo": 1484
+   },
+   {
+    "name": "Blackburn",
+    "en": "Blackburn",
+    "elo": 1476
+   },
+   {
+    "name": "Preston",
+    "en": "Preston",
+    "elo": 1475
+   },
+   {
+    "name": "QPR",
+    "en": "QPR",
+    "elo": 1466
+   },
+   {
+    "name": "Oxford",
+    "en": "Oxford",
+    "elo": 1456
+   }
+  ],
+  "英甲": [
+   {
+    "name": "Lincoln",
+    "en": "Lincoln",
+    "elo": 1682
+   },
+   {
+    "name": "Stockport",
+    "en": "Stockport",
+    "elo": 1591
+   },
+   {
+    "name": "Cardiff",
+    "en": "Cardiff",
+    "elo": 1581
+   },
+   {
+    "name": "Bolton",
+    "en": "Bolton",
+    "elo": 1567
+   },
+   {
+    "name": "Bradford",
+    "en": "Bradford",
+    "elo": 1553
+   },
+   {
+    "name": "Luton",
+    "en": "Luton",
+    "elo": 1551
+   },
+   {
+    "name": "Plymouth",
+    "en": "Plymouth",
+    "elo": 1551
+   },
+   {
+    "name": "Stevenage",
+    "en": "Stevenage",
+    "elo": 1549
+   },
+   {
+    "name": "Mansfield",
+    "en": "Mansfield",
+    "elo": 1533
+   },
+   {
+    "name": "Wycombe",
+    "en": "Wycombe",
+    "elo": 1528
+   },
+   {
+    "name": "Blackpool",
+    "en": "Blackpool",
+    "elo": 1524
+   },
+   {
+    "name": "Doncaster",
+    "en": "Doncaster",
+    "elo": 1519
+   },
+   {
+    "name": "Reading",
+    "en": "Reading",
+    "elo": 1516
+   },
+   {
+    "name": "Huddersfield",
+    "en": "Huddersfield",
+    "elo": 1508
+   },
+   {
+    "name": "Wigan",
+    "en": "Wigan",
+    "elo": 1481
+   },
+   {
+    "name": "Barnsley",
+    "en": "Barnsley",
+    "elo": 1475
+   },
+   {
+    "name": "Leyton Orient",
+    "en": "Leyton Orient",
+    "elo": 1474
+   },
+   {
+    "name": "Burton",
+    "en": "Burton",
+    "elo": 1467
+   },
+   {
+    "name": "Exeter",
+    "en": "Exeter",
+    "elo": 1443
+   },
+   {
+    "name": "Peterboro",
+    "en": "Peterboro",
+    "elo": 1443
+   }
+  ],
+  "英乙": [
+   {
+    "name": "Barnet",
+    "en": "Barnet",
+    "elo": 1588
+   },
+   {
+    "name": "Bromley",
+    "en": "Bromley",
+    "elo": 1572
+   },
+   {
+    "name": "Chesterfield",
+    "en": "Chesterfield",
+    "elo": 1561
+   },
+   {
+    "name": "Milton Keynes Dons",
+    "en": "Milton Keynes Dons",
+    "elo": 1555
+   },
+   {
+    "name": "Salford",
+    "en": "Salford",
+    "elo": 1535
+   },
+   {
+    "name": "Grimsby",
+    "en": "Grimsby",
+    "elo": 1533
+   },
+   {
+    "name": "Cambridge",
+    "en": "Cambridge",
+    "elo": 1528
+   },
+   {
+    "name": "Notts County",
+    "en": "Notts County",
+    "elo": 1528
+   },
+   {
+    "name": "Oldham",
+    "en": "Oldham",
+    "elo": 1497
+   },
+   {
+    "name": "Swindon",
+    "en": "Swindon",
+    "elo": 1488
+   },
+   {
+    "name": "Colchester",
+    "en": "Colchester",
+    "elo": 1477
+   },
+   {
+    "name": "Crewe",
+    "en": "Crewe",
+    "elo": 1466
+   },
+   {
+    "name": "Bristol Rvs",
+    "en": "Bristol Rvs",
+    "elo": 1461
+   },
+   {
+    "name": "Fleetwood Town",
+    "en": "Fleetwood Town",
+    "elo": 1455
+   },
+   {
+    "name": "Walsall",
+    "en": "Walsall",
+    "elo": 1450
+   },
+   {
+    "name": "Cheltenham",
+    "en": "Cheltenham",
+    "elo": 1419
+   },
+   {
+    "name": "Gillingham",
+    "en": "Gillingham",
+    "elo": 1409
+   },
+   {
+    "name": "Accrington",
+    "en": "Accrington",
+    "elo": 1396
+   },
+   {
+    "name": "Crawley Town",
+    "en": "Crawley Town",
+    "elo": 1388
+   },
+   {
+    "name": "Shrewsbury",
+    "en": "Shrewsbury",
+    "elo": 1382
+   }
+  ],
+  "英足总": [
+   {
+    "name": "York",
+    "en": "York",
+    "elo": 1689
+   },
+   {
+    "name": "Rochdale",
+    "en": "Rochdale",
+    "elo": 1633
+   },
+   {
+    "name": "Carlisle",
+    "en": "Carlisle",
+    "elo": 1562
+   },
+   {
+    "name": "Southend",
+    "en": "Southend",
+    "elo": 1560
+   },
+   {
+    "name": "Boreham Wood",
+    "en": "Boreham Wood",
+    "elo": 1558
+   },
+   {
+    "name": "Forest Green",
+    "en": "Forest Green",
+    "elo": 1531
+   },
+   {
+    "name": "Halifax",
+    "en": "Halifax",
+    "elo": 1509
+   },
+   {
+    "name": "Hartlepool",
+    "en": "Hartlepool",
+    "elo": 1495
+   },
+   {
+    "name": "Woking",
+    "en": "Woking",
+    "elo": 1488
+   },
+   {
+    "name": "Scunthorpe",
+    "en": "Scunthorpe",
+    "elo": 1483
+   },
+   {
+    "name": "Boston Utd",
+    "en": "Boston Utd",
+    "elo": 1481
+   },
+   {
+    "name": "Tamworth",
+    "en": "Tamworth",
+    "elo": 1479
+   },
+   {
+    "name": "Torquay",
+    "en": "Torquay",
+    "elo": 1474
+   },
+   {
+    "name": "Altrincham",
+    "en": "Altrincham",
+    "elo": 1457
+   },
+   {
+    "name": "Maidenhead",
+    "en": "Maidenhead",
+    "elo": 1454
+   },
+   {
+    "name": "Solihull",
+    "en": "Solihull",
+    "elo": 1446
+   },
+   {
+    "name": "Dag and Red",
+    "en": "Dag and Red",
+    "elo": 1444
+   },
+   {
+    "name": "Kidderminster",
+    "en": "Kidderminster",
+    "elo": 1437
+   },
+   {
+    "name": "Gateshead",
+    "en": "Gateshead",
+    "elo": 1436
+   },
+   {
+    "name": "Wealdstone",
+    "en": "Wealdstone",
+    "elo": 1427
+   }
+  ],
+  "西乙": [
+   {
+    "name": "Santander",
+    "en": "Santander",
+    "elo": 1578
+   },
+   {
+    "name": "La Coruna",
+    "en": "La Coruna",
+    "elo": 1552
+   },
+   {
+    "name": "Malaga",
+    "en": "Malaga",
+    "elo": 1543
+   },
+   {
+    "name": "Burgos",
+    "en": "Burgos",
+    "elo": 1542
+   },
+   {
+    "name": "Almeria",
+    "en": "Almeria",
+    "elo": 1538
+   },
+   {
+    "name": "拉斯帕尔马斯",
+    "en": "Las Palmas",
+    "elo": 1536
+   },
+   {
+    "name": "Eibar",
+    "en": "Eibar",
+    "elo": 1531
+   },
+   {
+    "name": "Castellon",
+    "en": "Castellon",
+    "elo": 1530
+   },
+   {
+    "name": "Ceuta",
+    "en": "Ceuta",
+    "elo": 1502
+   },
+   {
+    "name": "Albacete",
+    "en": "Albacete",
+    "elo": 1497
+   },
+   {
+    "name": "Cordoba",
+    "en": "Cordoba",
+    "elo": 1483
+   },
+   {
+    "name": "Sp Gijon",
+    "en": "Sp Gijon",
+    "elo": 1478
+   },
+   {
+    "name": "Sabadell",
+    "en": "Sabadell",
+    "elo": 1473
+   },
+   {
+    "name": "Andorra",
+    "en": "Andorra",
+    "elo": 1463
+   },
+   {
+    "name": "Ponferradina",
+    "en": "Ponferradina",
+    "elo": 1451
+   },
+   {
+    "name": "Amorebieta",
+    "en": "Amorebieta",
+    "elo": 1444
+   },
+   {
+    "name": "Logrones",
+    "en": "Logrones",
+    "elo": 1437
+   },
+   {
+    "name": "Granada",
+    "en": "Granada",
+    "elo": 1434
+   },
+   {
+    "name": "莱加内斯",
+    "en": "Leganes",
+    "elo": 1433
+   },
+   {
+    "name": "Mirandes",
+    "en": "Mirandes",
+    "elo": 1428
+   }
+  ],
+  "意乙": [
+   {
+    "name": "威尼斯",
+    "en": "Venezia",
+    "elo": 1605
+   },
+   {
+    "name": "Frosinone",
+    "en": "Frosinone",
+    "elo": 1599
+   },
+   {
+    "name": "Palermo",
+    "en": "Palermo",
+    "elo": 1557
+   },
+   {
+    "name": "蒙扎",
+    "en": "Monza",
+    "elo": 1544
+   },
+   {
+    "name": "Chievo",
+    "en": "Chievo",
+    "elo": 1519
+   },
+   {
+    "name": "Catanzaro",
+    "en": "Catanzaro",
+    "elo": 1511
+   },
+   {
+    "name": "Juve Stabia",
+    "en": "Juve Stabia",
+    "elo": 1480
+   },
+   {
+    "name": "Reggina",
+    "en": "Reggina",
+    "elo": 1467
+   },
+   {
+    "name": "Avellino",
+    "en": "Avellino",
+    "elo": 1467
+   },
+   {
+    "name": "Modena",
+    "en": "Modena",
+    "elo": 1457
+   },
+   {
+    "name": "Brescia",
+    "en": "Brescia",
+    "elo": 1451
+   },
+   {
+    "name": "Padova",
+    "en": "Padova",
+    "elo": 1451
+   },
+   {
+    "name": "Mantova",
+    "en": "Mantova",
+    "elo": 1450
+   },
+   {
+    "name": "Ascoli",
+    "en": "Ascoli",
+    "elo": 1447
+   },
+   {
+    "name": "Perugia",
+    "en": "Perugia",
+    "elo": 1446
+   },
+   {
+    "name": "Ternana",
+    "en": "Ternana",
+    "elo": 1440
+   },
+   {
+    "name": "Sampdoria",
+    "en": "Sampdoria",
+    "elo": 1438
+   },
+   {
+    "name": "Vicenza",
+    "en": "Vicenza",
+    "elo": 1432
+   },
+   {
+    "name": "Carrarese",
+    "en": "Carrarese",
+    "elo": 1430
+   },
+   {
+    "name": "Cesena",
+    "en": "Cesena",
+    "elo": 1429
+   }
+  ],
+  "德乙": [
+   {
+    "name": "Schalke 04",
+    "en": "Schalke 04",
+    "elo": 1559
+   },
+   {
+    "name": "Paderborn",
+    "en": "Paderborn",
+    "elo": 1557
+   },
+   {
+    "name": "Elversberg",
+    "en": "Elversberg",
+    "elo": 1556
+   },
+   {
+    "name": "Hannover",
+    "en": "Hannover",
+    "elo": 1554
+   },
+   {
+    "name": "Kaiserslautern",
+    "en": "Kaiserslautern",
+    "elo": 1487
+   },
+   {
+    "name": "Nurnberg",
+    "en": "Nurnberg",
+    "elo": 1482
+   },
+   {
+    "name": "Hertha",
+    "en": "Hertha",
+    "elo": 1481
+   },
+   {
+    "name": "Karlsruhe",
+    "en": "Karlsruhe",
+    "elo": 1474
+   },
+   {
+    "name": "Darmstadt",
+    "en": "Darmstadt",
+    "elo": 1471
+   },
+   {
+    "name": "波鸿",
+    "en": "Bochum",
+    "elo": 1461
+   },
+   {
+    "name": "基尔",
+    "en": "Holstein Kiel",
+    "elo": 1455
+   },
+   {
+    "name": "Fortuna Dusseldorf",
+    "en": "Fortuna Dusseldorf",
+    "elo": 1450
+   },
+   {
+    "name": "Magdeburg",
+    "en": "Magdeburg",
+    "elo": 1450
+   },
+   {
+    "name": "Dresden",
+    "en": "Dresden",
+    "elo": 1445
+   },
+   {
+    "name": "Greuther Furth",
+    "en": "Greuther Furth",
+    "elo": 1427
+   },
+   {
+    "name": "Ulm",
+    "en": "Ulm",
+    "elo": 1425
+   },
+   {
+    "name": "Bielefeld",
+    "en": "Bielefeld",
+    "elo": 1423
+   },
+   {
+    "name": "Braunschweig",
+    "en": "Braunschweig",
+    "elo": 1418
+   },
+   {
+    "name": "Wurzburger Kickers",
+    "en": "Wurzburger Kickers",
+    "elo": 1412
+   },
+   {
+    "name": "Wehen",
+    "en": "Wehen",
+    "elo": 1408
+   }
+  ],
+  "法乙": [
+   {
+    "name": "Le Mans",
+    "en": "Le Mans",
+    "elo": 1563
+   },
+   {
+    "name": "Rodez",
+    "en": "Rodez",
+    "elo": 1542
+   },
+   {
+    "name": "Troyes",
+    "en": "Troyes",
+    "elo": 1537
+   },
+   {
+    "name": "兰斯",
+    "en": "Reims",
+    "elo": 1530
+   },
+   {
+    "name": "圣埃蒂安",
+    "en": "St Etienne",
+    "elo": 1516
+   },
+   {
+    "name": "Annecy",
+    "en": "Annecy",
+    "elo": 1495
+   },
+   {
+    "name": "Red Star",
+    "en": "Red Star",
+    "elo": 1495
+   },
+   {
+    "name": "Bordeaux",
+    "en": "Bordeaux",
+    "elo": 1477
+   },
+   {
+    "name": "Sochaux",
+    "en": "Sochaux",
+    "elo": 1467
+   },
+   {
+    "name": "蒙彼利埃",
+    "en": "Montpellier",
+    "elo": 1467
+   },
+   {
+    "name": "Chambly",
+    "en": "Chambly",
+    "elo": 1452
+   },
+   {
+    "name": "Grenoble",
+    "en": "Grenoble",
+    "elo": 1445
+   },
+   {
+    "name": "Dunkerque",
+    "en": "Dunkerque",
+    "elo": 1440
+   },
+   {
+    "name": "Pau FC",
+    "en": "Pau FC",
+    "elo": 1434
+   },
+   {
+    "name": "Ajaccio",
+    "en": "Ajaccio",
+    "elo": 1431
+   },
+   {
+    "name": "Boulogne",
+    "en": "Boulogne",
+    "elo": 1431
+   },
+   {
+    "name": "Dijon",
+    "en": "Dijon",
+    "elo": 1430
+   },
+   {
+    "name": "Guingamp",
+    "en": "Guingamp",
+    "elo": 1429
+   },
+   {
+    "name": "Quevilly Rouen",
+    "en": "Quevilly Rouen",
+    "elo": 1428
+   },
+   {
+    "name": "Laval",
+    "en": "Laval",
+    "elo": 1424
+   }
+  ],
+  "苏super": [
+   {
+    "name": "Celtic",
+    "en": "Celtic",
+    "elo": 1798
+   },
+   {
+    "name": "Rangers",
+    "en": "Rangers",
+    "elo": 1726
+   },
+   {
+    "name": "Hearts",
+    "en": "Hearts",
+    "elo": 1693
+   },
+   {
+    "name": "Hibernian",
+    "en": "Hibernian",
+    "elo": 1617
+   },
+   {
+    "name": "Motherwell",
+    "en": "Motherwell",
+    "elo": 1602
+   },
+   {
+    "name": "Falkirk",
+    "en": "Falkirk",
+    "elo": 1551
+   },
+   {
+    "name": "Dundee United",
+    "en": "Dundee United",
+    "elo": 1540
+   },
+   {
+    "name": "Kilmarnock",
+    "en": "Kilmarnock",
+    "elo": 1516
+   },
+   {
+    "name": "Dundee",
+    "en": "Dundee",
+    "elo": 1504
+   },
+   {
+    "name": "Aberdeen",
+    "en": "Aberdeen",
+    "elo": 1493
+   },
+   {
+    "name": "St Mirren",
+    "en": "St Mirren",
+    "elo": 1477
+   },
+   {
+    "name": "Livingston",
+    "en": "Livingston",
+    "elo": 1437
+   }
+  ],
+  "苏冠": [
+   {
+    "name": "St Johnstone",
+    "en": "St Johnstone",
+    "elo": 1554
+   },
+   {
+    "name": "Partick",
+    "en": "Partick",
+    "elo": 1547
+   },
+   {
+    "name": "Inverness C",
+    "en": "Inverness C",
+    "elo": 1482
+   },
+   {
+    "name": "Raith Rvs",
+    "en": "Raith Rvs",
+    "elo": 1452
+   },
+   {
+    "name": "Dunfermline",
+    "en": "Dunfermline",
+    "elo": 1446
+   },
+   {
+    "name": "Alloa",
+    "en": "Alloa",
+    "elo": 1435
+   },
+   {
+    "name": "Arbroath",
+    "en": "Arbroath",
+    "elo": 1422
+   },
+   {
+    "name": "Ayr",
+    "en": "Ayr",
+    "elo": 1418
+   },
+   {
+    "name": "Queen of Sth",
+    "en": "Queen of Sth",
+    "elo": 1414
+   },
+   {
+    "name": "Morton",
+    "en": "Morton",
+    "elo": 1408
+   },
+   {
+    "name": "Cove Rangers",
+    "en": "Cove Rangers",
+    "elo": 1407
+   },
+   {
+    "name": "Queens Park",
+    "en": "Queens Park",
+    "elo": 1404
+   },
+   {
+    "name": "Airdrie Utd",
+    "en": "Airdrie Utd",
+    "elo": 1396
+   },
+   {
+    "name": "Hamilton",
+    "en": "Hamilton",
+    "elo": 1383
+   },
+   {
+    "name": "Ross County",
+    "en": "Ross County",
+    "elo": 1378
+   }
+  ]
+ },
+ "backtest": [
+  {
+   "name": "市场(博彩基准)",
+   "brier": 0.5827,
+   "ll": 0.979,
+   "kind": "market"
+  },
+  {
+   "name": "Elo 评分",
+   "brier": 0.6015,
+   "ll": 1.007,
+   "kind": "ours"
+  },
+  {
+   "name": "泊松·Dixon-Coles",
+   "brier": 0.6099,
+   "ll": 1.0201,
+   "kind": "ours"
+  },
+  {
+   "name": "泊松·进球",
+   "brier": 0.6105,
+   "ll": 1.0208,
+   "kind": "ours"
+  },
+  {
+   "name": "泊松·xG 代理",
+   "brier": 0.6106,
+   "ll": 1.0205,
+   "kind": "ours"
+  }
+ ],
+ "test_n": 1752,
+ "lab": {
+  "dataset": {
+   "n": 106838,
+   "span": "2012-03-02 → 2026-08-06",
+   "leagues": "英超 / 西甲 / 意甲 / 德甲 / 法甲",
+   "fields": "比分 · 射门 · 射正 · 角球 · 红黄牌 · Bet365 赔率",
+   "split": "训练 3,504 场 / 测试 1,752 场（按时间切分，防未来信息泄漏）",
+   "source": "football-data.co.uk（公开免费）",
+   "where": "本机 engine/data/raw/ · 网站仅展示结果快照"
+  },
+  "models": [
+   {
+    "name": "Elo 评分",
+    "algo": "滚动评分更新",
+    "feat": "历史胜负 + 主场优势"
+   },
+   {
+    "name": "泊松·进球",
+    "algo": "GLM 泊松回归",
+    "feat": "球队攻防强度 + 主场"
+   },
+   {
+    "name": "泊松·xG代理",
+    "algo": "GLM 泊松回归",
+    "feat": "射正 × 转化率"
+   },
+   {
+    "name": "泊松·DC",
+    "algo": "泊松 + Dixon-Coles",
+    "feat": "攻防 + 低比分相关性"
+   },
+   {
+    "name": "市场基准",
+    "algo": "赔率去水",
+    "feat": "Bet365 赔率"
+   }
+  ],
+  "iterations": [
+   {
+    "v": "v1",
+    "change": "Elo 基线",
+    "brier": 0.6015,
+    "delta": null,
+    "verdict": "起点"
+   },
+   {
+    "v": "v2",
+    "change": "加泊松进球模型",
+    "brier": 0.6105,
+    "delta": 0.009,
+    "verdict": "单独用不如 Elo"
+   },
+   {
+    "v": "v3",
+    "change": "泊松改用 xG 代理（射正）",
+    "brier": 0.6106,
+    "delta": 0.0001,
+    "verdict": "无效 · 粗糙代理丢信息"
+   },
+   {
+    "v": "v4",
+    "change": "泊松加 Dixon-Coles 修正",
+    "brier": 0.6099,
+    "delta": -0.0006,
+    "verdict": "小幅有效"
+   },
+   {
+    "v": "v5",
+    "change": "26 特征 + LightGBM（原版）",
+    "brier": 0.6136,
+    "delta": 0.0037,
+    "verdict": "过拟合 · 比 Elo 还差"
+   },
+   {
+    "v": "v6",
+    "change": "LightGBM 强正则简化（树400→120）",
+    "brier": 0.5839,
+    "delta": -0.0297,
+    "verdict": "★ 大幅有效 · 首超 Elo"
+   },
+   {
+    "v": "v7",
+    "change": "0.6×市场 + 0.4×简化模型",
+    "brier": 0.5801,
+    "delta": -0.0038,
+    "verdict": "达到市场水平"
+   },
+   {
+    "v": "v8",
+    "change": "温度缩放修校准",
+    "brier": 0.5808,
+    "delta": 0.0003,
+    "verdict": "无效 · v6 已自愈过度自信"
+   },
+   {
+    "v": "v9",
+    "change": "加联赛特征（Div）",
+    "brier": 0.5808,
+    "delta": 0.0003,
+    "verdict": "无效 · 模型已间接学到"
+   },
+   {
+    "v": "v10",
+    "change": "真 xG（3 个数据源）",
+    "brier": null,
+    "delta": null,
+    "verdict": "数据不可用 · 覆盖有系统性偏差"
+   },
+   {
+    "v": "v11",
+    "change": "赔率轨迹（开盘→收盘 11 个特征）",
+    "brier": 0.5791,
+    "delta": -0.001,
+    "verdict": "✅ 有效 · 但价值来自收盘线而非漂移量"
+   },
+   {
+    "v": "v12",
+    "change": "主力缺阵指数（FPL 出场数据反推）",
+    "brier": 0.5792,
+    "delta": 0.0001,
+    "verdict": "无效 · 市场已把伤停定价"
+   }
+  ],
+  "queue": [
+   "多家博彩分歧结构（Pinnacle 锐庄 vs 软庄的系统性差异）",
+   "分角色建模（大小球 / 让球独立建模，可能比胜平负更有空间）",
+   "时间加权（近期比赛权重更高）",
+   "小联赛 / 低关注度赛事（市场定价可能更松）",
+   "付费数据源评估（Opta / StatsBomb）"
+  ],
+  "failed": [
+   {
+    "item": "真 xG · Understat 直连",
+    "why": "页面 JS 渲染，HTTP 只返回空壳"
+   },
+   {
+    "item": "真 xG · FBref (soccerdata)",
+    "why": "需浏览器驱动；直连 403"
+   },
+   {
+    "item": "真 xG · GitHub FPL 镜像",
+    "why": "仅英超且球员覆盖 4→19 人逐年漂移，缺失非随机"
+   },
+   {
+    "item": "温度缩放",
+    "why": "混合模型本就不过度自信（T=0.90）"
+   },
+   {
+    "item": "联赛特征",
+    "why": "增噪声，Brier 反升"
+   },
+   {
+    "item": "亚盘线移动 ah_move / 大小球线移动 ou_move",
+    "why": "特征重要性排 #35/#37，ou_move 为 0，无预测力"
+   },
+   {
+    "item": "「漂移量=资金流向」假设",
+    "why": "drift 仅排 #11-15；真正有用的是收盘线本身更锐利"
+   },
+   {
+    "item": "主力缺阵指数（伤停代理）",
+    "why": "关联成功率 94%，但增益 −0.0001，重要性排 #32-41/43 —— 市场已把伤停定价"
+   }
+  ],
+  "insight": {
+   "title": "市场效率假说：连伤停数据都加不出增量",
+   "body": "我们用 FPL 出场记录反推出「主力缺阵指数」，94% 成功关联到英超比赛，数据质量没问题（场均 1.16 人缺阵）。但加进模型后增益为 0，特征重要性垫底。原因：<b>庄家早已把伤停信息定价进赔率</b>，而我们的模型本就在用市场概率做特征 —— 等于同一份信息喂了两遍。这也解释了为什么公开数据很难战胜市场：<b>公开的信息，市场都已经知道了</b>。"
+  },
+  "insight2": {
+   "title": "收盘线比开盘线准 0.0022 Brier",
+   "body": "金融学的「收盘价更有效」在足球赔率上被验证。预测时点越晚、信息越充分。但代价是：临场才能拿到收盘赔率，而那时模型基本等于复述市场共识（0.5780 vs 市场 0.5779）。"
+  },
+  "cv": {
+   "method": "时间序列滚动 CV（4 折 · 严禁随机切分）",
+   "note": "随机 CV 会把未来比赛放进训练集 → 回测虚高、实战崩盘",
+   "top_features": [
+    "odds_spread 赔率分歧",
+    "sot_diff 射正差",
+    "mkt_d 市场平局概率",
+    "form_sot 近期射正",
+    "h2h_goals 交战总进球"
+   ],
+   "calib_warn": "78-90% 置信档：模型说 80.8%，实际 66.7% → 系统性过度自信，已列入队列"
+  }
+ },
+ "season": [
+  {
+   "lg": "西甲",
+   "d": "8月16日",
+   "first": true
+  },
+  {
+   "lg": "英超",
+   "d": "8月22日"
+  },
+  {
+   "lg": "意甲",
+   "d": "8月23日"
+  },
+  {
+   "lg": "法甲",
+   "d": "8月23日"
+  },
+  {
+   "lg": "德甲",
+   "d": "8月28日"
+  }
+ ],
+ "sfc_lock": {
+  "期号": "26103",
+  "截止": "2026-08-11 22:00",
+  "锁定时间": "2026-08-10 15:11:41",
+  "方法": "UEFA国家系数校准跨联赛Elo",
+  "训练库": {
+   "场次": 106835,
+   "联赛": 36
+  },
+  "单式": {
+   "串": "00000030300303",
+   "期望命中": 7.22,
+   "预测胜率": 0.5159,
+   "分布": [
+    2e-05,
+    0.00039,
+    0.0031,
+    0.01475,
+    0.04686,
+    0.10559,
+    0.1744,
+    0.2149,
+    0.19885,
+    0.1377,
+    0.07033,
+    0.02572,
+    0.00637,
+    0.00096,
+    7e-05
+   ],
+   "累计": [
+    1.0,
+    0.99998,
+    0.99959,
+    0.99649,
+    0.98174,
+    0.93488,
+    0.82929,
+    0.65489,
+    0.43999,
+    0.24114,
+    0.10344,
+    0.03311,
+    0.00739,
+    0.00102,
+    7e-05
+   ],
+   "最可能命中": 7,
+   "中10场以上": 0.1034
+  },
+  "复式16元": {
+   "注数": 8,
+   "金额": 16,
+   "串": [
+    "0",
+    "03",
+    "0",
+    "0",
+    "0",
+    "0",
+    "3",
+    "0",
+    "3",
+    "0",
+    "03",
+    "3",
+    "0",
+    "03"
+   ],
+   "明细": [
+    {
+     "场次": 1,
+     "对阵": "阿拉木图vs凯尔特人",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.789
+    },
+    {
+     "场次": 2,
+     "对阵": "博德vs圣吉尔联合",
+     "选项": "03",
+     "选项数": 2,
+     "覆盖概率": 0.716
+    },
+    {
+     "场次": 3,
+     "对阵": "萨巴赫vs奥胡斯",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.588
+    },
+    {
+     "场次": 4,
+     "对阵": "奈梅亨vs奥林匹亚科斯",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.432
+    },
+    {
+     "场次": 5,
+     "对阵": "布拉迪斯拉发vs米亚尔比",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.56
+    },
+    {
+     "场次": 6,
+     "对阵": "格拉茨风暴vs费内巴切",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.524
+    },
+    {
+     "场次": 7,
+     "对阵": "里昂vs布拉格斯巴达",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.718
+    },
+    {
+     "场次": 8,
+     "对阵": "帕福斯vs萨尔茨堡",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.414
+    },
+    {
+     "场次": 9,
+     "对阵": "克拉约瓦vs库奥皮奥",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.493
+    },
+    {
+     "场次": 10,
+     "对阵": "雷克雅未克维京人vs图恩",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.486
+    },
+    {
+     "场次": 11,
+     "对阵": "安德莱赫特vs塞萨洛尼基",
+     "选项": "03",
+     "选项数": 2,
+     "覆盖概率": 0.717
+    },
+    {
+     "场次": 12,
+     "对阵": "流浪者vs比亚韦",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.422
+    },
+    {
+     "场次": 13,
+     "对阵": "哈茨vs本菲卡",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.621
+    },
+    {
+     "场次": 14,
+     "对阵": "巴黎圣日耳曼vs阿斯顿维拉",
+     "选项": "03",
+     "选项数": 2,
+     "覆盖概率": 0.724
+    }
+   ],
+   "全中概率": 0.00040798120778193697,
+   "期望命中": 8.2,
+   "覆盖胜率": 0.586,
+   "分布": [
+    0.0,
+    5e-05,
+    0.00054,
+    0.00349,
+    0.01504,
+    0.0461,
+    0.10365,
+    0.17362,
+    0.21781,
+    0.20374,
+    0.13996,
+    0.0685,
+    0.02259,
+    0.0045,
+    0.00041
+   ],
+   "累计": [
+    1.0,
+    1.0,
+    0.99995,
+    0.9994,
+    0.99592,
+    0.98088,
+    0.93478,
+    0.83112,
+    0.6575,
+    0.43969,
+    0.23595,
+    0.09599,
+    0.0275,
+    0.00491,
+    0.00041
+   ],
+   "加保场": [
+    2,
+    11,
+    14
+   ]
+  },
+  "基准": {
+   "全买主胜": 0.3217,
+   "历史主胜率": 0.439,
+   "随机": 0.3333
+  },
+  "逐场": [
+   {
+    "场次": 1,
+    "赛事": "欧冠",
+    "对阵": "阿拉木图vs凯尔特人",
+    "胜": 0.1,
+    "平": 0.11,
+    "负": 0.789,
+    "单选": "0",
+    "置信": 0.789,
+    "复式选": "0",
+    "Elo差": -358,
+    "来源": "单方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 2,
+    "赛事": "欧冠",
+    "对阵": "博德vs圣吉尔联合",
+    "胜": 0.335,
+    "平": 0.284,
+    "负": 0.381,
+    "单选": "0",
+    "置信": 0.381,
+    "复式选": "03",
+    "Elo差": -22,
+    "来源": "双方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 3,
+    "赛事": "欧冠",
+    "对阵": "萨巴赫vs奥胡斯",
+    "胜": 0.196,
+    "平": 0.216,
+    "负": 0.588,
+    "单选": "0",
+    "置信": 0.588,
+    "复式选": "0",
+    "Elo差": -191,
+    "来源": "单方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 4,
+    "赛事": "欧冠",
+    "对阵": "奈梅亨vs奥林匹亚科斯",
+    "胜": 0.297,
+    "平": 0.27,
+    "负": 0.432,
+    "单选": "0",
+    "置信": 0.432,
+    "复式选": "0",
+    "Elo差": -65,
+    "来源": "双方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 5,
+    "赛事": "欧冠",
+    "对阵": "布拉迪斯拉发vs米亚尔比",
+    "胜": 0.213,
+    "平": 0.227,
+    "负": 0.56,
+    "单选": "0",
+    "置信": 0.56,
+    "复式选": "0",
+    "Elo差": -168,
+    "来源": "单方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 6,
+    "赛事": "欧冠",
+    "对阵": "格拉茨风暴vs费内巴切",
+    "胜": 0.235,
+    "平": 0.241,
+    "负": 0.524,
+    "单选": "0",
+    "置信": 0.524,
+    "复式选": "0",
+    "Elo差": -139,
+    "来源": "双方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 7,
+    "赛事": "欧冠",
+    "对阵": "里昂vs布拉格斯巴达",
+    "胜": 0.718,
+    "平": 0.153,
+    "负": 0.129,
+    "单选": "3",
+    "置信": 0.718,
+    "复式选": "3",
+    "Elo差": 298,
+    "来源": "单方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 8,
+    "赛事": "欧罗巴",
+    "对阵": "帕福斯vs萨尔茨堡",
+    "胜": 0.311,
+    "平": 0.275,
+    "负": 0.414,
+    "单选": "0",
+    "置信": 0.414,
+    "复式选": "0",
+    "Elo差": -50,
+    "来源": "单方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 9,
+    "赛事": "欧罗巴",
+    "对阵": "克拉约瓦vs库奥皮奥",
+    "胜": 0.493,
+    "平": 0.251,
+    "负": 0.255,
+    "单选": "3",
+    "置信": 0.493,
+    "复式选": "3",
+    "Elo差": 114,
+    "来源": "双方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 10,
+    "赛事": "欧罗巴",
+    "对阵": "雷克雅未克维京人vs图恩",
+    "胜": 0.26,
+    "平": 0.254,
+    "负": 0.486,
+    "单选": "0",
+    "置信": 0.486,
+    "复式选": "0",
+    "Elo差": -108,
+    "来源": "单方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 11,
+    "赛事": "欧罗巴",
+    "对阵": "安德莱赫特vs塞萨洛尼基",
+    "胜": 0.334,
+    "平": 0.283,
+    "负": 0.383,
+    "单选": "0",
+    "置信": 0.383,
+    "复式选": "03",
+    "Elo差": -23,
+    "来源": "双方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 12,
+    "赛事": "欧罗巴",
+    "对阵": "流浪者vs比亚韦",
+    "胜": 0.422,
+    "平": 0.273,
+    "负": 0.305,
+    "单选": "3",
+    "置信": 0.422,
+    "复式选": "3",
+    "Elo差": 56,
+    "来源": "双方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 13,
+    "赛事": "欧罗巴",
+    "对阵": "哈茨vs本菲卡",
+    "胜": 0.178,
+    "平": 0.202,
+    "负": 0.621,
+    "单选": "0",
+    "置信": 0.621,
+    "复式选": "0",
+    "Elo差": -217,
+    "来源": "双方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   },
+   {
+    "场次": 14,
+    "赛事": "欧超杯",
+    "对阵": "巴黎圣日耳曼vs阿斯顿维拉",
+    "胜": 0.412,
+    "平": 0.276,
+    "负": 0.312,
+    "单选": "3",
+    "置信": 0.412,
+    "复式选": "03",
+    "Elo差": 48,
+    "来源": "双方实测",
+    "实际": null,
+    "单式命中": null,
+    "复式命中": null
+   }
+  ],
+  "已复盘": false
+ },
+ "sfc_review": {
+  "期号": "26101",
+  "截止": "2026-08-08 21:30",
+  "锁定时间": "2026-08-07 14:01:30",
+  "训练库": {
+   "场次": 106835,
+   "联赛": 36
+  },
+  "单式": {
+   "串": "33033333303300",
+   "期望命中": 7.82,
+   "预测胜率": 0.5586,
+   "分布": [
+    0.0,
+    0.0001,
+    0.00101,
+    0.00599,
+    0.02361,
+    0.06551,
+    0.13219,
+    0.19744,
+    0.2197,
+    0.18151,
+    0.10971,
+    0.0471,
+    0.01359,
+    0.00236,
+    0.00019
+   ],
+   "累计": [
+    1.0,
+    1.0,
+    0.9999,
+    0.99889,
+    0.9929,
+    0.96929,
+    0.90378,
+    0.77159,
+    0.57416,
+    0.35445,
+    0.17295,
+    0.06323,
+    0.01613,
+    0.00255,
+    0.00019
+   ],
+   "最可能命中": 8,
+   "中10场以上": 0.1729
+  },
+  "复式16元": {
+   "注数": 8,
+   "金额": 16,
+   "串": [
+    "03",
+    "3",
+    "0",
+    "3",
+    "3",
+    "3",
+    "3",
+    "03",
+    "3",
+    "0",
+    "3",
+    "3",
+    "0",
+    "03"
+   ],
+   "明细": [
+    {
+     "场次": 1,
+     "对阵": "斯旺西vs伯明翰",
+     "选项": "03",
+     "选项数": 2,
+     "覆盖概率": 0.721
+    },
+    {
+     "场次": 2,
+     "对阵": "西汉姆联vs朴茨茅斯",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.571
+    },
+    {
+     "场次": 3,
+     "对阵": "德比郡vs林肯城",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.467
+    },
+    {
+     "场次": 4,
+     "对阵": "奈梅亨vs特尔斯达",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.601
+    },
+    {
+     "场次": 5,
+     "对阵": "前进之鹰vs威廉二世",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.61
+    },
+    {
+     "场次": 6,
+     "对阵": "埃因霍温vs福图纳",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.835
+    },
+    {
+     "场次": 7,
+     "对阵": "阿尔克马尔vs海牙",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.662
+    },
+    {
+     "场次": 8,
+     "对阵": "马里迪莫vs卡萨皮亚",
+     "选项": "03",
+     "选项数": 2,
+     "覆盖概率": 0.713
+    },
+    {
+     "场次": 9,
+     "对阵": "吉马良斯vs阿罗卡",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.478
+    },
+    {
+     "场次": 10,
+     "对阵": "阿马多拉vs里斯本竞技",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.778
+    },
+    {
+     "场次": 11,
+     "对阵": "米亚尔比vs埃尔夫斯堡",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.563
+    },
+    {
+     "场次": 12,
+     "对阵": "维京vs萨普斯堡",
+     "选项": "3",
+     "选项数": 1,
+     "覆盖概率": 0.665
+    },
+    {
+     "场次": 13,
+     "对阵": "斯达vs腓特烈斯塔",
+     "选项": "0",
+     "选项数": 1,
+     "覆盖概率": 0.428
+    },
+    {
+     "场次": 14,
+     "对阵": "雅罗vs瓦萨",
+     "选项": "03",
+     "选项数": 2,
+     "覆盖概率": 0.719
+    }
+   ],
+   "全中概率": 0.0011902460488794906,
+   "期望命中": 8.81,
+   "覆盖胜率": 0.6294,
+   "分布": [
+    0.0,
+    1e-05,
+    0.00016,
+    0.00122,
+    0.00635,
+    0.02349,
+    0.06382,
+    0.12944,
+    0.19695,
+    0.22377,
+    0.18688,
+    0.11127,
+    0.04464,
+    0.01081,
+    0.00119
+   ],
+   "累计": [
+    1.0,
+    1.0,
+    0.99999,
+    0.99983,
+    0.99861,
+    0.99226,
+    0.96877,
+    0.90495,
+    0.77551,
+    0.57856,
+    0.35479,
+    0.16791,
+    0.05664,
+    0.012,
+    0.00119
+   ],
+   "加保场": [
+    1,
+    8,
+    14
+   ]
+  },
+  "基准": {
+   "全买主胜": 0.4829,
+   "历史主胜率": 0.439,
+   "随机": 0.3333
+  },
+  "逐场": [
+   {
+    "场次": 1,
+    "赛事": "英联杯",
+    "对阵": "斯旺西vs伯明翰",
+    "胜": 0.361,
+    "平": 0.28,
+    "负": 0.36,
+    "单选": "3",
+    "置信": 0.361,
+    "复式选": "03",
+    "Elo差": -34,
+    "来源": "Elo+市场",
+    "实际": "0",
+    "单式命中": false,
+    "复式命中": true
+   },
+   {
+    "场次": 2,
+    "赛事": "英联杯",
+    "对阵": "西汉姆联vs朴茨茅斯",
+    "胜": 0.571,
+    "平": 0.229,
+    "负": 0.201,
+    "单选": "3",
+    "置信": 0.571,
+    "复式选": "3",
+    "Elo差": 56,
+    "来源": "Elo+市场",
+    "实际": "3",
+    "单式命中": true,
+    "复式命中": true
+   },
+   {
+    "场次": 3,
+    "赛事": "英联杯",
+    "对阵": "德比郡vs林肯城",
+    "胜": 0.273,
+    "平": 0.26,
+    "负": 0.467,
+    "单选": "0",
+    "置信": 0.467,
+    "复式选": "0",
+    "Elo差": -153,
+    "来源": "仅Elo",
+    "实际": "0",
+    "单式命中": true,
+    "复式命中": true
+   },
+   {
+    "场次": 4,
+    "赛事": "荷甲",
+    "对阵": "奈梅亨vs特尔斯达",
+    "胜": 0.601,
+    "平": 0.214,
+    "负": 0.185,
+    "单选": "3",
+    "置信": 0.601,
+    "复式选": "3",
+    "Elo差": 96,
+    "来源": "Elo+市场",
+    "实际": "0",
+    "单式命中": false,
+    "复式命中": false
+   },
+   {
+    "场次": 5,
+    "赛事": "荷甲",
+    "对阵": "前进之鹰vs威廉二世",
+    "胜": 0.61,
+    "平": 0.213,
+    "负": 0.177,
+    "单选": "3",
+    "置信": 0.61,
+    "复式选": "3",
+    "Elo差": 139,
+    "来源": "Elo+市场",
+    "实际": "3",
+    "单式命中": true,
+    "复式命中": true
+   },
+   {
+    "场次": 6,
+    "赛事": "荷甲",
+    "对阵": "埃因霍温vs福图纳",
+    "胜": 0.835,
+    "平": 0.08,
+    "负": 0.085,
+    "单选": "3",
+    "置信": 0.835,
+    "复式选": "3",
+    "Elo差": 338,
+    "来源": "仅Elo",
+    "实际": "1",
+    "单式命中": false,
+    "复式命中": false
+   },
+   {
+    "场次": 7,
+    "赛事": "荷甲",
+    "对阵": "阿尔克马尔vs海牙",
+    "胜": 0.662,
+    "平": 0.187,
+    "负": 0.152,
+    "单选": "3",
+    "置信": 0.662,
+    "复式选": "3",
+    "Elo差": 206,
+    "来源": "Elo+市场",
+    "实际": "3",
+    "单式命中": true,
+    "复式命中": true
+   },
+   {
+    "场次": 8,
+    "赛事": "葡超",
+    "对阵": "马里迪莫vs卡萨皮亚",
+    "胜": 0.41,
+    "平": 0.286,
+    "负": 0.303,
+    "单选": "3",
+    "置信": 0.41,
+    "复式选": "03",
+    "Elo差": -51,
+    "来源": "Elo+市场",
+    "实际": "3",
+    "单式命中": true,
+    "复式命中": true
+   },
+   {
+    "场次": 9,
+    "赛事": "葡超",
+    "对阵": "吉马良斯vs阿罗卡",
+    "胜": 0.478,
+    "平": 0.265,
+    "负": 0.256,
+    "单选": "3",
+    "置信": 0.478,
+    "复式选": "3",
+    "Elo差": 15,
+    "来源": "Elo+市场",
+    "实际": "0",
+    "单式命中": false,
+    "复式命中": false
+   },
+   {
+    "场次": 10,
+    "赛事": "葡超",
+    "对阵": "阿马多拉vs里斯本竞技",
+    "胜": 0.104,
+    "平": 0.117,
+    "负": 0.778,
+    "单选": "0",
+    "置信": 0.778,
+    "复式选": "0",
+    "Elo差": -409,
+    "来源": "仅Elo",
+    "实际": "1",
+    "单式命中": false,
+    "复式命中": false
+   },
+   {
+    "场次": 11,
+    "赛事": "瑞典超",
+    "对阵": "米亚尔比vs埃尔夫斯堡",
+    "胜": 0.563,
+    "平": 0.226,
+    "负": 0.211,
+    "单选": "3",
+    "置信": 0.563,
+    "复式选": "3",
+    "Elo差": 111,
+    "来源": "仅Elo",
+    "实际": "0",
+    "单式命中": false,
+    "复式命中": false
+   },
+   {
+    "场次": 12,
+    "赛事": "挪超",
+    "对阵": "维京vs萨普斯堡",
+    "胜": 0.665,
+    "平": 0.181,
+    "负": 0.154,
+    "单选": "3",
+    "置信": 0.665,
+    "复式选": "3",
+    "Elo差": 194,
+    "来源": "仅Elo",
+    "实际": "3",
+    "单式命中": true,
+    "复式命中": true
+   },
+   {
+    "场次": 13,
+    "赛事": "挪超",
+    "对阵": "斯达vs腓特烈斯塔",
+    "胜": 0.3,
+    "平": 0.271,
+    "负": 0.428,
+    "单选": "0",
+    "置信": 0.428,
+    "复式选": "0",
+    "Elo差": -122,
+    "来源": "仅Elo",
+    "实际": "0",
+    "单式命中": true,
+    "复式命中": true
+   },
+   {
+    "场次": 14,
+    "赛事": "芬超",
+    "对阵": "雅罗vs瓦萨",
+    "胜": 0.328,
+    "平": 0.281,
+    "负": 0.391,
+    "单选": "0",
+    "置信": 0.391,
+    "复式选": "03",
+    "Elo差": -90,
+    "来源": "仅Elo",
+    "实际": "0",
+    "单式命中": true,
+    "复式命中": true
+   }
+  ],
+  "已复盘": true,
+  "实际开奖": "03003133010300",
+  "复盘": {
+   "单式命中": 8,
+   "复式命中": 9,
+   "单式胜率": 0.5714,
+   "复式胜率": 0.6429,
+   "期望单式": 7.82,
+   "期望复式": 8.81,
+   "偏差单式": 0.18,
+   "偏差复式": 0.19,
+   "加保收益": 1,
+   "落在预期区间": true,
+   "失手": 6,
+   "被平局打掉": 2,
+   "逐场": [
+    {
+     "场次": 1,
+     "对阵": "斯旺西vs伯明翰",
+     "预测": "胜",
+     "置信": 0.361,
+     "实际": "负",
+     "单式": "✗",
+     "复式选": "03",
+     "复式": "✓"
+    },
+    {
+     "场次": 2,
+     "对阵": "西汉姆联vs朴茨茅斯",
+     "预测": "胜",
+     "置信": 0.571,
+     "实际": "胜",
+     "单式": "✓",
+     "复式选": "3",
+     "复式": "✓"
+    },
+    {
+     "场次": 3,
+     "对阵": "德比郡vs林肯城",
+     "预测": "负",
+     "置信": 0.467,
+     "实际": "负",
+     "单式": "✓",
+     "复式选": "0",
+     "复式": "✓"
+    },
+    {
+     "场次": 4,
+     "对阵": "奈梅亨vs特尔斯达",
+     "预测": "胜",
+     "置信": 0.601,
+     "实际": "负",
+     "单式": "✗",
+     "复式选": "3",
+     "复式": "✗"
+    },
+    {
+     "场次": 5,
+     "对阵": "前进之鹰vs威廉二世",
+     "预测": "胜",
+     "置信": 0.61,
+     "实际": "胜",
+     "单式": "✓",
+     "复式选": "3",
+     "复式": "✓"
+    },
+    {
+     "场次": 6,
+     "对阵": "埃因霍温vs福图纳",
+     "预测": "胜",
+     "置信": 0.835,
+     "实际": "平",
+     "单式": "✗",
+     "复式选": "3",
+     "复式": "✗"
+    },
+    {
+     "场次": 7,
+     "对阵": "阿尔克马尔vs海牙",
+     "预测": "胜",
+     "置信": 0.662,
+     "实际": "胜",
+     "单式": "✓",
+     "复式选": "3",
+     "复式": "✓"
+    },
+    {
+     "场次": 8,
+     "对阵": "马里迪莫vs卡萨皮亚",
+     "预测": "胜",
+     "置信": 0.41,
+     "实际": "胜",
+     "单式": "✓",
+     "复式选": "03",
+     "复式": "✓"
+    },
+    {
+     "场次": 9,
+     "对阵": "吉马良斯vs阿罗卡",
+     "预测": "胜",
+     "置信": 0.478,
+     "实际": "负",
+     "单式": "✗",
+     "复式选": "3",
+     "复式": "✗"
+    },
+    {
+     "场次": 10,
+     "对阵": "阿马多拉vs里斯本竞技",
+     "预测": "负",
+     "置信": 0.778,
+     "实际": "平",
+     "单式": "✗",
+     "复式选": "0",
+     "复式": "✗"
+    },
+    {
+     "场次": 11,
+     "对阵": "米亚尔比vs埃尔夫斯堡",
+     "预测": "胜",
+     "置信": 0.563,
+     "实际": "负",
+     "单式": "✗",
+     "复式选": "3",
+     "复式": "✗"
+    },
+    {
+     "场次": 12,
+     "对阵": "维京vs萨普斯堡",
+     "预测": "胜",
+     "置信": 0.665,
+     "实际": "胜",
+     "单式": "✓",
+     "复式选": "3",
+     "复式": "✓"
+    },
+    {
+     "场次": 13,
+     "对阵": "斯达vs腓特烈斯塔",
+     "预测": "负",
+     "置信": 0.428,
+     "实际": "负",
+     "单式": "✓",
+     "复式选": "0",
+     "复式": "✓"
+    },
+    {
+     "场次": 14,
+     "对阵": "雅罗vs瓦萨",
+     "预测": "负",
+     "置信": 0.391,
+     "实际": "负",
+     "单式": "✓",
+     "复式选": "03",
+     "复式": "✓"
+    }
+   ]
+  }
+ },
+ "sfc_ledger": [
+  {
+   "期号": "26101",
+   "单式命中": 8,
+   "复式命中": 9,
+   "预测胜率": 0.5586,
+   "实际胜率": 0.5714,
+   "期望": 7.82,
+   "偏差": 0.18
+  }
+ ],
+ "sfc": {
+  "期号": "26103",
+  "截止": "2026-08-11 22:00",
+  "生成时间": "2026-08-10 15:11:04",
+  "方法": "UEFA国家系数校准跨联赛Elo",
+  "单式": "00000030300303",
+  "预测胜率": 0.5159,
+  "期望命中": 7.22,
+  "picks": [
+   {
+    "场次": 1,
+    "赛事": "欧冠",
+    "主队": "阿拉木图",
+    "客队": "凯尔特人",
+    "主国": "Kazakhstan",
+    "客国": "Scotland",
+    "主Elo": 1500,
+    "客Elo": 1798,
+    "主校准": 1928,
+    "客校准": 2346,
+    "校准差": -358,
+    "胜": 0.1,
+    "平": 0.11,
+    "负": 0.789,
+    "推荐码": "0",
+    "推荐": "负(0)",
+    "置信": 0.789,
+    "数据质量": "单方实测",
+    "中立场": false
+   },
+   {
+    "场次": 2,
+    "赛事": "欧冠",
+    "主队": "博德",
+    "客队": "圣吉尔联合",
+    "主国": "Norway",
+    "客国": "Belgium",
+    "主Elo": 1772,
+    "客Elo": 1765,
+    "主校准": 2373,
+    "客校准": 2455,
+    "校准差": -22,
+    "胜": 0.335,
+    "平": 0.284,
+    "负": 0.381,
+    "推荐码": "0",
+    "推荐": "负(0)",
+    "置信": 0.381,
+    "数据质量": "双方实测",
+    "中立场": false
+   },
+   {
+    "场次": 3,
+    "赛事": "欧冠",
+    "主队": "萨巴赫",
+    "客队": "奥胡斯",
+    "主国": "Azerbaijan",
+    "客国": "Denmark",
+    "主Elo": 1500,
+    "客Elo": 1660,
+    "主校准": 2019,
+    "客校准": 2270,
+    "校准差": -191,
+    "胜": 0.196,
+    "平": 0.216,
+    "负": 0.588,
+    "推荐码": "0",
+    "推荐": "负(0)",
+    "置信": 0.588,
+    "数据质量": "单方实测",
+    "中立场": false
+   },
+   {
+    "场次": 4,
+    "赛事": "欧冠",
+    "主队": "奈梅亨",
+    "客队": "奥林匹亚科斯",
+    "主国": "Netherlands",
+    "客国": "Greece",
+    "主Elo": 1600,
+    "客Elo": 1762,
+    "主校准": 2270,
+    "客校准": 2395,
+    "校准差": -65,
+    "胜": 0.297,
+    "平": 0.27,
+    "负": 0.432,
+    "推荐码": "0",
+    "推荐": "负(0)",
+    "置信": 0.432,
+    "数据质量": "双方实测",
+    "中立场": false
+   },
+   {
+    "场次": 5,
+    "赛事": "欧冠",
+    "主队": "布拉迪斯拉发",
+    "客队": "米亚尔比",
+    "主国": "Slovakia",
+    "客国": "Sweden",
+    "主Elo": 1500,
+    "客Elo": 1687,
+    "主校准": 2010,
+    "客校准": 2238,
+    "校准差": -168,
+    "胜": 0.213,
+    "平": 0.227,
+    "负": 0.56,
+    "推荐码": "0",
+    "推荐": "负(0)",
+    "置信": 0.56,
+    "数据质量": "单方实测",
+    "中立场": false
+   },
+   {
+    "场次": 6,
+    "赛事": "欧冠",
+    "主队": "格拉茨风暴",
+    "客队": "费内巴切",
+    "主国": "Austria",
+    "客国": "Turkey",
+    "主Elo": 1689,
+    "客Elo": 1780,
+    "主校准": 2238,
+    "客校准": 2437,
+    "校准差": -139,
+    "胜": 0.235,
+    "平": 0.241,
+    "负": 0.524,
+    "推荐码": "0",
+    "推荐": "负(0)",
+    "置信": 0.524,
+    "数据质量": "双方实测",
+    "中立场": false
+   },
+   {
+    "场次": 7,
+    "赛事": "欧冠",
+    "主队": "里昂",
+    "客队": "布拉格斯巴达",
+    "主国": "France",
+    "客国": "Czechia",
+    "主Elo": 1665,
+    "客Elo": 1500,
+    "主校准": 2381,
+    "客校准": 2143,
+    "校准差": 298,
+    "胜": 0.718,
+    "平": 0.153,
+    "负": 0.129,
+    "推荐码": "3",
+    "推荐": "胜(3)",
+    "置信": 0.718,
+    "数据质量": "单方实测",
+    "中立场": false
+   },
+   {
+    "场次": 8,
+    "赛事": "欧罗巴",
+    "主队": "帕福斯",
+    "客队": "萨尔茨堡",
+    "主国": "Cyprus",
+    "客国": "Austria",
+    "主Elo": 1500,
+    "客Elo": 1656,
+    "主校准": 2095,
+    "客校准": 2205,
+    "校准差": -50,
+    "胜": 0.311,
+    "平": 0.275,
+    "负": 0.414,
+    "推荐码": "0",
+    "推荐": "负(0)",
+    "置信": 0.414,
+    "数据质量": "单方实测",
+    "中立场": false
+   },
+   {
+    "场次": 9,
+    "赛事": "欧罗巴",
+    "主队": "克拉约瓦",
+    "客队": "库奥皮奥",
+    "主国": "Romania",
+    "客国": "Finland",
+    "主Elo": 1709,
+    "客Elo": 1764,
+    "主校准": 2253,
+    "客校准": 2199,
+    "校准差": 114,
+    "胜": 0.493,
+    "平": 0.251,
+    "负": 0.255,
+    "推荐码": "3",
+    "推荐": "胜(3)",
+    "置信": 0.493,
+    "数据质量": "双方实测",
+    "中立场": false
+   },
+   {
+    "场次": 10,
+    "赛事": "欧罗巴",
+    "主队": "雷克雅未克维京人",
+    "客队": "图恩",
+    "主国": "Iceland",
+    "客国": "Switzerland",
+    "主Elo": 1500,
+    "客Elo": 1575,
+    "主校准": 1979,
+    "客校准": 2148,
+    "校准差": -108,
+    "胜": 0.26,
+    "平": 0.254,
+    "负": 0.486,
+    "推荐码": "0",
+    "推荐": "负(0)",
+    "置信": 0.486,
+    "数据质量": "单方实测",
+    "中立场": false
+   },
+   {
+    "场次": 11,
+    "赛事": "欧罗巴",
+    "主队": "安德莱赫特",
+    "客队": "塞萨洛尼基",
+    "主国": "Belgium",
+    "客国": "Greece",
+    "主Elo": 1572,
+    "客Elo": 1713,
+    "主校准": 2262,
+    "客校准": 2346,
+    "校准差": -23,
+    "胜": 0.334,
+    "平": 0.283,
+    "负": 0.383,
+    "推荐码": "0",
+    "推荐": "负(0)",
+    "置信": 0.383,
+    "数据质量": "双方实测",
+    "中立场": false
+   },
+   {
+    "场次": 12,
+    "赛事": "欧罗巴",
+    "主队": "流浪者",
+    "客队": "比亚韦",
+    "主国": "Scotland",
+    "客国": "Poland",
+    "主Elo": 1726,
+    "客Elo": 1635,
+    "主校准": 2273,
+    "客校准": 2277,
+    "校准差": 56,
+    "胜": 0.422,
+    "平": 0.273,
+    "负": 0.305,
+    "推荐码": "3",
+    "推荐": "胜(3)",
+    "置信": 0.422,
+    "数据质量": "双方实测",
+    "中立场": false
+   },
+   {
+    "场次": 13,
+    "赛事": "欧罗巴",
+    "主队": "哈茨",
+    "客队": "本菲卡",
+    "主国": "Scotland",
+    "客国": "Portugal",
+    "主Elo": 1693,
+    "客Elo": 1812,
+    "主校准": 2240,
+    "客校准": 2518,
+    "校准差": -217,
+    "胜": 0.178,
+    "平": 0.202,
+    "负": 0.621,
+    "推荐码": "0",
+    "推荐": "负(0)",
+    "置信": 0.621,
+    "数据质量": "双方实测",
+    "中立场": false
+   },
+   {
+    "场次": 14,
+    "赛事": "欧超杯",
+    "主队": "巴黎圣日耳曼",
+    "客队": "阿斯顿维拉",
+    "主国": "France",
+    "客国": "England",
+    "主Elo": 1804,
+    "客Elo": 1686,
+    "主校准": 2521,
+    "客校准": 2472,
+    "校准差": 48,
+    "胜": 0.412,
+    "平": 0.276,
+    "负": 0.312,
+    "推荐码": "3",
+    "推荐": "胜(3)",
+    "置信": 0.412,
+    "数据质量": "双方实测",
+    "中立场": true
+   }
+  ]
+ },
+ "articles": [
+  {
+   "slug": "02_第一次真实检验",
+   "title": "预测 8 场，实际中 8 场：一次模型的真实检验，与它在何处翻车",
+   "date": "2026-08-10",
+   "style": "高华",
+   "period": "26101 复盘 + 26103 预测",
+   "status": "📝 待审阅 → 可发头条",
+   "tags": [
+    "足球",
+    "机器学习",
+    "复盘",
+    "高华风格"
+   ],
+   "lead": "先陈述一个巧合。",
+   "words": 3261,
+   "heads": [
+    "一、先说方法：为什么这次检验是可信的",
+    "二、结果",
+    "三、真正的发现：模型最有把握的两场，都输给了平局",
+    "四、六场失手的完整归因",
+    "五、第 26103 期：一个更困难的题目",
+    "六、两期之后可以说什么，不可以说什么"
+   ],
+   "cover": "/articles/02_第一次真实检验.png",
+   "md": "/articles/02_第一次真实检验.md",
+   "edit": "https://github.com/Baggio200cn/dobo-football/edit/main/articles/02_第一次真实检验.md"
+  },
+  {
+   "slug": "01_十二轮迭代八次失败",
+   "title": "十二轮迭代，八次失败：一次对博彩市场效率的实证检验",
+   "date": "2026-08-07",
+   "style": "高华",
+   "period": "",
+   "status": "📝 待审阅 → 可发头条",
+   "tags": [
+    "足球",
+    "机器学习",
+    "复盘",
+    "高华风格"
+   ],
+   "lead": "先提出一个反直觉的结果。",
+   "words": 3598,
+   "heads": [
+    "一、实验设计：先把\"怎样算赢\"定死",
+    "二、第一阶段：结构化模型的天花板（v1–v4）",
+    "三、第二阶段：机器学习的陷阱（v5–v6）",
+    "四、第三阶段：市场的力量（v7）",
+    "五、第四阶段：四次失败的排查（v8–v12）",
+    "六、一个被反复验证的结论",
+    "七、最终战绩",
+    "八、结语"
+   ],
+   "cover": "/articles/01_十二轮迭代八次失败.png",
+   "md": "/articles/01_十二轮迭代八次失败.md",
+   "edit": "https://github.com/Baggio200cn/dobo-football/edit/main/articles/01_十二轮迭代八次失败.md"
+  }
+ ]
+}
