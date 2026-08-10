@@ -273,7 +273,7 @@ fetch("/data.json?v=1786083679").then(function(r){return r.json()}).then(functio
     t.onclick=function(){CUR=t.dataset.l;
       document.querySelectorAll(".tab").forEach(function(x){x.classList.toggle("on",x.dataset.l===CUR)});
       renderElo();}});
-  renderWinRate(); renderSFC(); renderSources(); renderPosts(); renderPipeline(); renderTrain();
+  renderWinRate(); renderSFC(); renderSources(); renderPosts(); renderPosts(); renderPipeline(); renderTrain();
   renderElo(); renderBt(); renderLab(); renderBatch(); renderReview(); renderLedger();
 }).catch(function(e){
   document.getElementById("eloBody").innerHTML='<tr><td colspan="4" style="padding:18px;color:#5d6879">数据加载失败</td></tr>';
