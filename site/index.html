@@ -273,7 +273,7 @@ fetch("/data.json?v=1786083679").then(function(r){return r.json()}).then(functio
     t.onclick=function(){CUR=t.dataset.l;
       document.querySelectorAll(".tab").forEach(function(x){x.classList.toggle("on",x.dataset.l===CUR)});
       renderElo();}});
-  renderWinRate(); renderSFC(); renderSources(); renderPosts(); renderPosts(); renderPipeline(); renderTrain();
+  renderWinRate(); renderR9(); renderSFC(); renderSources(); renderPosts(); renderPosts(); renderPipeline(); renderTrain();
   renderElo(); renderBt(); renderLab(); renderBatch(); renderReview(); renderLedger();
 }).catch(function(e){
   document.getElementById("eloBody").innerHTML='<tr><td colspan="4" style="padding:18px;color:#5d6879">数据加载失败</td></tr>';
@@ -731,6 +731,56 @@ function openPost(a){
       el.href=u; el.download=a.slug+".md"; el.click(); URL.revokeObjectURL(u);
     };
   });
+}
+
+
+/* ===== 任选九场 · 16 元复式方案 ===== */
+function renderR9(){
+  var L=D.sfc_lock; if(!L||!L.任选九) return;
+  var R=L.任选九, F=R.复式;
+  var box=document.getElementById("wrBox"); if(!box) return;
+  var html=
+    '<div class="sec" style="margin-top:18px"><span class="bar"></span>'+
+      '<h2>推荐玩法 · 任选九场</h2><span class="more">比 14 场容易 '+Math.round(R.较14场容易)+' 倍</span></div>'+
+    '<div class="box">'+
+      '<div style="display:flex;border-bottom:1px solid var(--line)">'+
+        '<div style="flex:1;padding:13px;text-align:center;border-right:1px solid var(--line)">'+
+          '<div style="font-size:11px;color:var(--mut2)">任选九 单式</div>'+
+          '<div style="font-size:26px;font-weight:800;color:var(--gold);line-height:1.3">1/'+Math.round(1/R.全中概率).toLocaleString()+'</div>'+
+          '<div style="font-size:11px;color:var(--mut2)">2 元 · 胜率 '+(R.预测胜率*100).toFixed(1)+'%</div></div>'+
+        '<div style="flex:1;padding:13px;text-align:center;background:rgba(34,197,94,.06)">'+
+          '<div style="font-size:11px;color:var(--mut2)">16 元复式（'+F.注数+' 注）</div>'+
+          '<div style="font-size:26px;font-weight:800;color:var(--green);line-height:1.3">1/'+Math.round(1/F.全中概率).toLocaleString()+'</div>'+
+          '<div style="font-size:11px;color:var(--mut2)">提升 '+F.较单式提升+'× · 覆盖 '+(F.覆盖胜率*100).toFixed(1)+'%</div></div>'+
+      '</div>'+
+      '<table class="tbl" style="border:0"><thead><tr>'+
+        '<th style="width:34px">场次</th><th style="text-align:left;padding-left:8px">对阵</th>'+
+        '<th style="width:76px">投注选择</th><th style="width:56px">覆盖率</th></tr></thead><tbody>'+
+      F.明细.map(function(d){
+        var dbl=d.选项数>1;
+        var zh=d.中文.split("+").map(function(c){
+          var col=c==="胜"?"var(--green)":(c==="平"?"var(--gold)":"var(--red)");
+          return '<span style="color:'+col+';font-weight:700">'+c+'</span>';
+        }).join('<span style="color:var(--mut2);margin:0 3px">+</span>');
+        return '<tr'+(dbl?' style="background:rgba(245,196,81,.07)"':'')+'>'+
+          '<td style="color:var(--mut2)">'+d.场次+'</td>'+
+          '<td class="tm" style="font-size:12.5px;font-weight:600">'+d.对阵+
+            (dbl?' <span style="color:var(--gold);font-size:10px">★加保</span>':'')+'</td>'+
+          '<td>'+zh+' <span style="color:var(--mut2);font-family:monospace;font-size:11px">('+d.选项+')</span></td>'+
+          '<td style="color:'+(dbl?'var(--gold)':'var(--mut)')+';font-variant-numeric:tabular-nums">'+
+            (d.覆盖概率*100).toFixed(0)+'%</td></tr>';
+      }).join("")+
+      '</tbody></table>'+
+      '<div style="padding:11px 12px;background:var(--card2);border-top:1px solid var(--line);font-size:11.5px;color:var(--mut2);line-height:1.8">'+
+        '<b style="color:var(--gold)">放弃第 '+R.放弃.join('、')+' 场</b>（把握最低的 5 场，任选九允许只猜 9 场）<br>'+
+        '「★加保」= 该场买两个结果 → 2×2×2 = '+F.注数+' 注 × 2 元 = '+F.金额+' 元'+
+      '</div>'+
+    '</div>'+
+    '<div class="info">本期 14 场中有 <b>7 场法乙</b>，Elo 差在 ±5 分内（几乎五五开），'+
+      '胜负彩 14 场全中约 <b>1/'+Math.round(1/L.单式.全中概率).toLocaleString()+'</b>；'+
+      '任选九可丢掉最没把握的 5 场，难度降到 <b>1/'+Math.round(1/R.全中概率)+'</b>。<br>'+
+      '⚠️ 1/77 仍是小概率，彩票返奖率约 49%，长期期望为负 —— 本站只做模型验证记录。</div>';
+  box.insertAdjacentHTML("beforeend", html);
 }
 
 </script>
