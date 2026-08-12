@@ -54,8 +54,8 @@ def parse(p):
         "lead": lead[:160],
         "words": words,
         "heads": heads[:8],
-        "cover": f"/articles/{Path(p).stem}.png",
-        "md": f"/articles/{Path(p).stem}.md",
+        "cover": f"/articles/{slug}.png",
+        "md": f"/articles/{slug}.md",
         "edit": f"https://github.com/{GH_REPO}/edit/main/articles/{Path(p).name}",  # 编辑链接用原名
     }
 
