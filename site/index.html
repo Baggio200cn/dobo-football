@@ -273,7 +273,10 @@ fetch("/data.json?v=1786083679").then(function(r){return r.json()}).then(functio
     t.onclick=function(){CUR=t.dataset.l;
       document.querySelectorAll(".tab").forEach(function(x){x.classList.toggle("on",x.dataset.l===CUR)});
       renderElo();}});
-  renderWinRate(); renderR9(); renderSFC(); renderSources(); renderPosts(); renderPosts(); renderPipeline(); renderTrain();
+  [['winrate',renderWinRate],['r9',renderR9],['sfc',renderSFC],
+   ['sources',renderSources],['posts',renderPosts]].forEach(function(x){
+    try{ x[1](); }catch(e){ console.error('渲染失败:',x[0],e); }
+  }); renderPosts(); renderPipeline(); renderTrain();
   renderElo(); renderBt(); renderLab(); renderBatch(); renderReview(); renderLedger();
 }).catch(function(e){
   document.getElementById("eloBody").innerHTML='<tr><td colspan="4" style="padding:18px;color:#5d6879">数据加载失败</td></tr>';
@@ -304,7 +307,10 @@ function renderBt(){
 
 function renderWinRate(){
   var L=D.sfc_lock, box=document.getElementById("wrBox"); if(!L||!box) return;
-  var S=L.单式, F=L.复式16元, B=L.基准;
+  var S=L.单式, B=L.基准||{};
+  var F=L.复式16元 || (L.任选九&&L.任选九.复式) || null;
+  if(!S) return;
+  if(!F) F={注数:0,金额:0,串:[],明细:[],覆盖胜率:0,期望命中:0,分布:[],加保场:[]};
 
   // 命中分布柱状图
   var mx=Math.max.apply(null,S.分布);
