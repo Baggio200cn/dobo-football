@@ -66,16 +66,8 @@ jobs:
 
       - name: 检查产出
         run: |
-          echo "site/ 内容："
           ls -la site/ site/articles/ | head -20
-          python -c "
-import json
-d=json.load(open('site/data.json',encoding='utf-8'))
-assert d.get('sfc_lock'), '❌ 缺当期预测'
-assert d.get('articles'), '❌ 缺文章清单'
-print(f\"✅ 当期 {d['sfc_lock']['期号']} · 文章 {len(d['articles'])} 篇 · 训练库 {d['lab']['dataset']['n']:,} 场\")
-" 
-
+          python engine/check_output.py
       - name: 提交变更
         run: |
           git config user.name  "dobo-bot"
