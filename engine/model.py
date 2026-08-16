@@ -72,10 +72,22 @@ class Poisson:
     use_xg=True：用『射正×转化率』作 xG 代理目标（过程替代结果，降噪）。
     rho≠0：叠加 Dixon-Coles 低比分修正。"""
     def __init__(self, use_xg=False, rho=0.0):
-        self.res = None; self.teams = set(); self.mu = 1.35
+        self.res = {}; self.teams = set(); self.mu = 1.35
+        self.div_of = {}; self.mu_of = {}
         self.use_xg = use_xg; self.conv = 0.32; self.rho = rho
 
     def fit(self, matches):
+        """按联赛分别拟合。
+
+        本库无跨联赛比赛，故『整体拟合』与『分联赛拟合』在数学上等价，
+        但整体拟合的设计矩阵是 2N × 2T（36 联赛下约 21 万 × 2600 = 4.4 GB），
+        分联赛后降到 36 个 6000 × 80 的小矩阵。这是内存可行性的必要改动。
+        """
+        for div, sub in matches.groupby("Div", observed=True):
+            self._fit_one(div, sub)
+        return self
+
+    def _fit_one(self, div, matches):
         rows = []
         if self.use_xg:
             self.conv = sot_conversion(matches)
@@ -91,17 +103,24 @@ class Poisson:
                 rows.append((m.HomeTeam, m.AwayTeam, m.FTHG, 1))
                 rows.append((m.AwayTeam, m.HomeTeam, m.FTAG, 0))
         long = pd.DataFrame(rows, columns=["team", "opp", "goals", "home"])
-        self.teams = set(long.team)
-        self.mu = long.goals.mean()
-        self.res = smf.glm("goals ~ C(team) + C(opp) + home",
-                           data=long, family=sm.families.Poisson()).fit()
+        if long.team.nunique() < 3:                # 样本太少的联赛跳过
+            return self
+        self.teams |= set(long.team)
+        for t in long.team.unique(): self.div_of[t] = div
+        self.mu_of[div] = float(long.goals.mean())
+        self.mu = float(np.mean(list(self.mu_of.values())))
+        self.res[div] = smf.glm("goals ~ C(team) + C(opp) + home",
+                                data=long, family=sm.families.Poisson()).fit()
         return self
 
     def lambdas(self, home, away):
-        if home not in self.teams or away not in self.teams:
-            return self.mu * 1.1, self.mu * 0.95  # 未知队（升班马）→ 联赛均值兜底
-        lh = self.res.predict(pd.DataFrame([{"team": home, "opp": away, "home": 1}]))[0]
-        la = self.res.predict(pd.DataFrame([{"team": away, "opp": home, "home": 0}]))[0]
+        dh, da = self.div_of.get(home), self.div_of.get(away)
+        if dh is None or dh != da or dh not in self.res:
+            mu = self.mu_of.get(dh or da, self.mu)   # 未知队/跨联赛 → 联赛均值兜底
+            return mu * 1.1, mu * 0.95
+        res = self.res[dh]
+        lh = res.predict(pd.DataFrame([{"team": home, "opp": away, "home": 1}]))[0]
+        la = res.predict(pd.DataFrame([{"team": away, "opp": home, "home": 0}]))[0]
         return float(lh), float(la)
 
     def fit_rho(self, matches, grid=None):
