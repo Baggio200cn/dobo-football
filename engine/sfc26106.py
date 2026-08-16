@@ -13,7 +13,7 @@ try: sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
 from config import BASE
 import data as D
-from model import elo_run, elo_1x2, implied_1x2
+from model import elo_run, elo_1x2, implied_1x2, goal_tendency
 
 PERIOD, DEADLINE = "26106", "2026-08-16 21:30"
 W_MKT = 0.55

@@ -39,11 +39,40 @@ def draw_prob(elo_gap):
     return float(np.clip(a * d * d + b * d + c, 0.05, 0.32))
 
 
-def elo_1x2(rh, ra, hfa=60, draw=None):
-    """Elo 差 → 胜平负。draw=None 时按实力差动态估平局率（推荐）。"""
+# v15 二维平局模型：平局率还取决于「这场是不是低进球对局」。
+# 一维模型对势均力敌场次一律给 28.1%，但实际低进球组 30.4% / 高进球组 27.4%（差 3.0pp）。
+# logit(P平) = k + b1·|gap| + b2·gap² + b3·进球倾向   （6.9 万场逻辑回归拟合）
+# 效果：Brier −0.0003，分组校准 MAE 0.0102→0.0074（改善 28%），
+#       平局概率上限由 29.0% 提到 34.0%（一维模型结构上永远选不出平局）。
+DRAW2D = (-0.3912, -0.00052, -7.251e-06, -0.18638)
+GOAL_BASE = 2.65          # 全库场均总进球，缺进球倾向时的兜底
+
+
+def draw_prob2(elo_gap, goal_tend=None):
+    """二维平局率。goal_tend = 两队近 20 场场均总进球的均值；None 时退回一维。"""
+    if goal_tend is None or not np.isfinite(goal_tend):
+        return draw_prob(elo_gap)
+    k, b1, b2, b3 = DRAW2D
+    g = float(elo_gap)
+    z = k + b1 * abs(g) + b2 * g * g + b3 * float(goal_tend)
+    return float(np.clip(1 / (1 + np.exp(-z)), 0.04, 0.40))
+
+
+def goal_tendency(matches, window=20):
+    """每队近 window 场的场均总进球 → {队名: 值}。用于 draw_prob2。"""
+    from collections import defaultdict, deque
+    gf = defaultdict(lambda: deque(maxlen=window))
+    for x in matches.sort_values("Date").itertuples():
+        g = x.FTHG + x.FTAG
+        gf[x.HomeTeam].append(g); gf[x.AwayTeam].append(g)
+    return {t: float(np.mean(v)) for t, v in gf.items() if len(v) >= 10}
+
+
+def elo_1x2(rh, ra, hfa=60, draw=None, goal_tend=None):
+    """Elo 差 → 胜平负。draw=None 时按实力差(+进球倾向)动态估平局率。"""
     gap = rh + hfa - ra                      # 含主场优势的有效实力差
     if draw is None:
-        draw = draw_prob(gap)
+        draw = draw_prob2(gap, goal_tend)
     eh = 1 / (1 + 10 ** (-gap / 400))        # 主队期望胜率（含平局）
     ph = eh * (1 - draw); pa = (1 - eh) * (1 - draw)
     return {"H": ph, "D": draw, "A": pa}
