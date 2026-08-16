@@ -4,13 +4,16 @@ on:
   schedule:
     # 北京时间 = UTC+8
     - cron: '0 12 * * 5'   # 周五 20:00 北京 → 出预测
-    - cron: '0 2  * * 1'   # 周一 10:00 北京 → 复盘
+    # 自动复盘：胜负彩近乎隔日开奖，开奖回填多在北京时间上午。
+    # 每天跑两次，auto_review.py 幂等（已复盘跳过、未开奖跳过），多跑无害。
+    - cron: '0 4  * * *'   # 每天 12:00 北京 → 自动复盘
+    - cron: '0 13 * * *'   # 每天 21:00 北京 → 自动复盘（补当日晚开的）
   workflow_dispatch:        # 允许手动触发
     inputs:
       task:
         description: '手动执行哪个任务'
         required: true
-        default: 'predict'
+        default: 'review'
         type: choice
         options: [predict, review, both]
 
@@ -51,6 +54,10 @@ jobs:
           else
             echo "kind=review" >> $GITHUB_OUTPUT
           fi
+
+      - name: 自动复盘（扫描未复盘期次，开奖即结算）
+        working-directory: engine
+        run: python auto_review.py
 
       - name: 更新数据（36 联赛）
         working-directory: engine
