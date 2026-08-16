@@ -51,12 +51,15 @@ def find(r, name):
 def main():
     m = D.load_matches()
     r, _ = elo_run(m)
+    GT = goal_tendency(m)          # v15：每队近 20 场场均总进球
 
     picks = []
     for no, lg, hz, he, az, ae, ko, odds, neutral in FIX:
         th, okh = find(r, he); ta, oka = find(r, ae)
         eh = r.get(th, 1500.0); ea = r.get(ta, 1500.0)
-        pe = elo_1x2(eh, ea, hfa=0 if neutral else 60)
+        gts = [GT[x] for x in (th, ta) if x in GT]
+        gt = float(np.mean(gts)) if gts else None
+        pe = elo_1x2(eh, ea, hfa=0 if neutral else 60, goal_tend=gt)
         mk = implied_1x2(*odds) if odds else None
         if mk:
             p = {k: W_MKT*mk[k] + (1-W_MKT)*pe[k] for k in "HDA"}
@@ -68,6 +71,7 @@ def main():
         picks.append({
             "场次":no,"赛事":lg,"主队":hz,"客队":az,"主队EN":th or he,"客队EN":ta or ae,
             "开赛":ko,"中立场":neutral,
+            "进球倾向":round(gt,2) if gt else None,
             "Elo主":round(eh),"Elo客":round(ea),"Elo差":round(eh-ea),
             "胜":round(p["H"],3),"平":round(p["D"],3),"负":round(p["A"],3),
             "推荐码":{"H":"3","D":"1","A":"0"}[code],
