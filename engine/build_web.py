@@ -55,6 +55,16 @@ def main():
     arts = build_articles.main()
     web["articles"] = arts
 
+    # 4.5 在售期次（实时赛程 + 投注截止时间）
+    try:
+        import fetch_onsale
+        fetch_onsale.main()
+    except Exception as e:
+        print(f"  ⚠ 在售期次抓取失败（沿用上次结果）：{e}")
+    ons = load(BAT / "ONSALE.json", {})
+    if ons.get("期次"):
+        web["onsale"] = ons
+
     # 5 写出
     (BASE / "web_data.json").write_text(json.dumps(web, ensure_ascii=False, indent=1), encoding="utf-8")
     SITE.mkdir(exist_ok=True)

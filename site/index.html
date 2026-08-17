@@ -115,6 +115,51 @@
   .md blockquote{border-left:3px solid var(--gold);padding:8px 12px;margin:0 0 14px;background:rgba(245,196,81,.06);color:var(--mut)}
   .md hr{border:0;border-top:1px solid var(--line);margin:20px 0}
   .md em{color:var(--mut2);font-style:normal;font-size:12.5px}
+
+  /* ===== 在售期次 ===== */
+  .os{background:var(--card);border:1px solid var(--line);border-radius:10px;
+      margin-bottom:14px;overflow:hidden}
+  .os.live{border-color:rgba(34,197,94,.45)}
+  .os-hd{padding:12px 14px;background:linear-gradient(180deg,var(--card2),var(--card));
+         border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .os-no{font-size:19px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;
+         letter-spacing:.5px}
+  .os-badge{font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:20px;letter-spacing:.5px}
+  .os-badge.live{background:rgba(34,197,94,.15);color:var(--green);border:1px solid rgba(34,197,94,.4)}
+  .os-badge.wait{background:rgba(141,153,171,.12);color:var(--mut);border:1px solid var(--line2)}
+  .os-badge.done{background:rgba(59,130,246,.13);color:var(--blue);border:1px solid rgba(59,130,246,.35)}
+  .os-badge.no{background:rgba(226,59,59,.13);color:var(--red);border:1px solid rgba(226,59,59,.35)}
+  .os-dl{width:100%;display:flex;align-items:baseline;gap:8px;margin-top:2px}
+  .os-dl .lb{font-size:11px;color:var(--mut2)}
+  .os-dl .tm{font-size:13.5px;font-weight:700;color:var(--txt);font-variant-numeric:tabular-nums}
+  .os-cd{margin-left:auto;font-size:15px;font-weight:800;font-variant-numeric:tabular-nums;
+         color:var(--green);letter-spacing:.5px}
+  .os-cd.warn{color:var(--gold)}
+  .os-cd.urgent{color:var(--red)}
+  .os-cd.over{color:var(--mut2);font-size:12.5px;font-weight:600}
+  .os-meta{padding:8px 14px;font-size:11.5px;color:var(--mut);border-bottom:1px solid var(--line);
+           display:flex;gap:6px;flex-wrap:wrap}
+  .os-lg{background:var(--card2);border:1px solid var(--line2);border-radius:4px;
+         padding:2px 7px;font-size:11px;color:var(--mut)}
+  .os-tb{width:100%;border-collapse:collapse;font-size:12.5px}
+  .os-tb th{font-size:10.5px;color:var(--mut2);font-weight:600;text-align:left;
+            padding:7px 8px;border-bottom:1px solid var(--line);letter-spacing:.5px}
+  .os-tb td{padding:7px 8px;border-bottom:1px solid rgba(36,44,58,.55);vertical-align:middle}
+  .os-tb tr:last-child td{border-bottom:0}
+  .os-tb .n{width:24px;color:var(--mut2);font-weight:700;font-variant-numeric:tabular-nums}
+  .os-tb .lg{width:52px;font-size:10.5px;color:var(--mut2)}
+  .os-tb .vs{font-weight:600}
+  .os-tb .vs i{font-style:normal;color:var(--mut2);margin:0 5px;font-size:11px}
+  .os-tb .ko{width:74px;font-size:11px;color:var(--mut);font-variant-numeric:tabular-nums;text-align:right}
+  .os-tb .od{width:112px;text-align:right;font-size:11px;color:var(--mut2);
+             font-variant-numeric:tabular-nums;letter-spacing:.2px}
+  .os-tb .od b{color:var(--txt);font-weight:700}
+  .os-ft{padding:9px 14px;font-size:11px;color:var(--mut2);background:var(--card2);
+         border-top:1px solid var(--line)}
+  @media(max-width:480px){
+    .os-tb .od{display:none}
+    .os-tb .lg{width:44px}
+  }
 </style>
 </head>
 <body>
@@ -129,6 +174,7 @@
 </div>
 
 <div class="subnav" id="subnav">
+  <a data-p="onsale">在售</a>
   <a data-p="pred" class="on">预测</a>
   <a data-p="rank">实力榜</a>
   <a data-p="model">模型能力</a>
@@ -137,6 +183,12 @@
 </div>
 
 <div class="wrap">
+
+  <div class="panel" data-p="onsale" hidden>
+  <div class="sec"><span class="bar"></span><h2>在售期次 · 投注截止倒计时</h2>
+    <span class="more" id="osUpd">—</span></div>
+  <div id="osBox"></div>
+  </div><!--/onsale-->
 
   <div class="panel" data-p="pred">
   <!-- 预测胜率 + 命中分布（核心指标，置顶） -->
@@ -274,6 +326,7 @@ fetch("/data.json?v=1786083679").then(function(r){return r.json()}).then(functio
       document.querySelectorAll(".tab").forEach(function(x){x.classList.toggle("on",x.dataset.l===CUR)});
       renderElo();}});
   [['winrate',renderWinRate],['r9',renderR9],['sfc',renderSFC],
+   ['onsale',renderOnsale],
    ['sources',renderSources],['posts',renderPosts]].forEach(function(x){
     try{ x[1](); }catch(e){ console.error('渲染失败:',x[0],e); }
   }); renderPosts(); renderPipeline(); renderTrain();
@@ -390,6 +443,98 @@ function renderWinRate(){
     '<div class="info">⚠️ <b>单期 14 场样本极小</b>，中 6 场或 10 场都在正常波动内（90% 概率落在 6–10 场）。'+
       '真正有意义的是<b>累积 10 期以上（140+ 场）</b>后的长期胜率 —— 那才能验证模型是否真有 '+(S.预测胜率*100).toFixed(0)+'% 的水平。<br>'+
       '本期预测已于 <b>'+L.锁定时间+'</b> 锁定（赛前），赛后将逐场对照，不可事后修改。</div>';
+}
+
+/* ===== 在售期次：赛程 + 投注截止倒计时 ===== */
+var OS_TIMER=null;
+function osParse(s){                     // "2026-08-18 22:00:00" → Date（按北京时间解读）
+  if(!s) return null;
+  var m=String(s).match(/(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?/);
+  if(!m) return null;
+  return new Date(Date.UTC(+m[1],+m[2]-1,+m[3],+m[4]-8,+m[5],+(m[6]||0)));
+}
+function osFmt(s){                       // 显示成 "08-18 周二 22:00"
+  var d=osParse(s); if(!d) return s||'—';
+  var w=['周日','周一','周二','周三','周四','周五','周六'];
+  var p=new Date(d.getTime()+8*3600e3);  // 转回北京时间取字段
+  var z=function(n){return (n<10?'0':'')+n};
+  return z(p.getUTCMonth()+1)+'-'+z(p.getUTCDate())+' '+w[p.getUTCDay()]+' '
+        +z(p.getUTCHours())+':'+z(p.getUTCMinutes());
+}
+function osCountdown(ms){
+  if(ms<=0) return {t:'已截止',c:'over'};
+  var s=Math.floor(ms/1000);
+  var d=Math.floor(s/86400), h=Math.floor(s%86400/3600),
+      m=Math.floor(s%3600/60), q=s%60;
+  var z=function(n){return (n<10?'0':'')+n};
+  var t = d>0 ? (d+'天 '+z(h)+':'+z(m)+':'+z(q)) : (z(h)+':'+z(m)+':'+z(q));
+  return {t:t, c: s<3600?'urgent' : (s<21600?'warn':'')};
+}
+function renderOnsale(){
+  var box=document.getElementById('osBox'); if(!box) return;
+  var O=(D&&D.onsale)||null;
+  if(!O||!O.期次||!O.期次.length){
+    box.innerHTML='<div class="box" style="padding:20px;color:#5d6879;text-align:center">'
+      +'暂无在售期次数据</div>'; return;
+  }
+  var u=document.getElementById('osUpd');
+  if(u) u.textContent='更新 '+(O.更新时间||'').slice(5,16);
+
+  box.innerHTML=O.期次.map(function(p,pi){
+    var live = p.状态==='在售';
+    var lg=p.联赛构成||{};
+    var lgs=Object.keys(lg).map(function(k){
+      return '<span class="os-lg">'+k+' ×'+lg[k]+'</span>'}).join('');
+    var rows=(p.赛程||[]).map(function(g){
+      var od='';
+      if(g.赔率&&g.赔率.length===3){
+        var mx=Math.max.apply(null,g.赔率);
+        od=g.赔率.map(function(v){
+          return v===Math.min.apply(null,g.赔率)?'<b>'+v.toFixed(2)+'</b>':v.toFixed(2);
+        }).join(' ');
+      }else{ od='<span style="color:#3d4757">暂无</span>'; }
+      return '<tr>'
+        +'<td class="n">'+g.场次+'</td>'
+        +'<td class="lg">'+(g.赛事||'')+'</td>'
+        +'<td class="vs">'+(g.主队||'')+'<i>vs</i>'+(g.客队||'')+'</td>'
+        +'<td class="ko">'+osFmt(g.开赛).slice(0,5)+'<br/>'
+          +'<span style="color:#3d4757">'+osFmt(g.开赛).slice(-5)+'</span></td>'
+        +'<td class="od">'+od+'</td>'
+      +'</tr>';
+    }).join('');
+    return '<div class="os'+(live?' live':'')+'">'
+      +'<div class="os-hd">'
+        +'<span class="os-no">第 '+p.期号+' 期</span>'
+        +'<span class="os-badge '+(live?'live':'wait')+'">'+(live?'● 在售中':'○ 已截止·待开奖')+'</span>'
+        +'<span class="os-badge '+(p.已预测?'done':'no')+'">'
+          +(p.已预测?'✓ 我们已预测':'✗ 我们尚未预测')+'</span>'
+        +'<div class="os-dl">'
+          +'<span class="lb">投注截止</span>'
+          +'<span class="tm">'+osFmt(p.截止)+'</span>'
+          +'<span class="os-cd" data-end="'+(p.截止||'')+'">—</span>'
+        +'</div>'
+      +'</div>'
+      +'<div class="os-meta">'+lgs
+        +'<span class="os-lg" style="border-color:#2f3949">首场 '+osFmt(p.首场)+'</span></div>'
+      +'<table class="os-tb"><thead><tr>'
+        +'<th></th><th>赛事</th><th>对阵</th><th style="text-align:right">开赛</th>'
+        +'<th style="text-align:right">平均赔率 胜/平/负</th>'
+      +'</tr></thead><tbody>'+rows+'</tbody></table>'
+      +'<div class="os-ft">时间为北京时间。赔率来自 500.com 平均赔率，仅作数据展示，'
+        +'本站不提供购彩功能，不构成任何投注建议。</div>'
+    +'</div>';
+  }).join('');
+
+  if(OS_TIMER) clearInterval(OS_TIMER);
+  var tick=function(){
+    document.querySelectorAll('.os-cd').forEach(function(el){
+      var end=osParse(el.dataset.end); if(!end){el.textContent='—';return;}
+      var r=osCountdown(end.getTime()-Date.now());
+      el.textContent=r.t;
+      el.className='os-cd'+(r.c?' '+r.c:'');
+    });
+  };
+  tick(); OS_TIMER=setInterval(tick,1000);
 }
 
 function renderSFC(){
