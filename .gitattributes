@@ -1,0 +1,5 @@
+# 构建产物：本地与 GitHub Actions 都会重新生成，冲突时一律取当前分支版本，
+# 随后由 build_web.py 覆盖重算。避免每次 bot 提交后 rebase 都撞车。
+engine/web_data.json      merge=ours
+engine/batches/ONSALE.json merge=ours
+site/data.json            merge=ours
