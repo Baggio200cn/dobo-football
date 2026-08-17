@@ -480,6 +480,39 @@ function renderOnsale(){
   var u=document.getElementById('osUpd');
   if(u) u.textContent='更新 '+(O.更新时间||'').slice(5,16);
 
+  var RZH={'3':'胜','1':'平','0':'负'};
+  var kjHtml=(O.开奖||[]).map(function(k){
+    var a=k.奖金||{};
+    var cells=k.开奖.split('').map(function(c,i){
+      var col=c==='3'?'var(--green)':(c==='1'?'var(--gold)':'var(--red)');
+      return '<span style="display:inline-block;width:26px;height:26px;line-height:26px;'
+        +'text-align:center;margin:2px;border-radius:5px;font-weight:800;font-size:13px;'
+        +'background:var(--card2);border:1px solid '+col+';color:'+col+'" '
+        +'title="第'+(i+1)+'场 '+RZH[c]+'">'+c+'</span>';
+    }).join('');
+    var pr=['一等奖','二等奖','任九'].map(function(t){
+      var v=a[t]||{};
+      return '<tr><td style="padding:5px 8px;color:var(--mut)">'+t+'</td>'
+        +'<td style="padding:5px 8px;text-align:right;font-variant-numeric:tabular-nums">'
+        +(v.注数||0).toLocaleString()+' 注</td>'
+        +'<td style="padding:5px 8px;text-align:right;font-weight:700;color:var(--gold);'
+        +'font-variant-numeric:tabular-nums">'+(v.单注||0).toLocaleString()+' 元</td></tr>';
+    }).join('');
+    return '<div class="os"><div class="os-hd">'
+      +'<span class="os-no">第 '+k.期号+' 期</span>'
+      +'<span class="os-badge done">✔ 已开奖</span>'
+      +'<div class="os-dl"><span class="lb">开奖时间</span>'
+      +'<span class="tm">'+osFmt(k.开奖时间)+'</span></div></div>'
+      +'<div style="padding:10px 12px 6px">'+cells+'</div>'
+      +'<div class="os-meta"><span class="os-lg">销量 '+(k.销量||0).toLocaleString()+' 元</span>'
+      +'<span class="os-lg">任九销量 '+(k.任九销量||0).toLocaleString()+' 元</span>'
+      +'<span class="os-lg">平局 '+k.开奖.split('').filter(function(c){return c==='1'}).length+' 场</span></div>'
+      +'<table style="width:100%;border-collapse:collapse;font-size:12.5px">'+pr+'</table>'
+      +'<div class="os-ft">中奖信息取自官方开奖数据，仅作结果公示。</div></div>';
+  }).join('');
+  if(kjHtml) kjHtml='<div class="sec" style="margin-top:4px"><span class="bar"></span>'
+    +'<h2>开奖公布 · 中奖信息</h2></div>'+kjHtml;
+
   box.innerHTML=O.期次.map(function(p,pi){
     var live = p.状态==='在售';
     var lg=p.联赛构成||{};
@@ -508,6 +541,10 @@ function renderOnsale(){
         +'<span class="os-badge '+(live?'live':'wait')+'">'+(live?'● 在售中':'○ 已截止·待开奖')+'</span>'
         +'<span class="os-badge '+(p.已预测?'done':'no')+'">'
           +(p.已预测?'✓ 我们已预测':(p.跳过?'⛔ 数据不足·不出票':'✗ 我们尚未预测'))+'</span>'
+        +(p.等级&&p.等级!=='A'
+           ?'<span class="os-badge no" title="降级出票，单独记账">▼ '+p.等级+' 级·'
+             +p.等级说明+'（单独记账）</span>'
+           :(p.等级==='A'?'<span class="os-badge done">A 级·标准</span>':''))
         +'<div class="os-dl">'
           +'<span class="lb">投注截止</span>'
           +'<span class="tm">'+osFmt(p.截止)+'</span>'
@@ -530,7 +567,7 @@ function renderOnsale(){
       +'<div class="os-ft">时间为北京时间。赔率来自 500.com 平均赔率，仅作数据展示，'
         +'本站不提供购彩功能，不构成任何投注建议。</div>'
     +'</div>';
-  }).join('');
+  }).join('') + kjHtml;
 
   if(OS_TIMER) clearInterval(OS_TIMER);
   var tick=function(){

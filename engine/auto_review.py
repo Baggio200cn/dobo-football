@@ -188,7 +188,9 @@ def show(L, R, warn):
 
 
 def ledger():
+    """A 级进主台账，B/C 级（降级出票）进独立台账，两者绝不混算。"""
     lp = BASE / "batches" / "SFC_LEDGER.json"
+    dp_fp = BASE / "batches" / "SFC_LEDGER_DEGRADED.json"
     led = []
     for f in sorted(glob.glob(str(BASE / "batches" / "sfc_*_LOCK.json"))):
         L = json.loads(Path(f).read_text(encoding="utf-8"))
@@ -204,17 +206,35 @@ def ledger():
         e = {"期号": L["期号"], "单式命中": hit,
              "预测胜率": L["单式"]["预测胜率"],
              "实际胜率": R.get("单式胜率", round(hit / 14, 4)),
-             "期望": exp, "偏差": dev, "实际平局数": nd}
+             "期望": exp, "偏差": dev, "实际平局数": nd,
+             "数据等级": L.get("数据等级", "A"),
+             "双方实测": (L.get("数据覆盖") or {}).get("双方实测")}
         for k in ("复式命中", "任九命中", "任九复式命中"):
             if k in R: e[k] = R[k]
         led.append(e)
     led.sort(key=lambda x: x["期号"])
-    lp.write_text(json.dumps(led, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    main_led = [x for x in led if x["数据等级"] == "A"]
+    deg_led = [x for x in led if x["数据等级"] != "A"]
+    lp.write_text(json.dumps(main_led, ensure_ascii=False, indent=1), encoding="utf-8")
+    dp_fp.write_text(json.dumps(deg_led, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    if deg_led:
+        h = sum(x["单式命中"] for x in deg_led); n = len(deg_led) * 14
+        print("\n" + "-" * 78)
+        print(f"  【降级台账 · 不并入主统计】{len(deg_led)} 期 · {n} 场 · 命中 {h} = {h/n:.1%}")
+        print(f"  {'期号':<8}{'等级':>5}{'实测':>6}{'预测':>8}{'实际':>8}{'偏差':>8}")
+        for x in deg_led:
+            print(f"  {x['期号']:<8}{x['数据等级']:>5}{str(x.get('双方实测','—')):>6}"
+                  f"{x['预测胜率']:>8.1%}{x['实际胜率']:>8.1%}{x['偏差']:>+8.2f}")
+        print("-" * 78)
+
+    led = main_led
     if led:
         h = sum(x["单式命中"] for x in led); n = len(led) * 14
         d = sum(x["实际平局数"] or 0 for x in led)
         print("\n" + "=" * 78)
-        print(f"  累积台账：{len(led)} 期 · {n} 场 · 命中 {h} = {h/n:.1%} · 平局 {d} 场 = {d/n:.1%}")
+        print(f"  主台账（A 级）：{len(led)} 期 · {n} 场 · 命中 {h} = {h/n:.1%} · 平局 {d} 场 = {d/n:.1%}")
         print("=" * 78)
         print(f"  {'期号':<8}{'预测':>8}{'实际':>8}{'偏差':>8}{'平局':>6}")
         for x in led:

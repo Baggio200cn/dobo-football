@@ -25,47 +25,76 @@ from model import elo_run, elo_1x2, implied_1x2, goal_tendency
 import sfc_lock as SL
 from lock26106 import best14, build_detail
 
-W_MKT = 0.55          # 市场权重
-MIN_COVER = 12        # 14 场里至少要有几场「双方均有实测 Elo」
+W_MKT = 0.55          # 双方均有实测 Elo 时的市场权重
 NEUTRAL_KW = ("社区盾", "超级杯", "欧洲超级杯")   # 中立场地赛事关键词
+CROSS_KW = ("欧冠", "欧罗巴", "欧协联", "欧联", "欧超杯")  # 跨联赛赛事 → 需 UEFA 校准
 CODE = {"H": "3", "D": "1", "A": "0"}
 ZH = {"H": "胜", "D": "平", "A": "负"}
 
+# 数据等级：按「双方均有实测 Elo」的场次数划分
+TIERS = [(12, "A", "标准"), (6, "B", "降级"), (0, "C", "纯市场")]
+
+
+def tier_of(cover):
+    for lo, g, name in TIERS:
+        if cover >= lo: return g, name
+    return "C", "纯市场"
+
 
 def resolve(zh, TM, elo):
-    """中文队名 → (英文名, 是否有实测 Elo)"""
+    """中文队名 → (英文名, 是否有实测 Elo, 所属 Div)"""
     v = TM.get(zh)
-    if v and v["en"] in elo:
-        return v["en"], True
-    if v:
-        return v["en"], False
-    return None, False
+    if not v: return None, False, None
+    return v["en"], (v["en"] in elo), v.get("div")
 
 
-def predict(period, sched, TM, elo, GT):
+def predict(period, sched, TM, elo, GT, div_of):
+    """核心原则：没信息就闭嘴。
+       只有【双方都有实测 Elo】时模型才参与投票（权重 0.45）；
+       否则市场权重 = 1.00，模型完全不发言。
+       依据：26103 期让一个没有信息的 Elo 以 45% 权重投票，贡献的是噪声，
+             实际只中 5/14、偏差 -2.22，为历史最差。"""
+    from euro import DIV2CTY, league_offset
     picks, cover = [], 0
     for g in sched:
-        neutral = any(k in (g.get("赛事") or "") for k in NEUTRAL_KW)
-        th, okh = resolve(g["主队"], TM, elo)
-        ta, oka = resolve(g["客队"], TM, elo)
+        ev = g.get("赛事") or ""
+        neutral = any(k in ev for k in NEUTRAL_KW)
+        cross = any(k in ev for k in CROSS_KW)
+        th, okh, dh = resolve(g["主队"], TM, elo)
+        ta, oka, da = resolve(g["客队"], TM, elo)
         both = okh and oka
         cover += both
+
+        od = g.get("赔率")
+        mk = implied_1x2(*od) if (od and len(od) == 3) else None
+
         eh = elo.get(th, 1500.0); ea = elo.get(ta, 1500.0)
+        adj = ""
+        if both and cross:
+            # 跨联赛：两边 Elo 来自互不相通的池子，用 UEFA 国家系数对表
+            ch = DIV2CTY.get(div_of.get(th, dh)); ca = DIV2CTY.get(div_of.get(ta, da))
+            if ch and ca and ch != ca:
+                eh += league_offset(ch); ea += league_offset(ca)
+                adj = f"UEFA({ch}/{ca})"
+
         gts = [GT[x] for x in (th, ta) if x in GT]
         gt = float(np.mean(gts)) if gts else None
         pe = elo_1x2(eh, ea, hfa=0 if neutral else 60, goal_tend=gt)
-        od = g.get("赔率")
-        mk = implied_1x2(*od) if (od and len(od) == 3) else None
-        if mk:
-            p = {k: W_MKT * mk[k] + (1 - W_MKT) * pe[k] for k in "HDA"}
-            s = sum(p.values()); p = {k: v / s for k, v in p.items()}
-            src = "Elo+市场"
+
+        if mk and both:
+            w = W_MKT; src = "Elo+市场" + ("·" + adj if adj else "")
+        elif mk:
+            w = 1.00; src = "纯市场（Elo缺数据，不参与）"
         else:
-            p = pe; src = "仅Elo"
+            w = 0.00; src = "仅Elo（无赔率）"
+        p = {k: w * mk[k] + (1 - w) * pe[k] for k in "HDA"} if mk else dict(pe)
+        s = sum(p.values()); p = {k: v / s for k, v in p.items()}
+
         code = max(p, key=p.get)
         picks.append({
             "场次": g["场次"], "赛事": g["赛事"], "主队": g["主队"], "客队": g["客队"],
             "主队EN": th, "客队EN": ta, "开赛": g["开赛"], "中立场": neutral,
+            "市场权重": round(w, 2), "UEFA校准": adj or None,
             "Elo主": round(eh), "Elo客": round(ea), "Elo差": round(eh - ea),
             "胜": round(p["H"], 3), "平": round(p["D"], 3), "负": round(p["A"], 3),
             "推荐码": CODE[code], "推荐": f"{ZH[code]}({CODE[code]})",
@@ -75,7 +104,7 @@ def predict(period, sched, TM, elo, GT):
     return picks, cover
 
 
-def make_lock(period, deadline, picks, cover, m):
+def make_lock(period, deadline, picks, cover, m, grade, gname):
     P = picks
     conf = np.array([p["置信"] for p in P])
     M = []
@@ -99,7 +128,11 @@ def make_lock(period, deadline, picks, cover, m):
     return {
         "期号": period, "截止": deadline, "锁定时间": str(dt.datetime.now())[:19],
         "玩法建议": "胜负彩14场", "自动生成": True,
-        "数据覆盖": {"双方实测": cover, "总场次": 14, "闸门": MIN_COVER},
+        "数据等级": grade, "等级说明": gname,
+        "单独记账": grade != "A",
+        "数据覆盖": {"双方实测": cover, "总场次": 14,
+                  "纯市场场次": sum(1 for p in picks if p["市场权重"] >= 1.0),
+                  "UEFA校准场次": sum(1 for p in picks if p["UEFA校准"])},
         "训练库": {"场次": int(len(m)), "联赛": int(m.Div.nunique())},
         "单式": {"串": single, "期望命中": round(float(conf.sum()), 2),
                 "预测胜率": round(float(conf.mean()), 4),
@@ -134,66 +167,74 @@ def main():
     elo, _ = elo_run(m)
     GT = goal_tendency(m)
 
+    # 球队 → 最近所属 Div（供 UEFA 跨联赛校准用）
+    div_of = {}
+    for x in m.itertuples():
+        div_of[x.HomeTeam] = x.Div; div_of[x.AwayTeam] = x.Div
+
     todo = [p for p in ON["期次"] if p["状态"] == "在售" and not p["已预测"]]
     if not todo:
         print("没有需要预测的在售期次。"); return []
 
-    made, skipped = [], []
+    made = []
     for p in todo:
         per = p["期号"]
-        print("=" * 84)
-        print(f"  第 {per} 期  截止 {p['截止']}")
-        print("=" * 84)
-        picks, cover = predict(per, p["赛程"], TM, elo, GT)
+        picks, cover = predict(per, p["赛程"], TM, elo, GT, div_of)
+        grade, gname = tier_of(cover)
         q = {}
         for x in picks: q[x["匹配"]] = q.get(x["匹配"], 0) + 1
-        print(f"  数据覆盖：双方实测 {cover}/14   明细 {q}")
+        nmkt = sum(1 for x in picks if x["市场权重"] >= 1.0)
+        nuefa = sum(1 for x in picks if x["UEFA校准"])
 
-        if cover < MIN_COVER:
-            miss = [f"第{x['场次']}场 {x['主队']}vs{x['客队']}"
-                    for x in picks if x["匹配"] != "实测"]
-            reason = (f"双方实测仅 {cover}/14，低于闸门 {MIN_COVER}。"
-                      f"以下场次球队不在我们的 36 联赛数据库内，Elo 只能靠先验估算：")
-            print(f"\n  ⛔ 拒绝出票：{reason}")
-            for s in miss[:8]: print(f"       {s}")
-            if len(miss) > 8: print(f"       …… 另有 {len(miss)-8} 场")
-            print(f"\n  依据：26103 期（同为欧战）双方实测不足，实际只中 5/14，偏差 -2.22，为历史最差。")
-            skipped.append({"期号": per, "截止": p["截止"], "覆盖": cover,
-                            "闸门": MIN_COVER, "原因": reason, "缺数据场次": miss,
-                            "赛事构成": p.get("联赛构成", {})})
-            print()
-            continue
+        print("=" * 88)
+        print(f"  第 {per} 期  截止 {p['截止']}   数据等级 {grade}（{gname}）")
+        print("=" * 88)
+        print(f"  双方实测 {cover}/14   明细 {q}")
+        print(f"  纯市场场次 {nmkt}（Elo 缺数据，权重 0，不参与投票）· UEFA 校准 {nuefa} 场")
+        if grade != "A":
+            print(f"\n  ⚠ 降级出票：本期计入**独立台账**，不并入主胜率统计。")
+            print(f"    依据：26103 期（欧战）曾让无信息的 Elo 以 45% 权重投票，")
+            print(f"          实际只中 5/14、偏差 -2.22，为历史最差。现改为无数据即弃权。")
 
         obj = {"期号": per, "截止": p["截止"], "生成时间": str(dt.datetime.now())[:19],
-               "单式": "".join(x["推荐码"] for x in picks),
+               "数据等级": grade, "单式": "".join(x["推荐码"] for x in picks),
                "训练库场次": int(len(m)), "训练库联赛": int(m.Div.nunique()),
                "picks": picks}
         (BASE / "batches" / f"sfc_{per}.json").write_text(
             json.dumps(obj, ensure_ascii=False, indent=1), encoding="utf-8")
-        lock = make_lock(per, p["截止"], picks, cover, m)
+        lock = make_lock(per, p["截止"], picks, cover, m, grade, gname)
         (BASE / "batches" / f"sfc_{per}_LOCK.json").write_text(
             json.dumps(lock, ensure_ascii=False, indent=1), encoding="utf-8")
 
         S = lock["单式"]; F = lock["复式16元"]
-        print(f"\n  {'场':>3} {'赛事':<6}{'对阵':<26}{'胜':>6}{'平':>6}{'负':>6}{'荐':>4}{'置信':>7}")
+        hedged = {d["场次"]: d for d in F["明细"] if d["选项数"] > 1}
+        print(f"\n  {'场':>3} {'赛事':<6}{'对阵':<26}{'胜':>6}{'平':>6}{'负':>6}"
+              f"{'荐':>4}{'置信':>7}{'权重':>6}  {'复式加保'}")
+        print("  " + "-" * 86)
         for x in picks:
+            h = hedged.get(x["场次"])
+            tag = f"★ {h['中文']} {h['覆盖概率']:.0%}" if h else ""
             print(f"  {x['场次']:>3} {x['赛事']:<6}{x['主队']+'vs'+x['客队']:<26}"
                   f"{x['胜']:>6.2f}{x['平']:>6.2f}{x['负']:>6.2f}"
-                  f"{x['推荐码']:>4}{x['置信']:>7.1%}")
+                  f"{x['推荐码']:>4}{x['置信']:>7.1%}{x['市场权重']:>6.2f}  {tag}")
+        print("  " + "-" * 86)
+        dp = np.array([x["平"] for x in picks])
+        print(f"\n  【平局】期望 {dp.sum():.2f} 场 · 逐场 "
+              + " ".join(f"{v:.0%}" for v in dp))
+        top = sorted(picks, key=lambda x: -x["平"])[:3]
+        print(f"    平局概率最高三场：" + "、".join(
+            f"第{x['场次']}场 {x['主队']}vs{x['客队']}({x['平']:.0%})" for x in top))
+        print(f"    单式选平 {S['串'].count('1')} 场 · 复式加保位含平局 "
+              f"{sum(1 for d in F['明细'] if d['选项数']>1 and '1' in d['选项'])} 场")
         print(f"\n  单式 {S['串']}  预测胜率 {S['预测胜率']:.1%} · 期望命中 {S['期望命中']}/14")
         print(f"  复式 {F['注数']} 注 {F['金额']} 元 · 加保第 {F['加保场']} 场 · "
               f"覆盖胜率 {F['覆盖胜率']:.1%} · 期望命中 {F['期望命中']}/14")
-        print(f"  ✅ 已锁定 sfc_{per}_LOCK.json\n")
-        made.append(per)
+        print(f"  ✅ 已锁定 sfc_{per}_LOCK.json（等级 {grade}）\n")
+        made.append((per, grade))
 
-    fp = BASE / "batches" / "SKIPPED.json"
-    fp.write_text(json.dumps({"更新时间": str(dt.datetime.now())[:19], "期次": skipped},
-                             ensure_ascii=False, indent=1), encoding="utf-8")
-    print("=" * 84)
-    print(f"  自动出票 {len(made)} 期" + (f"：{', '.join(made)}" if made else "") +
-          f" · 拒绝 {len(skipped)} 期" +
-          (f"：{', '.join(s['期号'] for s in skipped)}" if skipped else ""))
-    return made
+    print("=" * 88)
+    print("  自动出票 " + " · ".join(f"{a}({b}级)" for a, b in made))
+    return [a for a, _ in made]
 
 
 if __name__ == "__main__":

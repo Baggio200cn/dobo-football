@@ -75,6 +75,10 @@ def main():
         for p in ons["期次"]:
             # 预测可能刚刚生成，重新判定
             p["已预测"] = (BAT / f"sfc_{p['期号']}_LOCK.json").exists()
+            if p["已预测"]:
+                lk = load(BAT / f"sfc_{p['期号']}_LOCK.json", {})
+                p["等级"] = lk.get("数据等级", "A")
+                p["等级说明"] = lk.get("等级说明", "标准")
             if p["期号"] in skip and not p["已预测"]:
                 s = skip[p["期号"]]
                 p["跳过"] = {"原因": s["原因"], "覆盖": s["覆盖"],
