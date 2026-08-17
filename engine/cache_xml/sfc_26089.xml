@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+	<PeriodicalNO>26089</PeriodicalNO>
+	<Result>3,1,1,0,3,3,3,3,3,3,3,1,1,3</Result>
+	<EndTime>2026-06-29 22:00:00</EndTime>
+	<ResultTime>2026-07-04 00:00:00</ResultTime>
+	<EncashTime>2026-09-01 00:00:00</EncashTime>
+	<Money1>39,882</Money1>
+	<Num1>500</Num1>
+	<TotalMoney>44,511,382</TotalMoney>
+	<CCMoney>0</CCMoney>
+	<IsOutMoney>1</IsOutMoney>
+	<FirstMatchTime>2026-06-29 22:30:00</FirstMatchTime>
+	<StartTime>2026-06-28 18:00:00</StartTime>
+	<intoMoneyDate>2026-07-04 14:22:26</intoMoneyDate>
+	<AddMoney1>0</AddMoney1>
+	<AddNineMoney>0</AddNineMoney>
+	<Money2>673</Money2>
+	<Num2>12688</Num2>
+	<NineMoney>683</NineMoney>
+	<NineNum>19540</NineNum>
+	<NineTotalMoney>20,880,846</NineTotalMoney>
+	<AddMoneySF>0</AddMoneySF>
+	<AddMoneyRJ>0</AddMoneyRJ>
+	<DshmFaEndTime></DshmFaEndTime>
+	<DshmEndTime></DshmEndTime>
+	<DshmUpEndTime></DshmUpEndTime>
+	<AllMatchFinished>1</AllMatchFinished>
+	<MatchTeams>
+		<MatchTeam HomeTeamName="巴西" GuestTeamName="日本" MatchScore="2:1" Result="3" MatchTime="2026-06-30 01:00:00" AverageOdds="1.75 3.52 5.04" OrderNum="1" FixtureID="1359161" HomeTeamID="11" GuestTeamID="29" stageid="26220" seasonid="19476" stagemode="3" homestanding="5" gueststanding="15" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="1.00" AwayMoneyLine="0.84" HandicapLineName="半球/一球" winkl="0.95" drawkl="0.95" lostkl="0.95" win="6.14" draw="11.02" lost="36.30" />
+		<MatchTeam HomeTeamName="德国" GuestTeamName="巴拉圭" MatchScore="1:1" Result="1" MatchTime="2026-06-30 04:30:00" AverageOdds="1.33 5.10 9.39" OrderNum="2" FixtureID="1359157" HomeTeamID="13" GuestTeamID="24" stageid="26220" seasonid="19476" stagemode="3" homestanding="10" gueststanding="53" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="1.02" AwayMoneyLine="0.82" HandicapLineName="球半" winkl="0.95" drawkl="0.95" lostkl="0.95" win="5.55" draw="18.60" lost="77.00" />
+		<MatchTeam HomeTeamName="荷兰" GuestTeamName="摩洛哥" MatchScore="1:1" Result="1" MatchTime="2026-06-30 09:00:00" AverageOdds="2.35 3.09 3.29" OrderNum="3" FixtureID="1359158" HomeTeamID="18" GuestTeamID="38" stageid="26220" seasonid="19476" stagemode="3" homestanding="7" gueststanding="14" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="1.00" AwayMoneyLine="0.84" HandicapLineName="平手/半球" winkl="0.95" drawkl="0.95" lostkl="0.95" win="15.66" draw="9.98" lost="15.94" />
+		<MatchTeam HomeTeamName="科特迪瓦" GuestTeamName="挪威" MatchScore="1:2" Result="0" MatchTime="2026-07-01 01:00:00" AverageOdds="3.52 3.35 2.13" OrderNum="4" FixtureID="1359169" HomeTeamID="59" GuestTeamID="31" stageid="26220" seasonid="19476" stagemode="3" homestanding="46" gueststanding="43" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="1.02" AwayMoneyLine="0.82" HandicapLineName="受平手/半球" winkl="0.96" drawkl="0.94" lostkl="0.95" win="15.19" draw="9.10" lost="11.39" />
+		<MatchTeam HomeTeamName="法国" GuestTeamName="瑞典" MatchScore="3:0" Result="3" MatchTime="2026-07-01 05:00:00" AverageOdds="1.28 5.84 9.81" OrderNum="5" FixtureID="1359165" HomeTeamID="10" GuestTeamID="27" stageid="26220" seasonid="19476" stagemode="3" homestanding="2" gueststanding="27" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="0.82" AwayMoneyLine="1.02" HandicapLineName="球半" winkl="0.95" drawkl="0.95" lostkl="0.93" win="5.38" draw="37.72" lost="92.28" />
+		<MatchTeam HomeTeamName="墨西哥" GuestTeamName="厄瓜多尔" MatchScore="2:0" Result="3" MatchTime="2026-07-01 09:00:00" AverageOdds="2.28 2.73 4.04" OrderNum="6" FixtureID="1359174" HomeTeamID="16" GuestTeamID="33" stageid="26220" seasonid="19476" stagemode="3" homestanding="19" gueststanding="24" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="0.94" AwayMoneyLine="0.90" HandicapLineName="半球" winkl="0.96" drawkl="0.95" lostkl="0.94" win="15.80" draw="10.81" lost="20.85" />
+		<MatchTeam HomeTeamName="英格兰" GuestTeamName="刚果(金)" MatchScore="2:1" Result="3" MatchTime="2026-07-02 00:00:00" AverageOdds="1.28 5.09 13.04" OrderNum="7" FixtureID="1359178" HomeTeamID="15" GuestTeamID="68" stageid="26220" seasonid="19476" stagemode="3" homestanding="4" gueststanding="61" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="0.92" AwayMoneyLine="0.92" HandicapLineName="球半" winkl="0.95" drawkl="0.95" lostkl="0.93" win="5.88" draw="31.12" lost="117.41" />
+		<MatchTeam HomeTeamName="美国" GuestTeamName="波黑" MatchScore="2:0" Result="3" MatchTime="2026-07-02 08:00:00" AverageOdds="1.35 5.07 8.65" OrderNum="8" FixtureID="1359181" HomeTeamID="2" GuestTeamID="80" stageid="26220" seasonid="19476" stagemode="3" homestanding="16" gueststanding="74" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="0.91" AwayMoneyLine="0.93" HandicapLineName="球半" winkl="0.95" drawkl="0.95" lostkl="0.95" win="8.47" draw="12.08" lost="48.95" />
+		<MatchTeam HomeTeamName="西班牙" GuestTeamName="奥地利" MatchScore="3:0" Result="3" MatchTime="2026-07-03 03:00:00" AverageOdds="1.33 5.08 9.71" OrderNum="9" FixtureID="1359190" HomeTeamID="12" GuestTeamID="53" stageid="26220" seasonid="19476" stagemode="3" homestanding="3" gueststanding="22" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="0.98" AwayMoneyLine="0.86" HandicapLineName="球半" winkl="0.95" drawkl="0.95" lostkl="0.94" win="7.61" draw="19.43" lost="62.51" />
+		<MatchTeam HomeTeamName="葡萄牙" GuestTeamName="克罗地亚" MatchScore="2:1" Result="3" MatchTime="2026-07-03 07:00:00" AverageOdds="1.70 3.65 5.29" OrderNum="10" FixtureID="1359187" HomeTeamID="20" GuestTeamID="36" stageid="26220" seasonid="19476" stagemode="3" homestanding="6" gueststanding="13" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="0.84" AwayMoneyLine="1.00" HandicapLineName="半球/一球" winkl="0.95" drawkl="0.95" lostkl="0.95" win="16.28" draw="22.55" lost="36.32" />
+		<MatchTeam HomeTeamName="瑞士" GuestTeamName="阿尔及利亚" MatchScore="2:0" Result="3" MatchTime="2026-07-03 11:00:00" AverageOdds="1.98 3.20 4.26" OrderNum="11" FixtureID="1359192" HomeTeamID="46" GuestTeamID="69" stageid="26220" seasonid="19476" stagemode="3" homestanding="20" gueststanding="37" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="0.94" AwayMoneyLine="0.90" HandicapLineName="半球" winkl="0.95" drawkl="0.95" lostkl="0.95" win="18.37" draw="19.97" lost="35.80" />
+		<MatchTeam HomeTeamName="澳大利亚" GuestTeamName="埃及" MatchScore="1:1" Result="1" MatchTime="2026-07-04 02:00:00" AverageOdds="3.52 2.84 2.39" OrderNum="12" FixtureID="1359197" HomeTeamID="45" GuestTeamID="41" stageid="26220" seasonid="19476" stagemode="3" homestanding="26" gueststanding="33" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="0.85" AwayMoneyLine="0.99" HandicapLineName="受平手/半球" winkl="0.94" drawkl="0.95" lostkl="0.95" win="20.67" draw="8.55" lost="12.69" />
+		<MatchTeam HomeTeamName="阿根廷" GuestTeamName="佛得角" MatchScore="1:1" Result="1" MatchTime="2026-07-04 06:00:00" AverageOdds="1.13 8.49 21.01" OrderNum="13" FixtureID="1359194" HomeTeamID="14" GuestTeamID="152" stageid="26220" seasonid="19476" stagemode="3" homestanding="1" gueststanding="72" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="1.00" AwayMoneyLine="0.84" HandicapLineName="两球/两球半" winkl="0.96" drawkl="0.93" lostkl="0.92" win="3.08" draw="213.80" lost="239.70" />
+		<MatchTeam HomeTeamName="哥伦比亚" GuestTeamName="加纳" MatchScore="1:0" Result="3" MatchTime="2026-07-04 09:30:00" AverageOdds="1.43 4.28 8.43" OrderNum="14" FixtureID="1359196" HomeTeamID="6" GuestTeamID="60" stageid="26220" seasonid="19476" stagemode="3" homestanding="12" gueststanding="77" SimpleGBName="世界杯" BackColor="#0000FF" HomeMoneyLine="1.02" AwayMoneyLine="0.82" HandicapLineName="一球/球半" winkl="0.95" drawkl="0.94" lostkl="0.94" win="4.86" draw="14.69" lost="43.33" />
+	</MatchTeams>
+</xml>

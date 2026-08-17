@@ -3,11 +3,13 @@ name: 每周自动预测与复盘
 on:
   schedule:
     # 北京时间 = UTC+8
-    - cron: '0 12 * * 5'   # 周五 20:00 北京 → 出预测
-    # 自动复盘：胜负彩近乎隔日开奖，开奖回填多在北京时间上午。
-    # 每天跑两次，auto_review.py 幂等（已复盘跳过、未开奖跳过），多跑无害。
-    - cron: '0 4  * * *'   # 每天 12:00 北京 → 自动复盘
-    - cron: '0 13 * * *'   # 每天 21:00 北京 → 自动复盘（补当日晚开的）
+    # 胜负彩近乎隔日开奖，不再按周跑。每次运行都做全套：
+    #   auto_review  已开奖未复盘 → 结算
+    #   fetch_onsale 发现新挂出的在售期次
+    #   predict_any  在售且未出票 → 覆盖率够就出票，不够则拒绝并写明原因
+    # 三者都幂等，多跑无害。
+    - cron: '0 4  * * *'   # 每天 12:00 北京
+    - cron: '0 13 * * *'   # 每天 21:00 北京
   workflow_dispatch:        # 允许手动触发
     inputs:
       task:
@@ -49,7 +51,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "kind=${{ inputs.task }}" >> $GITHUB_OUTPUT
-          elif [ "${{ github.event.schedule }}" = "0 12 * * 5" ]; then
+          elif [ "${{ github.event.schedule }}" = "0 4 * * *" ]; then
             echo "kind=predict" >> $GITHUB_OUTPUT
           else
             echo "kind=review" >> $GITHUB_OUTPUT
@@ -58,6 +60,11 @@ jobs:
       - name: 自动复盘（扫描未复盘期次，开奖即结算）
         working-directory: engine
         run: python auto_review.py
+
+      - name: 更新中英队名对照表（自举，增量）
+        working-directory: engine
+        run: python build_teammap.py 40 || echo "对照表更新失败，沿用旧表"
+        continue-on-error: true
 
       - name: 更新数据（36 联赛）
         working-directory: engine

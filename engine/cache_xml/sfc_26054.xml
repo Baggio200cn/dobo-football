@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+	<PeriodicalNO>26054</PeriodicalNO>
+	<Result>1,1,1,0,0,3,0,3,1,1,1,1,1,3</Result>
+	<EndTime>2026-04-05 20:30:00</EndTime>
+	<ResultTime>2026-04-06 00:00:00</ResultTime>
+	<EncashTime>2026-06-04 00:00:00</EncashTime>
+	<Money1>0</Money1>
+	<Num1>0</Num1>
+	<TotalMoney>13,755,664</TotalMoney>
+	<CCMoney>7,861,939</CCMoney>
+	<IsOutMoney>1</IsOutMoney>
+	<FirstMatchTime>2026-04-05 21:00:00</FirstMatchTime>
+	<StartTime>2026-04-01 20:00:00</StartTime>
+	<intoMoneyDate>2026-04-06 10:31:33</intoMoneyDate>
+	<AddMoney1>0</AddMoney1>
+	<AddNineMoney>0</AddNineMoney>
+	<Money2>176,072</Money2>
+	<Num2>15</Num2>
+	<NineMoney>23,639</NineMoney>
+	<NineNum>421</NineNum>
+	<NineTotalMoney>15,550,194</NineTotalMoney>
+	<AddMoneySF>0</AddMoneySF>
+	<AddMoneyRJ>0</AddMoneyRJ>
+	<DshmFaEndTime></DshmFaEndTime>
+	<DshmEndTime></DshmEndTime>
+	<DshmUpEndTime></DshmUpEndTime>
+	<AllMatchFinished>1</AllMatchFinished>
+	<MatchTeams>
+		<MatchTeam HomeTeamName="西汉姆联" GuestTeamName="利兹联" MatchScore="2:2" Result="1" MatchTime="2026-04-05 23:30:00" AverageOdds="2.81 3.33 2.49" OrderNum="1" FixtureID="1393803" HomeTeamID="1286" GuestTeamID="1015" stageid="26915" seasonid="10629" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="英足总杯" BackColor="#003366" HomeMoneyLine="1.04" AwayMoneyLine="0.74" HandicapLineName="平手" winkl="0.94" drawkl="0.94" lostkl="0.94" win="39.92" draw="13.12" lost="19.31" />
+		<MatchTeam HomeTeamName="柏林联合" GuestTeamName="圣保利" MatchScore="1:1" Result="1" MatchTime="2026-04-05 21:30:00" AverageOdds="2.05 3.17 3.92" OrderNum="2" FixtureID="1205943" HomeTeamID="660" GuestTeamID="495" stageid="22219" seasonid="9117" stagemode="1" homestanding="12" gueststanding="16" SimpleGBName="德甲" BackColor="#990099" HomeMoneyLine="1.12" AwayMoneyLine="0.72" HandicapLineName="半球" winkl="0.96" drawkl="0.94" lostkl="0.93" win="11.29" draw="7.85" lost="20.45" />
+		<MatchTeam HomeTeamName="法兰克福" GuestTeamName="科隆" MatchScore="2:2" Result="1" MatchTime="2026-04-05 23:30:00" AverageOdds="1.94 3.69 3.70" OrderNum="3" FixtureID="1206156" HomeTeamID="791" GuestTeamID="932" stageid="22219" seasonid="9117" stagemode="1" homestanding="7" gueststanding="15" SimpleGBName="德甲" BackColor="#990099" HomeMoneyLine="0.92" AwayMoneyLine="0.92" HandicapLineName="半球" winkl="0.95" drawkl="0.95" lostkl="0.95" win="16.68" draw="10.87" lost="24.05" />
+		<MatchTeam HomeTeamName="克雷莫纳" GuestTeamName="博洛尼亚" MatchScore="1:2" Result="0" MatchTime="2026-04-05 21:00:00" AverageOdds="3.38 3.32 2.17" OrderNum="4" FixtureID="1199648" HomeTeamID="933" GuestTeamID="707" stageid="22159" seasonid="9080" stagemode="1" homestanding="17" gueststanding="9" SimpleGBName="意甲" BackColor="#0066FF" HomeMoneyLine="1.02" AwayMoneyLine="0.82" HandicapLineName="受平手/半球" winkl="0.97" drawkl="0.95" lostkl="0.93" win="13.62" draw="7.53" lost="7.75" />
+		<MatchTeam HomeTeamName="比萨" GuestTeamName="都灵" MatchScore="0:1" Result="0" MatchTime="2026-04-06 00:00:00" AverageOdds="3.15 3.01 2.45" OrderNum="5" FixtureID="1199654" HomeTeamID="1994" GuestTeamID="776" stageid="22159" seasonid="9080" stagemode="1" homestanding="19" gueststanding="14" SimpleGBName="意甲" BackColor="#0066FF" HomeMoneyLine="0.78" AwayMoneyLine="1.06" HandicapLineName="受平手/半球" winkl="0.95" drawkl="0.95" lostkl="0.94" win="8.50" draw="4.86" lost="8.64" />
+		<MatchTeam HomeTeamName="国米" GuestTeamName="罗马" MatchScore="5:2" Result="3" MatchTime="2026-04-06 02:45:00" AverageOdds="1.60 3.96 5.63" OrderNum="6" FixtureID="1199649" HomeTeamID="846" GuestTeamID="1032" stageid="22159" seasonid="9080" stagemode="1" homestanding="1" gueststanding="6" SimpleGBName="意甲" BackColor="#0066FF" HomeMoneyLine="0.98" AwayMoneyLine="0.86" HandicapLineName="一球" winkl="0.95" drawkl="0.95" lostkl="0.95" win="6.27" draw="8.55" lost="30.52" />
+		<MatchTeam HomeTeamName="瓦伦西亚" GuestTeamName="塞尔塔" MatchScore="2:3" Result="0" MatchTime="2026-04-05 22:15:00" AverageOdds="2.36 3.20 3.11" OrderNum="7" FixtureID="1215928" HomeTeamID="1243" GuestTeamID="457" stageid="22267" seasonid="9124" stagemode="1" homestanding="13" gueststanding="6" SimpleGBName="西甲" BackColor="#006633" HomeMoneyLine="1.00" AwayMoneyLine="0.84" HandicapLineName="平手/半球" winkl="0.95" drawkl="0.94" lostkl="0.94" win="6.19" draw="9.40" lost="8.73" />
+		<MatchTeam HomeTeamName="皇家奥维耶多" GuestTeamName="塞维利亚" MatchScore="1:0" Result="3" MatchTime="2026-04-06 00:30:00" AverageOdds="2.82 2.94 2.76" OrderNum="8" FixtureID="1215933" HomeTeamID="629" GuestTeamID="464" stageid="22267" seasonid="9124" stagemode="1" homestanding="20" gueststanding="16" SimpleGBName="西甲" BackColor="#006633" HomeMoneyLine="0.90" AwayMoneyLine="0.94" HandicapLineName="平手" winkl="0.95" drawkl="0.95" lostkl="0.95" win="10.99" draw="4.59" lost="13.97" />
+		<MatchTeam HomeTeamName="阿拉维斯" GuestTeamName="奥萨苏纳" MatchScore="2:2" Result="1" MatchTime="2026-04-06 03:00:00" AverageOdds="2.67 3.10 2.79" OrderNum="9" FixtureID="1215884" HomeTeamID="542" GuestTeamID="622" stageid="22267" seasonid="9124" stagemode="1" homestanding="15" gueststanding="11" SimpleGBName="西甲" BackColor="#006633" HomeMoneyLine="0.90" AwayMoneyLine="0.94" HandicapLineName="平手" winkl="0.95" drawkl="0.95" lostkl="0.95" win="19.98" draw="7.60" lost="14.03" />
+		<MatchTeam HomeTeamName="昂热" GuestTeamName="里昂" MatchScore="0:0" Result="1" MatchTime="2026-04-05 21:00:00" AverageOdds="5.19 3.92 1.64" OrderNum="10" FixtureID="1205723" HomeTeamID="597" GuestTeamID="997" stageid="22218" seasonid="9118" stagemode="1" homestanding="12" gueststanding="5" SimpleGBName="法甲" BackColor="#663333" HomeMoneyLine="0.84" AwayMoneyLine="1.00" HandicapLineName="受一球" winkl="0.97" drawkl="0.96" lostkl="0.93" win="34.10" draw="30.69" lost="15.38" />
+		<MatchTeam HomeTeamName="勒阿弗尔" GuestTeamName="欧塞尔" MatchScore="1:1" Result="1" MatchTime="2026-04-05 23:15:00" AverageOdds="2.42 3.07 3.14" OrderNum="11" FixtureID="1205821" HomeTeamID="982" GuestTeamID="1146" stageid="22218" seasonid="9118" stagemode="1" homestanding="14" gueststanding="16" SimpleGBName="法甲" BackColor="#663333" HomeMoneyLine="0.98" AwayMoneyLine="0.86" HandicapLineName="平手/半球" winkl="0.94" drawkl="0.95" lostkl="0.95" win="7.15" draw="6.95" lost="9.21" />
+		<MatchTeam HomeTeamName="洛里昂" GuestTeamName="巴黎FC" MatchScore="1:1" Result="1" MatchTime="2026-04-05 23:15:00" AverageOdds="2.36 3.24 3.07" OrderNum="12" FixtureID="1205724" HomeTeamID="980" GuestTeamID="4599" stageid="22218" seasonid="9118" stagemode="1" homestanding="10" gueststanding="13" SimpleGBName="法甲" BackColor="#663333" HomeMoneyLine="1.06" AwayMoneyLine="0.78" HandicapLineName="平手/半球" winkl="0.94" drawkl="0.95" lostkl="0.94" win="9.29" draw="8.07" lost="6.27" />
+		<MatchTeam HomeTeamName="梅斯" GuestTeamName="南特" MatchScore="0:0" Result="1" MatchTime="2026-04-05 23:15:00" AverageOdds="2.86 3.26 2.49" OrderNum="13" FixtureID="1205876" HomeTeamID="1084" GuestTeamID="1129" stageid="22218" seasonid="9118" stagemode="1" homestanding="18" gueststanding="17" SimpleGBName="法甲" BackColor="#663333" HomeMoneyLine="1.08" AwayMoneyLine="0.76" HandicapLineName="平手" winkl="0.95" drawkl="0.95" lostkl="0.95" win="5.49" draw="5.09" lost="6.85" />
+		<MatchTeam HomeTeamName="摩纳哥" GuestTeamName="马赛" MatchScore="2:1" Result="3" MatchTime="2026-04-06 02:45:00" AverageOdds="2.09 3.70 3.25" OrderNum="14" FixtureID="1205775" HomeTeamID="1105" GuestTeamID="1064" stageid="22218" seasonid="9118" stagemode="1" homestanding="7" gueststanding="4" SimpleGBName="法甲" BackColor="#663333" HomeMoneyLine="0.80" AwayMoneyLine="1.04" HandicapLineName="平手/半球" winkl="0.95" drawkl="0.95" lostkl="0.94" win="11.60" draw="7.79" lost="19.43" />
+	</MatchTeams>
+</xml>

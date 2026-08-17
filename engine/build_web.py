@@ -61,8 +61,24 @@ def main():
         fetch_onsale.main()
     except Exception as e:
         print(f"  ⚠ 在售期次抓取失败（沿用上次结果）：{e}")
+
+    # 4.6 自动预测：在售且尚未出票的期次，够格就出，不够格记入 SKIPPED
+    try:
+        import predict_any
+        predict_any.main()
+    except Exception as e:
+        print(f"  ⚠ 自动预测失败：{e}")
+
     ons = load(BAT / "ONSALE.json", {})
     if ons.get("期次"):
+        skip = {s["期号"]: s for s in load(BAT / "SKIPPED.json", {}).get("期次", [])}
+        for p in ons["期次"]:
+            # 预测可能刚刚生成，重新判定
+            p["已预测"] = (BAT / f"sfc_{p['期号']}_LOCK.json").exists()
+            if p["期号"] in skip and not p["已预测"]:
+                s = skip[p["期号"]]
+                p["跳过"] = {"原因": s["原因"], "覆盖": s["覆盖"],
+                            "闸门": s["闸门"], "缺数据场次": s["缺数据场次"]}
         web["onsale"] = ons
 
     # 5 写出

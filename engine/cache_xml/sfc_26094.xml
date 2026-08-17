@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+	<PeriodicalNO>26094</PeriodicalNO>
+	<Result>3,0,3,1,3,0,3,3,0,1,0,0,1,3</Result>
+	<EndTime>2026-07-21 22:00:00</EndTime>
+	<ResultTime>2026-07-24 00:00:00</ResultTime>
+	<EncashTime>2026-09-21 00:00:00</EncashTime>
+	<Money1>2,859,355</Money1>
+	<Num1>2</Num1>
+	<TotalMoney>12,764,978</TotalMoney>
+	<CCMoney>0</CCMoney>
+	<IsOutMoney>1</IsOutMoney>
+	<FirstMatchTime>2026-07-21 22:30:00</FirstMatchTime>
+	<StartTime>2026-07-19 20:00:00</StartTime>
+	<intoMoneyDate>2026-07-24 10:35:55</intoMoneyDate>
+	<AddMoney1>0</AddMoney1>
+	<AddNineMoney>0</AddNineMoney>
+	<Money2>23,794</Money2>
+	<Num2>103</Num2>
+	<NineMoney>11,533</NineMoney>
+	<NineNum>652</NineNum>
+	<NineTotalMoney>11,749,264</NineTotalMoney>
+	<AddMoneySF>0</AddMoneySF>
+	<AddMoneyRJ>0</AddMoneyRJ>
+	<DshmFaEndTime></DshmFaEndTime>
+	<DshmEndTime></DshmEndTime>
+	<DshmUpEndTime></DshmUpEndTime>
+	<AllMatchFinished>1</AllMatchFinished>
+	<MatchTeams>
+		<MatchTeam HomeTeamName="萨巴赫" GuestTeamName="古比斯" MatchScore="1:0" Result="3" MatchTime="2026-07-22 00:00:00" AverageOdds="1.44 4.48 6.26" OrderNum="1" FixtureID="1446632" HomeTeamID="10810" GuestTeamID="841" stageid="28008" seasonid="19943" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧冠" BackColor="#F75000" HomeMoneyLine="0.84" AwayMoneyLine="0.94" HandicapLineName="一球/球半" winkl="0.93" drawkl="0.91" lostkl="0.91" win="35.19" draw="47.29" lost="143.13" />
+		<MatchTeam HomeTeamName="奥胡斯" GuestTeamName="波兹南莱赫" MatchScore="1:4" Result="0" MatchTime="2026-07-22 01:00:00" AverageOdds="2.48 3.21 2.78" OrderNum="2" FixtureID="1427652" HomeTeamID="609" GuestTeamID="1006" stageid="28008" seasonid="19943" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧冠" BackColor="#F75000" HomeMoneyLine="0.90" AwayMoneyLine="0.86" HandicapLineName="平手" winkl="0.94" drawkl="0.93" lostkl="0.92" win="40.20" draw="12.44" lost="122.08" />
+		<MatchTeam HomeTeamName="格拉茨风暴" GuestTeamName="哈茨" MatchScore="4:0" Result="3" MatchTime="2026-07-22 02:30:00" AverageOdds="1.80 3.66 3.98" OrderNum="3" FixtureID="1427657" HomeTeamID="825" GuestTeamID="855" stageid="28008" seasonid="19943" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧冠" BackColor="#F75000" HomeMoneyLine="1.00" AwayMoneyLine="0.78" HandicapLineName="半球/一球" winkl="0.92" drawkl="0.93" lostkl="0.93" win="10.88" draw="11.82" lost="41.92" />
+		<MatchTeam HomeTeamName="哈马比" GuestTeamName="安德莱赫特" MatchScore="1:1" Result="1" MatchTime="2026-07-24 01:00:00" AverageOdds="1.72 3.80 4.26" OrderNum="4" FixtureID="1440674" HomeTeamID="852" GuestTeamID="590" stageid="28103" seasonid="20000" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧罗巴" BackColor="#6F00DD" HomeMoneyLine="0.94" AwayMoneyLine="0.76" HandicapLineName="一球" winkl="0.92" drawkl="0.94" lostkl="0.95" win="100.38" draw="28.76" lost="136.77" />
+		<MatchTeam HomeTeamName="贝西克塔斯" GuestTeamName="中日德兰" MatchScore="1:0" Result="3" MatchTime="2026-07-24 02:00:00" AverageOdds="2.07 3.57 3.08" OrderNum="5" FixtureID="1440672" HomeTeamID="688" GuestTeamID="1096" stageid="28103" seasonid="20000" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧罗巴" BackColor="#6F00DD" HomeMoneyLine="0.94" AwayMoneyLine="0.76" HandicapLineName="平手/半球" winkl="0.92" drawkl="0.92" lostkl="0.92" win="15.42" draw="23.29" lost="38.84" />
+		<MatchTeam HomeTeamName="特温特" GuestTeamName="费伦茨瓦罗斯" MatchScore="1:2" Result="0" MatchTime="2026-07-24 02:00:00" AverageOdds="1.52 4.14 5.36" OrderNum="6" FixtureID="1449796" HomeTeamID="1231" GuestTeamID="798" stageid="28103" seasonid="20000" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧罗巴" BackColor="#6F00DD" HomeMoneyLine="0.78" AwayMoneyLine="0.92" HandicapLineName="一球" winkl="0.92" drawkl="0.92" lostkl="0.92" win="12.70" draw="24.57" lost="44.15" />
+		<MatchTeam HomeTeamName="圣加仑" GuestTeamName="本菲卡" MatchScore="2:1" Result="3" MatchTime="2026-07-24 02:00:00" AverageOdds="6.80 4.91 1.36" OrderNum="7" FixtureID="1440677" HomeTeamID="500" GuestTeamID="678" stageid="28103" seasonid="20000" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧罗巴" BackColor="#6F00DD" HomeMoneyLine="0.94" AwayMoneyLine="0.76" HandicapLineName="受一球/球半" winkl="0.91" drawkl="0.91" lostkl="0.92" win="47.53" draw="36.23" lost="8.10" />
+		<MatchTeam HomeTeamName="博德闪耀" GuestTeamName="汉坎" MatchScore="3:0" Result="3" MatchTime="2026-07-23 01:00:00" AverageOdds="1.09 9.97 18.96" OrderNum="8" FixtureID="1363497" HomeTeamID="703" GuestTeamID="861" stageid="26365" seasonid="19507" stagemode="1" homestanding="3" gueststanding="7" SimpleGBName="挪超" BackColor="#666666" HomeMoneyLine="0.94" AwayMoneyLine="0.84" HandicapLineName="两球半/三球" winkl="0.93" drawkl="0.92" lostkl="0.93" win="4.31" draw="174.97" lost="270.65" />
+		<MatchTeam HomeTeamName="利勒斯特罗姆" GuestTeamName="维京" MatchScore="1:2" Result="0" MatchTime="2026-07-23 01:00:00" AverageOdds="3.20 3.72 2.03" OrderNum="9" FixtureID="1364093" HomeTeamID="1009" GuestTeamID="1259" stageid="26365" seasonid="19507" stagemode="1" homestanding="4" gueststanding="2" SimpleGBName="挪超" BackColor="#666666" HomeMoneyLine="0.78" AwayMoneyLine="1.00" HandicapLineName="受半球" winkl="0.94" drawkl="0.93" lostkl="0.92" win="25.53" draw="14.13" lost="17.58" />
+		<MatchTeam HomeTeamName="米内罗竞技" GuestTeamName="巴伊亚" MatchScore="1:1" Result="1" MatchTime="2026-07-22 06:30:00" AverageOdds="1.88 3.49 3.94" OrderNum="10" FixtureID="1362317" HomeTeamID="1570" GuestTeamID="2277" stageid="26335" seasonid="19498" stagemode="1" homestanding="11" gueststanding="6" SimpleGBName="巴甲" BackColor="#003C00" HomeMoneyLine="0.90" AwayMoneyLine="0.88" HandicapLineName="半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="17.40" draw="11.64" lost="37.92" />
+		<MatchTeam HomeTeamName="沙佩科恩斯" GuestTeamName="弗拉门戈" MatchScore="0:4" Result="0" MatchTime="2026-07-23 08:30:00" AverageOdds="8.15 4.62 1.37" OrderNum="11" FixtureID="1362293" HomeTeamID="6184" GuestTeamID="1577" stageid="26335" seasonid="19498" stagemode="1" homestanding="20" gueststanding="2" SimpleGBName="巴甲" BackColor="#003C00" HomeMoneyLine="0.90" AwayMoneyLine="0.88" HandicapLineName="受一球/球半" winkl="0.93" drawkl="0.93" lostkl="0.93" win="78.54" draw="19.78" lost="8.64" />
+		<MatchTeam HomeTeamName="圣保罗" GuestTeamName="巴拉纳竞技" MatchScore="1:2" Result="0" MatchTime="2026-07-23 08:30:00" AverageOdds="2.04 3.12 3.82" OrderNum="12" FixtureID="1362321" HomeTeamID="1385" GuestTeamID="1571" stageid="26335" seasonid="19498" stagemode="1" homestanding="8" gueststanding="5" SimpleGBName="巴甲" BackColor="#003C00" HomeMoneyLine="0.98" AwayMoneyLine="0.80" HandicapLineName="半球" winkl="0.93" drawkl="0.94" lostkl="0.93" win="8.01" draw="10.63" lost="24.08" />
+		<MatchTeam HomeTeamName="博塔弗戈" GuestTeamName="维多利亚" MatchScore="0:0" Result="1" MatchTime="2026-07-24 06:30:00" AverageOdds="1.72 3.65 4.58" OrderNum="13" FixtureID="1362188" HomeTeamID="1568" GuestTeamID="1589" stageid="26335" seasonid="19498" stagemode="1" homestanding="10" gueststanding="12" SimpleGBName="巴甲" BackColor="#003C00" HomeMoneyLine="0.91" AwayMoneyLine="0.87" HandicapLineName="半球/一球" winkl="0.93" drawkl="0.93" lostkl="0.92" win="14.29" draw="10.35" lost="45.39" />
+		<MatchTeam HomeTeamName="科林蒂安" GuestTeamName="雷莫" MatchScore="3:0" Result="3" MatchTime="2026-07-24 06:30:00" AverageOdds="1.49 4.06 6.47" OrderNum="14" FixtureID="1362264" HomeTeamID="1572" GuestTeamID="2417" stageid="26335" seasonid="19498" stagemode="1" homestanding="13" gueststanding="19" SimpleGBName="巴甲" BackColor="#003C00" HomeMoneyLine="0.88" AwayMoneyLine="0.90" HandicapLineName="一球" winkl="0.94" drawkl="0.92" lostkl="0.93" win="8.49" draw="11.85" lost="50.98" />
+	</MatchTeams>
+</xml>

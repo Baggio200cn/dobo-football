@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+	<PeriodicalNO>26095</PeriodicalNO>
+	<Result>0,3,0,1,3,3,1,1,0,3,1,3,3,1</Result>
+	<EndTime>2026-07-25 20:30:00</EndTime>
+	<ResultTime>2026-07-26 00:00:00</ResultTime>
+	<EncashTime>2026-09-23 00:00:00</EncashTime>
+	<Money1>5,000,000</Money1>
+	<Num1>1</Num1>
+	<TotalMoney>11,539,852</TotalMoney>
+	<CCMoney>169,854</CCMoney>
+	<IsOutMoney>1</IsOutMoney>
+	<FirstMatchTime>2026-07-25 21:00:00</FirstMatchTime>
+	<StartTime>2026-07-22 20:00:00</StartTime>
+	<intoMoneyDate>2026-07-26 14:16:08</intoMoneyDate>
+	<AddMoney1>0</AddMoney1>
+	<AddNineMoney>0</AddNineMoney>
+	<Money2>138,478</Money2>
+	<Num2>16</Num2>
+	<NineMoney>30,607</NineMoney>
+	<NineNum>250</NineNum>
+	<NineTotalMoney>11,956,014</NineTotalMoney>
+	<AddMoneySF>0</AddMoneySF>
+	<AddMoneyRJ>0</AddMoneyRJ>
+	<DshmFaEndTime></DshmFaEndTime>
+	<DshmEndTime></DshmEndTime>
+	<DshmUpEndTime></DshmUpEndTime>
+	<AllMatchFinished>1</AllMatchFinished>
+	<MatchTeams>
+		<MatchTeam HomeTeamName="代格福什" GuestTeamName="尤尔加登" MatchScore="0:1" Result="0" MatchTime="2026-07-25 21:00:00" AverageOdds="4.70 3.88 1.65" OrderNum="1" FixtureID="1362713" HomeTeamID="245" GuestTeamID="1355" stageid="26350" seasonid="19501" stagemode="1" homestanding="14" gueststanding="6" SimpleGBName="瑞典超" BackColor="#004488" HomeMoneyLine="1.02" AwayMoneyLine="0.76" HandicapLineName="受半球/一球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="27.77" draw="11.34" lost="9.18" />
+		<MatchTeam HomeTeamName="卡尔马" GuestTeamName="米亚尔比" MatchScore="2:1" Result="3" MatchTime="2026-07-25 23:30:00" AverageOdds="2.59 3.40 2.52" OrderNum="2" FixtureID="1362716" HomeTeamID="913" GuestTeamID="2465" stageid="26350" seasonid="19501" stagemode="1" homestanding="12" gueststanding="10" SimpleGBName="瑞典超" BackColor="#004488" HomeMoneyLine="0.88" AwayMoneyLine="0.90" HandicapLineName="平手" winkl="0.91" drawkl="0.93" lostkl="0.95" win="11.52" draw="8.62" lost="22.11" />
+		<MatchTeam HomeTeamName="克里斯蒂安松" GuestTeamName="斯达" MatchScore="1:2" Result="0" MatchTime="2026-07-25 22:00:00" AverageOdds="2.18 3.43 3.07" OrderNum="3" FixtureID="1364264" HomeTeamID="4338" GuestTeamID="508" stageid="26365" seasonid="19507" stagemode="1" homestanding="15" gueststanding="16" SimpleGBName="挪超" BackColor="#666666" HomeMoneyLine="0.87" AwayMoneyLine="0.91" HandicapLineName="平手/半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="13.05" draw="10.88" lost="10.29" />
+		<MatchTeam HomeTeamName="玛丽港" GuestTeamName="奥卢" MatchScore="1:1" Result="1" MatchTime="2026-07-25 21:30:00" AverageOdds="5.51 4.27 1.50" OrderNum="4" FixtureID="1363651" HomeTeamID="2326" GuestTeamID="363" stageid="26364" seasonid="19506" stagemode="1" homestanding="12" gueststanding="4" SimpleGBName="芬超" BackColor="#137AAC" HomeMoneyLine="0.76" AwayMoneyLine="1.02" HandicapLineName="受一球/球半" winkl="0.93" drawkl="0.92" lostkl="0.92" win="39.21" draw="18.04" lost="11.10" />
+		<MatchTeam HomeTeamName="古比斯" GuestTeamName="VPS瓦萨" MatchScore="3:1" Result="3" MatchTime="2026-07-25 22:00:00" AverageOdds="2.09 3.43 3.22" OrderNum="5" FixtureID="1363656" HomeTeamID="841" GuestTeamID="434" stageid="26364" seasonid="19506" stagemode="1" homestanding="1" gueststanding="3" SimpleGBName="芬超" BackColor="#137AAC" HomeMoneyLine="0.86" AwayMoneyLine="0.92" HandicapLineName="平手/半球" winkl="0.93" drawkl="0.92" lostkl="0.92" win="16.27" draw="9.98" lost="50.80" />
+		<MatchTeam HomeTeamName="巴拉纳竞技" GuestTeamName="巴西国际" MatchScore="2:0" Result="3" MatchTime="2026-07-26 05:30:00" AverageOdds="1.98 3.23 3.88" OrderNum="6" FixtureID="1362370" HomeTeamID="1571" GuestTeamID="1582" stageid="26335" seasonid="19498" stagemode="1" homestanding="3" gueststanding="14" SimpleGBName="巴甲" BackColor="#003C00" HomeMoneyLine="0.95" AwayMoneyLine="0.83" HandicapLineName="半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="8.19" draw="6.79" lost="25.93" />
+		<MatchTeam HomeTeamName="桑托斯" GuestTeamName="沙佩科恩斯" MatchScore="2:2" Result="1" MatchTime="2026-07-26 05:30:00" AverageOdds="1.34 4.87 8.31" OrderNum="7" FixtureID="1362299" HomeTeamID="472" GuestTeamID="6184" stageid="26335" seasonid="19498" stagemode="1" homestanding="15" gueststanding="20" SimpleGBName="巴甲" BackColor="#003C00" HomeMoneyLine="0.98" AwayMoneyLine="0.80" HandicapLineName="球半" winkl="0.94" drawkl="0.93" lostkl="0.93" win="6.89" draw="21.32" lost="79.25" />
+		<MatchTeam HomeTeamName="瓦斯科达伽马" GuestTeamName="米拉索" MatchScore="1:1" Result="1" MatchTime="2026-07-26 07:30:00" AverageOdds="2.00 3.31 3.71" OrderNum="8" FixtureID="1362304" HomeTeamID="1588" GuestTeamID="5164" stageid="26335" seasonid="19498" stagemode="1" homestanding="17" gueststanding="18" SimpleGBName="巴甲" BackColor="#003C00" HomeMoneyLine="1.00" AwayMoneyLine="0.78" HandicapLineName="半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="7.89" draw="6.70" lost="20.90" />
+		<MatchTeam HomeTeamName="纽约红牛" GuestTeamName="夏洛特FC" MatchScore="0:2" Result="0" MatchTime="2026-07-26 06:30:00" AverageOdds="2.20 3.80 2.82" OrderNum="9" FixtureID="1358470" HomeTeamID="1139" GuestTeamID="13702" stageid="26185" seasonid="19471" stagemode="1" homestanding="17" gueststanding="14" SimpleGBName="美职联" BackColor="#660033" HomeMoneyLine="0.90" AwayMoneyLine="0.88" HandicapLineName="平手/半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="9.48" draw="11.63" lost="16.77" />
+		<MatchTeam HomeTeamName="休斯敦迪纳摩" GuestTeamName="奥斯汀FC" MatchScore="3:0" Result="3" MatchTime="2026-07-26 08:30:00" AverageOdds="1.67 3.87 4.64" OrderNum="10" FixtureID="1358475" HomeTeamID="3419" GuestTeamID="11305" stageid="26185" seasonid="19471" stagemode="1" homestanding="12" gueststanding="23" SimpleGBName="美职联" BackColor="#660033" HomeMoneyLine="0.87" AwayMoneyLine="0.91" HandicapLineName="半球/一球" winkl="0.94" drawkl="0.93" lostkl="0.93" win="8.36" draw="20.66" lost="64.83" />
+		<MatchTeam HomeTeamName="明尼苏达联" GuestTeamName="温哥华白浪" MatchScore="0:0" Result="1" MatchTime="2026-07-26 08:30:00" AverageOdds="3.27 3.73 2.00" OrderNum="11" FixtureID="1358477" HomeTeamID="7316" GuestTeamID="4285" stageid="26185" seasonid="19471" stagemode="1" homestanding="16" gueststanding="3" SimpleGBName="美职联" BackColor="#660033" HomeMoneyLine="0.80" AwayMoneyLine="0.96" HandicapLineName="受半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="17.93" draw="10.64" lost="9.56" />
+		<MatchTeam HomeTeamName="圣路易斯城" GuestTeamName="科罗拉多急流" MatchScore="1:0" Result="3" MatchTime="2026-07-26 08:30:00" AverageOdds="1.93 3.70 3.53" OrderNum="12" FixtureID="1358480" HomeTeamID="14129" GuestTeamID="934" stageid="26185" seasonid="19471" stagemode="1" homestanding="15" gueststanding="19" SimpleGBName="美职联" BackColor="#660033" HomeMoneyLine="0.98" AwayMoneyLine="0.80" HandicapLineName="半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="5.86" draw="11.48" lost="25.75" />
+		<MatchTeam HomeTeamName="圣地亚哥FC" GuestTeamName="达拉斯FC" MatchScore="1:0" Result="3" MatchTime="2026-07-26 09:30:00" AverageOdds="2.22 3.76 2.79" OrderNum="13" FixtureID="1358481" HomeTeamID="15301" GuestTeamID="750" stageid="26185" seasonid="19471" stagemode="1" homestanding="22" gueststanding="7" SimpleGBName="美职联" BackColor="#660033" HomeMoneyLine="1.00" AwayMoneyLine="0.78" HandicapLineName="平手/半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="14.58" draw="11.21" lost="36.81" />
+		<MatchTeam HomeTeamName="圣何塞地震" GuestTeamName="洛杉矶银河" MatchScore="1:1" Result="1" MatchTime="2026-07-26 10:30:00" AverageOdds="1.96 3.87 3.31" OrderNum="14" FixtureID="1358487" HomeTeamID="499" GuestTeamID="1044" stageid="26185" seasonid="19471" stagemode="1" homestanding="4" gueststanding="19" SimpleGBName="美职联" BackColor="#660033" HomeMoneyLine="1.02" AwayMoneyLine="0.76" HandicapLineName="半球" winkl="0.94" drawkl="0.93" lostkl="0.92" win="31.57" draw="17.21" lost="123.47" />
+	</MatchTeams>
+</xml>

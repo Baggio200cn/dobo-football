@@ -507,7 +507,7 @@ function renderOnsale(){
         +'<span class="os-no">第 '+p.期号+' 期</span>'
         +'<span class="os-badge '+(live?'live':'wait')+'">'+(live?'● 在售中':'○ 已截止·待开奖')+'</span>'
         +'<span class="os-badge '+(p.已预测?'done':'no')+'">'
-          +(p.已预测?'✓ 我们已预测':'✗ 我们尚未预测')+'</span>'
+          +(p.已预测?'✓ 我们已预测':(p.跳过?'⛔ 数据不足·不出票':'✗ 我们尚未预测'))+'</span>'
         +'<div class="os-dl">'
           +'<span class="lb">投注截止</span>'
           +'<span class="tm">'+osFmt(p.截止)+'</span>'
@@ -516,6 +516,13 @@ function renderOnsale(){
       +'</div>'
       +'<div class="os-meta">'+lgs
         +'<span class="os-lg" style="border-color:#2f3949">首场 '+osFmt(p.首场)+'</span></div>'
+      +(p.跳过 ? '<div style="padding:10px 14px;background:rgba(226,59,59,.07);'
+        +'border-bottom:1px solid var(--line);font-size:11.5px;color:#c9a0a0;line-height:1.6">'
+        +'<b style="color:var(--red)">⛔ 本期不出票</b> —— 双方球队均在我们数据库内的场次仅 '
+        +'<b>'+p.跳过.覆盖+'/14</b>，低于闸门 <b>'+p.跳过.闸门+'</b>。'
+        +'缺数据的球队来自我们未覆盖的联赛，Elo 只能靠先验估算。<br/>'
+        +'<span style="color:#8d99ab">依据：26103 期（同为欧战）实测不足，实际只中 5/14，'
+        +'偏差 −2.22，为历史最差。宁可不出，不出垃圾票。</span></div>' : '')
       +'<table class="os-tb"><thead><tr>'
         +'<th></th><th>赛事</th><th>对阵</th><th style="text-align:right">开赛</th>'
         +'<th style="text-align:right">平均赔率 胜/平/负</th>'

@@ -1,0 +1,1370 @@
+{
+ "AC米兰": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Milan",
+  "n": 5
+ },
+ "KFUM奥斯陆": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "KFUM Oslo",
+  "n": 3
+ },
+ "RB莱比锡": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "RB Leipzig",
+  "n": 9
+ },
+ "SBV精英": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "Excelsior",
+  "n": 1
+ },
+ "TPS图尔库": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "TPS",
+  "n": 1
+ },
+ "VPS瓦萨": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "VPS",
+  "n": 3
+ },
+ "乌德勒支": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "Utrecht",
+  "n": 1
+ },
+ "乌迪内斯": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Udinese",
+  "n": 3
+ },
+ "云达不莱梅": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Werder Bremen",
+  "n": 6
+ },
+ "亚特兰大": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Atalanta",
+  "n": 3
+ },
+ "亚眠": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Amiens",
+  "n": 4
+ },
+ "代格福什": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Degerfors",
+  "n": 4
+ },
+ "伊普斯维奇": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Ipswich",
+  "n": 4
+ },
+ "休斯敦迪纳摩": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Houston Dynamo",
+  "n": 1
+ },
+ "伯恩利": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Burnley",
+  "n": 7
+ },
+ "伯恩茅斯": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Bournemouth",
+  "n": 4
+ },
+ "伯明翰": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Birmingham",
+  "n": 3
+ },
+ "伯顿": {
+  "conf": 1.0,
+  "div": "E2",
+  "en": "Burton",
+  "n": 1
+ },
+ "佛罗伦萨": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Fiorentina",
+  "n": 5
+ },
+ "克莱蒙": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Clermont",
+  "n": 1
+ },
+ "克里斯蒂安松": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Kristiansund",
+  "n": 8
+ },
+ "克雷莫纳": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Cremonese",
+  "n": 4
+ },
+ "兹沃勒": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "Zwolle",
+  "n": 2
+ },
+ "凯泽斯劳滕": {
+  "conf": 1.0,
+  "div": "D2",
+  "en": "Kaiserslautern",
+  "n": 1
+ },
+ "切尔西": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Chelsea",
+  "n": 6
+ },
+ "利兹联": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Leeds",
+  "n": 7
+ },
+ "利勒斯特罗姆": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Lillestrom",
+  "n": 4
+ },
+ "利物浦": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Liverpool",
+  "n": 4
+ },
+ "前进之鹰": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "Go Ahead Eagles",
+  "n": 1
+ },
+ "勒沃库森": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Leverkusen",
+  "n": 6
+ },
+ "勒芒": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Le Mans",
+  "n": 2
+ },
+ "勒阿弗尔": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Le Havre",
+  "n": 3
+ },
+ "南安普顿": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Southampton",
+  "n": 5
+ },
+ "南特": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Nantes",
+  "n": 2
+ },
+ "南锡": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Nancy",
+  "n": 2
+ },
+ "博德闪耀": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Bodo/Glimt",
+  "n": 5
+ },
+ "博洛尼亚": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Bologna",
+  "n": 4
+ },
+ "卡利亚里": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Cagliari",
+  "n": 4
+ },
+ "卡尔马": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Kalmar",
+  "n": 6
+ },
+ "卡萨比亚": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Casa Pia",
+  "n": 2
+ },
+ "古比斯": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "KuPS",
+  "n": 3
+ },
+ "吉尔维森特": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Gil Vicente",
+  "n": 3
+ },
+ "吉马良斯": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Guimaraes",
+  "n": 1
+ },
+ "哈姆斯塔德": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Halmstad",
+  "n": 5
+ },
+ "哈马比": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Hammarby",
+  "n": 3
+ },
+ "哥德堡": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Goteborg",
+  "n": 4
+ },
+ "哥德堡盖斯": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "GAIS",
+  "n": 5
+ },
+ "国米": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Inter",
+  "n": 7
+ },
+ "图卢兹": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Toulouse",
+  "n": 1
+ },
+ "图尔库国际": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "Inter Turku",
+  "n": 6
+ },
+ "圣何塞地震": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "San Jose Earthquakes",
+  "n": 2
+ },
+ "圣保利": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "St Pauli",
+  "n": 5
+ },
+ "圣克拉拉": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Santa Clara",
+  "n": 1
+ },
+ "圣路易斯城": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "St. Louis City",
+  "n": 2
+ },
+ "埃克塞特城": {
+  "conf": 1.0,
+  "div": "E2",
+  "en": "Exeter",
+  "n": 1
+ },
+ "埃因霍温": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "PSV Eindhoven",
+  "n": 1
+ },
+ "埃尔切": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Elche",
+  "n": 3
+ },
+ "埃尔夫斯堡": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Elfsborg",
+  "n": 4
+ },
+ "埃尔维斯": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "Ilves",
+  "n": 4
+ },
+ "埃弗顿": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Everton",
+  "n": 6
+ },
+ "埃斯托里尔": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Estoril",
+  "n": 2
+ },
+ "堪萨斯城竞技": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Sporting Kansas City",
+  "n": 1
+ },
+ "塞尔塔": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Celta",
+  "n": 5
+ },
+ "塞维利亚": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Sevilla",
+  "n": 5
+ },
+ "塞那乔其": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "SJK",
+  "n": 3
+ },
+ "夏洛特FC": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Charlotte",
+  "n": 1
+ },
+ "多伦多FC": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Toronto FC",
+  "n": 1
+ },
+ "多特蒙德": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Dortmund",
+  "n": 5
+ },
+ "天狼星": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Sirius",
+  "n": 4
+ },
+ "奥勒松": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Aalesund",
+  "n": 6
+ },
+ "奥卢": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "AC Oulu",
+  "n": 5
+ },
+ "奥尔格里特": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Orgryte",
+  "n": 4
+ },
+ "奥斯汀FC": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Austin FC",
+  "n": 1
+ },
+ "奥格斯堡": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Augsburg",
+  "n": 4
+ },
+ "奥萨苏纳": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Osasuna",
+  "n": 5
+ },
+ "女王公园": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "QPR",
+  "n": 1
+ },
+ "富勒姆": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Fulham",
+  "n": 4
+ },
+ "尤尔加登": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Djurgarden",
+  "n": 4
+ },
+ "尤文": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Juventus",
+  "n": 7
+ },
+ "尼斯": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Nice",
+  "n": 3
+ },
+ "巴列卡诺": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Vallecano",
+  "n": 2
+ },
+ "巴萨": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Barcelona",
+  "n": 7
+ },
+ "巴黎FC": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Paris FC",
+  "n": 3
+ },
+ "巴黎圣日耳曼": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Paris SG",
+  "n": 6
+ },
+ "布伦特福德": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Brentford",
+  "n": 4
+ },
+ "布伦瑞克": {
+  "conf": 1.0,
+  "div": "D2",
+  "en": "Braunschweig",
+  "n": 2
+ },
+ "布兰": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Brann",
+  "n": 7
+ },
+ "布拉加": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Sp Braga",
+  "n": 1
+ },
+ "布洛涅": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Boulogne",
+  "n": 2
+ },
+ "布洛马波卡纳": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Brommapojkarna",
+  "n": 3
+ },
+ "布莱克本": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Blackburn",
+  "n": 1
+ },
+ "布莱克浦": {
+  "conf": 1.0,
+  "div": "E2",
+  "en": "Blackpool",
+  "n": 1
+ },
+ "布里斯托尔城": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Bristol City",
+  "n": 1
+ },
+ "布雷斯特": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Brest",
+  "n": 3
+ },
+ "布雷达": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "NAC Breda",
+  "n": 1
+ },
+ "帕尔马": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Parma",
+  "n": 3
+ },
+ "弗赖堡": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Freiburg",
+  "n": 9
+ },
+ "德比郡": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Derby",
+  "n": 2
+ },
+ "德累斯顿": {
+  "conf": 1.0,
+  "div": "D2",
+  "en": "Dresden",
+  "n": 1
+ },
+ "拉瓦勒": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Laval",
+  "n": 2
+ },
+ "拉赫蒂": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "Lahti",
+  "n": 3
+ },
+ "拉齐奥": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Lazio",
+  "n": 7
+ },
+ "拜仁": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Bayern Munich",
+  "n": 8
+ },
+ "摩纳哥": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Monaco",
+  "n": 4
+ },
+ "斯图加特": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Stuttgart",
+  "n": 7
+ },
+ "斯托克城": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Stoke",
+  "n": 2
+ },
+ "斯旺西": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Swansea",
+  "n": 1
+ },
+ "斯特拉斯堡": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Strasbourg",
+  "n": 4
+ },
+ "斯达": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Start",
+  "n": 7
+ },
+ "昂热": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Angers",
+  "n": 3
+ },
+ "昂纳西": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Annecy",
+  "n": 2
+ },
+ "明尼苏达联": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Minnesota United",
+  "n": 1
+ },
+ "普雷斯顿": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Preston",
+  "n": 1
+ },
+ "曼城": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Man City",
+  "n": 7
+ },
+ "曼联": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Man United",
+  "n": 6
+ },
+ "朗斯": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Lens",
+  "n": 6
+ },
+ "本菲卡": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Benfica",
+  "n": 3
+ },
+ "朴茨茅斯": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Portsmouth",
+  "n": 2
+ },
+ "杜塞尔多夫": {
+  "conf": 1.0,
+  "div": "D2",
+  "en": "Fortuna Dusseldorf",
+  "n": 1
+ },
+ "柏林联合": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Union Berlin",
+  "n": 6
+ },
+ "查尔顿": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Charlton",
+  "n": 1
+ },
+ "格尼斯坦": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "Gnistan",
+  "n": 4
+ },
+ "格罗宁根": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "Groningen",
+  "n": 1
+ },
+ "桑德兰": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Sunderland",
+  "n": 7
+ },
+ "桑德菲杰": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Sandefjord",
+  "n": 2
+ },
+ "梅斯": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Metz",
+  "n": 4
+ },
+ "欧塞尔": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Auxerre",
+  "n": 2
+ },
+ "比利亚雷亚尔": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Villarreal",
+  "n": 4
+ },
+ "比萨": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Pisa",
+  "n": 8
+ },
+ "毕尔巴鄂": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Ath Bilbao",
+  "n": 4
+ },
+ "水晶宫": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Crystal Palace",
+  "n": 5
+ },
+ "汉坎": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "HamKam",
+  "n": 3
+ },
+ "汉堡": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Hamburg",
+  "n": 6
+ },
+ "汉诺威96": {
+  "conf": 1.0,
+  "div": "D2",
+  "en": "Hannover",
+  "n": 1
+ },
+ "沃尔夫斯堡": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Wolfsburg",
+  "n": 6
+ },
+ "沃特福德": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Watford",
+  "n": 3
+ },
+ "法兰克福": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Ein Frankfurt",
+  "n": 5
+ },
+ "法马利康": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Famalicao",
+  "n": 1
+ },
+ "波城": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Pau FC",
+  "n": 2
+ },
+ "波特兰伐木工": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Portland Timbers",
+  "n": 1
+ },
+ "洛杉矶FC": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Los Angeles FC",
+  "n": 1
+ },
+ "洛杉矶银河": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Los Angeles Galaxy",
+  "n": 1
+ },
+ "洛里昂": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Lorient",
+  "n": 3
+ },
+ "海登海姆": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Heidenheim",
+  "n": 1
+ },
+ "温哥华白浪": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Vancouver Whitecaps",
+  "n": 1
+ },
+ "热刺": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Tottenham",
+  "n": 6
+ },
+ "热那亚": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Genoa",
+  "n": 3
+ },
+ "牛津联": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Oxford",
+  "n": 1
+ },
+ "特温特": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "Twente",
+  "n": 1
+ },
+ "特罗姆瑟": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Tromso",
+  "n": 5
+ },
+ "特鲁瓦": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Troyes",
+  "n": 1
+ },
+ "狼队": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Wolves",
+  "n": 5
+ },
+ "玛丽港": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "Mariehamn",
+  "n": 2
+ },
+ "瓦伦西亚": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Valencia",
+  "n": 4
+ },
+ "瓦勒伦加": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Valerenga",
+  "n": 4
+ },
+ "瓦斯特拉斯": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Vasteras SK",
+  "n": 2
+ },
+ "甘冈": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Guingamp",
+  "n": 2
+ },
+ "皇家奥维耶多": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Oviedo",
+  "n": 6
+ },
+ "皇家社会": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Sociedad",
+  "n": 4
+ },
+ "皇马": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Real Madrid",
+  "n": 9
+ },
+ "福伦丹": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "Volendam",
+  "n": 1
+ },
+ "科莫": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Como",
+  "n": 2
+ },
+ "科隆": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "FC Koln",
+  "n": 2
+ },
+ "米亚尔比": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Mjallby",
+  "n": 2
+ },
+ "米德尔斯堡": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Middlesbrough",
+  "n": 2
+ },
+ "索尔纳": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "AIK",
+  "n": 2
+ },
+ "红星": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Red Star",
+  "n": 3
+ },
+ "纽卡斯尔联": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Newcastle",
+  "n": 4
+ },
+ "纽约红牛": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "New York Red Bulls",
+  "n": 1
+ },
+ "维京": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Viking",
+  "n": 4
+ },
+ "维尔港": {
+  "conf": 1.0,
+  "div": "E2",
+  "en": "Port Vale",
+  "n": 1
+ },
+ "维罗纳": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Verona",
+  "n": 4
+ },
+ "罗德兹": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Rodez",
+  "n": 2
+ },
+ "罗森博格": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Rosenborg",
+  "n": 4
+ },
+ "罗马": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Roma",
+  "n": 5
+ },
+ "美因茨": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Mainz",
+  "n": 5
+ },
+ "考文垂": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Coventry",
+  "n": 3
+ },
+ "腓特烈斯塔": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Fredrikstad",
+  "n": 3
+ },
+ "艾禾斯堡": {
+  "conf": 1.0,
+  "div": "D2",
+  "en": "Elversberg",
+  "n": 1
+ },
+ "莫尔德": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Molde",
+  "n": 6
+ },
+ "莱万特": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Levante",
+  "n": 4
+ },
+ "莱切": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Lecce",
+  "n": 3
+ },
+ "莱斯特城": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Leicester",
+  "n": 1
+ },
+ "莱顿东方": {
+  "conf": 1.0,
+  "div": "E2",
+  "en": "Leyton Orient",
+  "n": 1
+ },
+ "菲尔特": {
+  "conf": 1.0,
+  "div": "D2",
+  "en": "Greuther Furth",
+  "n": 2
+ },
+ "萨普斯堡": {
+  "conf": 1.0,
+  "div": "NOR",
+  "en": "Sarpsborg 08",
+  "n": 7
+ },
+ "萨索洛": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Sassuolo",
+  "n": 3
+ },
+ "葡萄牙体育": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Sp Lisbon",
+  "n": 3
+ },
+ "蒙彼利埃": {
+  "conf": 1.0,
+  "div": "F2",
+  "en": "Montpellier",
+  "n": 3
+ },
+ "蒙特利尔CF": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "CF Montreal",
+  "n": 1
+ },
+ "西布罗姆维奇": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "West Brom",
+  "n": 2
+ },
+ "西汉姆联": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "West Ham",
+  "n": 6
+ },
+ "西班牙人": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Espanol",
+  "n": 4
+ },
+ "西雅图海湾人": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Seattle Sounders",
+  "n": 1
+ },
+ "诺丁汉森林": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Nott'm Forest",
+  "n": 6
+ },
+ "诺维奇": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Norwich",
+  "n": 1
+ },
+ "谢菲联": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Sheffield United",
+  "n": 2
+ },
+ "贝蒂斯": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Betis",
+  "n": 9
+ },
+ "赫塔菲": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Getafe",
+  "n": 6
+ },
+ "赫尔辛基": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "HJK",
+  "n": 3
+ },
+ "赫拉克勒斯": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "Heracles",
+  "n": 1
+ },
+ "赫根": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Hacken",
+  "n": 4
+ },
+ "赫罗纳": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Girona",
+  "n": 3
+ },
+ "辛辛那提FC": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "FC Cincinnati",
+  "n": 2
+ },
+ "迈阿密国际": {
+  "conf": 1.0,
+  "div": "USA",
+  "en": "Inter Miami",
+  "n": 1
+ },
+ "通德拉": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Tondela",
+  "n": 2
+ },
+ "那不勒斯": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Napoli",
+  "n": 5
+ },
+ "都灵": {
+  "conf": 1.0,
+  "div": "I1",
+  "en": "Torino",
+  "n": 7
+ },
+ "里尔": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Lille",
+  "n": 2
+ },
+ "里昂": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Lyon",
+  "n": 4
+ },
+ "门兴": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "M'gladbach",
+  "n": 4
+ },
+ "阿尔克马尔": {
+  "conf": 1.0,
+  "div": "N1",
+  "en": "AZ Alkmaar",
+  "n": 1
+ },
+ "阿拉维斯": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Alaves",
+  "n": 6
+ },
+ "阿斯顿维拉": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Aston Villa",
+  "n": 5
+ },
+ "阿森纳": {
+  "conf": 1.0,
+  "div": "E0",
+  "en": "Arsenal",
+  "n": 3
+ },
+ "阿维什镇": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "AVS",
+  "n": 1
+ },
+ "阿罗卡": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Arouca",
+  "n": 2
+ },
+ "阿马多拉之星": {
+  "conf": 1.0,
+  "div": "P1",
+  "en": "Estrela",
+  "n": 2
+ },
+ "雅罗": {
+  "conf": 1.0,
+  "div": "FIN",
+  "en": "Jaro",
+  "n": 5
+ },
+ "雷克瑟姆": {
+  "conf": 1.0,
+  "div": "E1",
+  "en": "Wrexham",
+  "n": 3
+ },
+ "雷恩": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Rennes",
+  "n": 5
+ },
+ "霍芬海姆": {
+  "conf": 1.0,
+  "div": "D1",
+  "en": "Hoffenheim",
+  "n": 6
+ },
+ "韦康比流浪者": {
+  "conf": 1.0,
+  "div": "E2",
+  "en": "Wycombe",
+  "n": 1
+ },
+ "马尔默": {
+  "conf": 1.0,
+  "div": "SWE",
+  "en": "Malmo FF",
+  "n": 4
+ },
+ "马格德堡": {
+  "conf": 1.0,
+  "div": "D2",
+  "en": "Magdeburg",
+  "n": 1
+ },
+ "马略卡": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Mallorca",
+  "n": 2
+ },
+ "马竞": {
+  "conf": 1.0,
+  "div": "SP1",
+  "en": "Ath Madrid",
+  "n": 4
+ },
+ "马赛": {
+  "conf": 1.0,
+  "div": "F1",
+  "en": "Marseille",
+  "n": 8
+ }
+}

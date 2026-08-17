@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+	<PeriodicalNO>26072</PeriodicalNO>
+	<Result>3,1,3,3,0,3,3,0,3,1,1,1,3,*</Result>
+	<EndTime>2026-05-05 22:00:00</EndTime>
+	<ResultTime>2026-05-08 00:00:00</ResultTime>
+	<EncashTime>2026-07-06 00:00:00</EncashTime>
+	<Money1>3,243,838</Money1>
+	<Num1>2</Num1>
+	<TotalMoney>14,481,424</TotalMoney>
+	<CCMoney>0</CCMoney>
+	<IsOutMoney>1</IsOutMoney>
+	<FirstMatchTime>2026-05-05 22:30:00</FirstMatchTime>
+	<StartTime>2026-05-03 20:00:00</StartTime>
+	<intoMoneyDate>2026-05-10 10:52:49</intoMoneyDate>
+	<AddMoney1>0</AddMoney1>
+	<AddNineMoney>0</AddNineMoney>
+	<Money2>15,979</Money2>
+	<Num2>174</Num2>
+	<NineMoney>5,362</NineMoney>
+	<NineNum>1820</NineNum>
+	<NineTotalMoney>15,248,700</NineTotalMoney>
+	<AddMoneySF>0</AddMoneySF>
+	<AddMoneyRJ>0</AddMoneyRJ>
+	<DshmFaEndTime></DshmFaEndTime>
+	<DshmEndTime></DshmEndTime>
+	<DshmUpEndTime></DshmUpEndTime>
+	<AllMatchFinished>1</AllMatchFinished>
+	<MatchTeams>
+		<MatchTeam HomeTeamName="阿森纳" GuestTeamName="马竞" MatchScore="1:0" Result="3" MatchTime="2026-05-06 03:00:00" AverageOdds="1.60 4.17 5.30" OrderNum="1" FixtureID="1407202" HomeTeamID="554" GuestTeamID="1046" stageid="27298" seasonid="9106" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧冠" BackColor="#F75000" HomeMoneyLine="0.96" AwayMoneyLine="0.88" HandicapLineName="一球" winkl="0.95" drawkl="0.94" lostkl="0.95" win="5.20" draw="10.71" lost="29.32" />
+		<MatchTeam HomeTeamName="拜仁" GuestTeamName="巴黎圣日耳曼" MatchScore="1:1" Result="1" MatchTime="2026-05-07 03:00:00" AverageOdds="1.61 5.09 4.21" OrderNum="2" FixtureID="1407203" HomeTeamID="664" GuestTeamID="647" stageid="27298" seasonid="9106" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧冠" BackColor="#F75000" HomeMoneyLine="0.88" AwayMoneyLine="0.96" HandicapLineName="一球" winkl="0.95" drawkl="0.95" lostkl="0.94" win="6.05" draw="27.73" lost="34.61" />
+		<MatchTeam HomeTeamName="阿斯顿维拉" GuestTeamName="诺丁汉森林" MatchScore="4:0" Result="3" MatchTime="2026-05-08 03:00:00" AverageOdds="1.73 3.79 4.66" OrderNum="3" FixtureID="1407211" HomeTeamID="555" GuestTeamID="1142" stageid="27300" seasonid="9107" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧罗巴" BackColor="#6F00DD" HomeMoneyLine="0.92" AwayMoneyLine="0.86" HandicapLineName="半球/一球" winkl="0.95" drawkl="0.94" lostkl="0.94" win="5.96" draw="7.35" lost="16.62" />
+		<MatchTeam HomeTeamName="弗赖堡" GuestTeamName="布拉加" MatchScore="3:1" Result="3" MatchTime="2026-05-08 03:00:00" AverageOdds="1.70 3.63 5.20" OrderNum="4" FixtureID="1407210" HomeTeamID="804" GuestTeamID="719" stageid="27300" seasonid="9107" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧罗巴" BackColor="#6F00DD" HomeMoneyLine="0.88" AwayMoneyLine="0.90" HandicapLineName="半球/一球" winkl="0.95" drawkl="0.94" lostkl="0.94" win="7.64" draw="11.16" lost="26.34" />
+		<MatchTeam HomeTeamName="斯特拉斯堡" GuestTeamName="巴列卡诺" MatchScore="0:1" Result="0" MatchTime="2026-05-08 03:00:00" AverageOdds="1.94 3.57 3.75" OrderNum="5" FixtureID="1407206" HomeTeamID="1194" GuestTeamID="650" stageid="27299" seasonid="9121" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="欧协联" BackColor="#4EEE94" HomeMoneyLine="0.90" AwayMoneyLine="0.88" HandicapLineName="半球" winkl="0.94" drawkl="0.94" lostkl="0.94" win="4.90" draw="10.24" lost="14.96" />
+		<MatchTeam HomeTeamName="格尼斯坦" GuestTeamName="图尔库国际" MatchScore="2:0" Result="3" MatchTime="2026-05-06 00:00:00" AverageOdds="4.60 3.88 1.65" OrderNum="6" FixtureID="1363314" HomeTeamID="2687" GuestTeamID="1327" stageid="26364" seasonid="19506" stagemode="1" homestanding="12" gueststanding="3" SimpleGBName="芬超" BackColor="#137AAC" HomeMoneyLine="0.92" AwayMoneyLine="0.86" HandicapLineName="受半球/一球" winkl="0.91" drawkl="0.92" lostkl="0.93" win="19.54" draw="12.82" lost="7.93" />
+		<MatchTeam HomeTeamName="罗萨里奥中央" GuestTeamName="亚松森自由" MatchScore="1:0" Result="3" MatchTime="2026-05-06 06:00:00" AverageOdds="1.35 4.70 8.31" OrderNum="7" FixtureID="1398884" HomeTeamID="1034" GuestTeamID="2261" stageid="27056" seasonid="19496" stagemode="2" homestanding="1" gueststanding="4" SimpleGBName="解放者杯" BackColor="#01673F" HomeMoneyLine="0.88" AwayMoneyLine="0.90" HandicapLineName="一球/球半" winkl="0.92" drawkl="0.94" lostkl="0.94" win="4.93" draw="23.93" lost="93.71" />
+		<MatchTeam HomeTeamName="水晶竞技" GuestTeamName="帕尔梅拉斯" MatchScore="0:2" Result="0" MatchTime="2026-05-06 06:00:00" AverageOdds="5.98 4.01 1.51" OrderNum="8" FixtureID="1398839" HomeTeamID="2271" GuestTeamID="1567" stageid="27056" seasonid="19496" stagemode="2" homestanding="1" gueststanding="2" SimpleGBName="解放者杯" BackColor="#01673F" HomeMoneyLine="0.92" AwayMoneyLine="0.86" HandicapLineName="受一球" winkl="0.92" drawkl="0.92" lostkl="0.93" win="43.86" draw="12.58" lost="5.73" />
+		<MatchTeam HomeTeamName="瓜亚基尔巴塞罗那" GuestTeamName="博卡青年" MatchScore="1:0" Result="3" MatchTime="2026-05-06 08:00:00" AverageOdds="4.16 3.10 1.95" OrderNum="9" FixtureID="1398794" HomeTeamID="3588" GuestTeamID="705" stageid="27056" seasonid="19496" stagemode="2" homestanding="4" gueststanding="1" SimpleGBName="解放者杯" BackColor="#01673F" HomeMoneyLine="0.88" AwayMoneyLine="0.90" HandicapLineName="受半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="34.38" draw="7.27" lost="11.20" />
+		<MatchTeam HomeTeamName="门多萨独立" GuestTeamName="弗鲁米嫩塞" MatchScore="1:1" Result="1" MatchTime="2026-05-07 08:30:00" AverageOdds="2.30 3.00 3.21" OrderNum="10" FixtureID="1398772" HomeTeamID="4620" GuestTeamID="1578" stageid="27056" seasonid="19496" stagemode="2" homestanding="1" gueststanding="4" SimpleGBName="解放者杯" BackColor="#01673F" HomeMoneyLine="0.52" AwayMoneyLine="1.26" HandicapLineName="平手" winkl="0.92" drawkl="0.92" lostkl="0.94" win="8.75" draw="6.95" lost="23.36" />
+		<MatchTeam HomeTeamName="圣塔菲" GuestTeamName="科林蒂安" MatchScore="1:1" Result="1" MatchTime="2026-05-07 08:30:00" AverageOdds="3.14 2.81 2.47" OrderNum="11" FixtureID="1398816" HomeTeamID="2829" GuestTeamID="1572" stageid="27056" seasonid="19496" stagemode="2" homestanding="4" gueststanding="1" SimpleGBName="解放者杯" BackColor="#01673F" HomeMoneyLine="0.74" AwayMoneyLine="1.04" HandicapLineName="受平手/半球" winkl="0.94" drawkl="0.91" lostkl="0.93" win="23.86" draw="14.01" lost="6.48" />
+		<MatchTeam HomeTeamName="普拉滕斯" GuestTeamName="佩纳罗尔" MatchScore="1:1" Result="1" MatchTime="2026-05-08 06:00:00" AverageOdds="2.16 2.82 3.87" OrderNum="12" FixtureID="1398818" HomeTeamID="10693" GuestTeamID="2061" stageid="27056" seasonid="19496" stagemode="2" homestanding="2" gueststanding="4" SimpleGBName="解放者杯" BackColor="#01673F" HomeMoneyLine="0.88" AwayMoneyLine="0.90" HandicapLineName="平手/半球" winkl="0.92" drawkl="0.93" lostkl="0.94" win="7.61" draw="8.70" lost="42.37" />
+		<MatchTeam HomeTeamName="米拉索" GuestTeamName="基多大学体育" MatchScore="2:0" Result="3" MatchTime="2026-05-08 06:00:00" AverageOdds="1.58 3.72 5.68" OrderNum="13" FixtureID="1398863" HomeTeamID="5164" GuestTeamID="2232" stageid="27056" seasonid="19496" stagemode="2" homestanding="2" gueststanding="1" SimpleGBName="解放者杯" BackColor="#01673F" HomeMoneyLine="0.80" AwayMoneyLine="0.98" HandicapLineName="半球/一球" winkl="0.94" drawkl="0.91" lostkl="0.90" win="7.83" draw="11.28" lost="42.22" />
+		<MatchTeam HomeTeamName="麦德林独立" GuestTeamName="弗拉门戈" MatchScore="-1:-1" Result="-1" MatchTime="2026-05-08 08:30:00" AverageOdds="4.22 3.31 1.87" OrderNum="14" FixtureID="1398728" HomeTeamID="2257" GuestTeamID="1577" stageid="27056" seasonid="19496" stagemode="2" homestanding="3" gueststanding="1" SimpleGBName="解放者杯" BackColor="#01673F" HomeMoneyLine="0.88" AwayMoneyLine="0.90" HandicapLineName="受半球" winkl="0.92" drawkl="0.92" lostkl="0.94" win="65.05" draw="12.39" lost="15.29" />
+	</MatchTeams>
+</xml>

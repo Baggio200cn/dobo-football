@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+	<PeriodicalNO>26106</PeriodicalNO>
+	<Result></Result>
+	<EndTime>2026-08-16 21:30:00</EndTime>
+	<ResultTime>2026-08-17 00:00:00</ResultTime>
+	<EncashTime>2026-10-15 00:00:00</EncashTime>
+	<Money1>0</Money1>
+	<Num1>0</Num1>
+	<TotalMoney>0</TotalMoney>
+	<CCMoney>0</CCMoney>
+	<IsOutMoney>0</IsOutMoney>
+	<FirstMatchTime>2026-08-16 22:00:00</FirstMatchTime>
+	<StartTime>2026-08-12 20:00:00</StartTime>
+	<intoMoneyDate></intoMoneyDate>
+	<AddMoney1>0</AddMoney1>
+	<AddNineMoney>0</AddNineMoney>
+	<Money2>0</Money2>
+	<Num2>0</Num2>
+	<NineMoney>0</NineMoney>
+	<NineNum>0</NineNum>
+	<NineTotalMoney>0</NineTotalMoney>
+	<AddMoneySF>0</AddMoneySF>
+	<AddMoneyRJ>0</AddMoneyRJ>
+	<DshmFaEndTime></DshmFaEndTime>
+	<DshmEndTime></DshmEndTime>
+	<DshmUpEndTime></DshmUpEndTime>
+	<AllMatchFinished>0</AllMatchFinished>
+	<MatchTeams>
+		<MatchTeam HomeTeamName="伯恩利" GuestTeamName="西汉姆联" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-16 23:00:00" AverageOdds="3.06 3.46 2.20" OrderNum="1" FixtureID="1425303" HomeTeamID="700" GuestTeamID="1286" stageid="27989" seasonid="19935" stagemode="1" homestanding="12" gueststanding="14" SimpleGBName="英冠" BackColor="#CC3300" HomeMoneyLine="0.90" AwayMoneyLine="0.88" HandicapLineName="受平手/半球" winkl="0.94" drawkl="0.94" lostkl="0.93" win="31.73" draw="8.23" lost="11.70" />
+		<MatchTeam HomeTeamName="阿森纳" GuestTeamName="曼城" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-16 22:00:00" AverageOdds="2.73 3.37 2.55" OrderNum="2" FixtureID="1411691" HomeTeamID="554" GuestTeamID="1072" stageid="27651" seasonid="19800" stagemode="3" homestanding="0" gueststanding="0" SimpleGBName="社区盾" BackColor="#4E0901" HomeMoneyLine="1.04" AwayMoneyLine="0.74" HandicapLineName="平手" winkl="0.95" drawkl="0.95" lostkl="0.95" win="23.85" draw="12.78" lost="12.67" />
+		<MatchTeam HomeTeamName="桑坦德竞技" GuestTeamName="比利亚雷亚尔" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-16 23:00:00" AverageOdds="3.35 3.57 2.08" OrderNum="3" FixtureID="1427943" HomeTeamID="471" GuestTeamID="683" stageid="28016" seasonid="19947" stagemode="1" homestanding="18" gueststanding="13" SimpleGBName="西甲" BackColor="#006633" HomeMoneyLine="1.04" AwayMoneyLine="0.80" HandicapLineName="受平手/半球" winkl="0.94" drawkl="0.94" lostkl="0.94" win="20.81" draw="11.58" lost="8.60" />
+		<MatchTeam HomeTeamName="西班牙人" GuestTeamName="莱万特" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-17 01:00:00" AverageOdds="2.10 3.24 3.66" OrderNum="4" FixtureID="1427941" HomeTeamID="1283" GuestTeamID="985" stageid="28016" seasonid="19947" stagemode="1" homestanding="3" gueststanding="8" SimpleGBName="西甲" BackColor="#006633" HomeMoneyLine="1.05" AwayMoneyLine="0.79" HandicapLineName="半球" winkl="0.95" drawkl="0.95" lostkl="0.95" win="9.48" draw="5.04" lost="16.97" />
+		<MatchTeam HomeTeamName="塞尔塔" GuestTeamName="奥萨苏纳" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-17 03:30:00" AverageOdds="2.02 3.35 3.67" OrderNum="5" FixtureID="1427939" HomeTeamID="457" GuestTeamID="622" stageid="28016" seasonid="19947" stagemode="1" homestanding="4" gueststanding="16" SimpleGBName="西甲" BackColor="#006633" HomeMoneyLine="1.02" AwayMoneyLine="0.82" HandicapLineName="半球" winkl="0.94" drawkl="0.94" lostkl="0.94" win="3.17" draw="6.98" lost="17.05" />
+		<MatchTeam HomeTeamName="阿贾克斯" GuestTeamName="海伦芬" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-16 22:45:00" AverageOdds="1.45 4.79 5.94" OrderNum="6" FixtureID="1415865" HomeTeamID="540" GuestTeamID="857" stageid="27908" seasonid="19878" stagemode="1" homestanding="8" gueststanding="11" SimpleGBName="荷甲" BackColor="#FF6699" HomeMoneyLine="0.88" AwayMoneyLine="0.90" HandicapLineName="一球/球半" winkl="0.93" drawkl="0.94" lostkl="0.95" win="5.62" draw="16.92" lost="32.86" />
+		<MatchTeam HomeTeamName="马德拉国民" GuestTeamName="埃斯托里尔" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-16 22:30:00" AverageOdds="2.74 3.28 2.51" OrderNum="7" FixtureID="1438062" HomeTeamID="1099" GuestTeamID="1616" stageid="28089" seasonid="19987" stagemode="1" homestanding="10" gueststanding="12" SimpleGBName="葡超" BackColor="#008888" HomeMoneyLine="1.02" AwayMoneyLine="0.76" HandicapLineName="平手" winkl="0.94" drawkl="0.94" lostkl="0.93" win="26.98" draw="9.35" lost="12.97" />
+		<MatchTeam HomeTeamName="阿罗卡" GuestTeamName="莫雷拉人" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-17 01:00:00" AverageOdds="2.00 3.28 3.75" OrderNum="8" FixtureID="1438058" HomeTeamID="5551" GuestTeamID="1110" stageid="28089" seasonid="19987" stagemode="1" homestanding="4" gueststanding="11" SimpleGBName="葡超" BackColor="#008888" HomeMoneyLine="0.94" AwayMoneyLine="0.84" HandicapLineName="半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="5.99" draw="8.06" lost="31.79" />
+		<MatchTeam HomeTeamName="法马利康" GuestTeamName="马里迪莫" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-17 03:30:00" AverageOdds="1.76 3.50 4.72" OrderNum="9" FixtureID="1438061" HomeTeamID="261" GuestTeamID="1050" stageid="28089" seasonid="19987" stagemode="1" homestanding="13" gueststanding="6" SimpleGBName="葡超" BackColor="#008888" HomeMoneyLine="0.98" AwayMoneyLine="0.80" HandicapLineName="半球/一球" winkl="0.94" drawkl="0.94" lostkl="0.94" win="5.86" draw="6.08" lost="28.12" />
+		<MatchTeam HomeTeamName="布拉加" GuestTeamName="吉尔维森特" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-17 03:30:00" AverageOdds="1.62 3.80 5.28" OrderNum="10" FixtureID="1438059" HomeTeamID="719" GuestTeamID="1263" stageid="28089" seasonid="19987" stagemode="1" homestanding="8" gueststanding="5" SimpleGBName="葡超" BackColor="#008888" HomeMoneyLine="0.80" AwayMoneyLine="0.98" HandicapLineName="半球/一球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="7.39" draw="15.53" lost="46.30" />
+		<MatchTeam HomeTeamName="哥德堡盖斯" GuestTeamName="马尔默" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-16 22:30:00" AverageOdds="2.22 3.54 2.91" OrderNum="11" FixtureID="1362740" HomeTeamID="288" GuestTeamID="1051" stageid="26350" seasonid="19501" stagemode="1" homestanding="8" gueststanding="9" SimpleGBName="瑞典超" BackColor="#004488" HomeMoneyLine="0.88" AwayMoneyLine="0.90" HandicapLineName="平手/半球" winkl="0.93" drawkl="0.93" lostkl="0.92" win="11.83" draw="6.42" lost="11.91" />
+		<MatchTeam HomeTeamName="卡尔马" GuestTeamName="哈马比" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-16 22:30:00" AverageOdds="4.41 3.81 1.70" OrderNum="12" FixtureID="1362742" HomeTeamID="913" GuestTeamID="852" stageid="26350" seasonid="19501" stagemode="1" homestanding="12" gueststanding="2" SimpleGBName="瑞典超" BackColor="#004488" HomeMoneyLine="0.83" AwayMoneyLine="0.95" HandicapLineName="受半球/一球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="42.63" draw="9.86" lost="5.68" />
+		<MatchTeam HomeTeamName="布兰" GuestTeamName="汉坎" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-16 23:00:00" AverageOdds="1.55 4.18 5.18" OrderNum="13" FixtureID="1364337" HomeTeamID="722" GuestTeamID="861" stageid="26365" seasonid="19507" stagemode="1" homestanding="7" gueststanding="9" SimpleGBName="挪超" BackColor="#666666" HomeMoneyLine="0.90" AwayMoneyLine="0.88" HandicapLineName="一球" winkl="0.92" drawkl="0.93" lostkl="0.94" win="7.08" draw="15.34" lost="35.36" />
+		<MatchTeam HomeTeamName="莫尔德" GuestTeamName="特罗姆瑟" MatchScore="-1:-1" Result="-1" MatchTime="2026-08-16 23:00:00" AverageOdds="2.01 3.72 3.24" OrderNum="14" FixtureID="1364316" HomeTeamID="1109" GuestTeamID="1226" stageid="26365" seasonid="19507" stagemode="1" homestanding="5" gueststanding="3" SimpleGBName="挪超" BackColor="#666666" HomeMoneyLine="0.78" AwayMoneyLine="1.00" HandicapLineName="平手/半球" winkl="0.93" drawkl="0.93" lostkl="0.93" win="16.44" draw="18.52" lost="41.85" />
+	</MatchTeams>
+</xml>
