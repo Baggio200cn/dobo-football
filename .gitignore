@@ -1,4 +1,7 @@
+!site/*.html
+*.html
 *.pyc
+*.xml
 .vercel
 __pycache__/
 engine/C:/
@@ -7,3 +10,5 @@ engine/cache_xml/
 engine/data/
 engine/repair.log
 engine/web_data.json
+r1.json
+stage.js
