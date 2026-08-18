@@ -1,6 +1,9 @@
-engine/data/
-__pycache__/
 *.pyc
 .vercel
+__pycache__/
 engine/C:/
+engine/cache_500/
+engine/cache_xml/
+engine/data/
+engine/repair.log
 engine/web_data.json
