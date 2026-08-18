@@ -151,15 +151,23 @@ def stage_of(season_id):
 
 
 def season_matches(stid, max_round=60):
-    """逐轮取完整赛季"""
-    out = []
+    """逐轮取完整赛季。
+
+    ⚠ 某些赛事（季后赛/附加赛分组）在轮次越界时会重复返回同一批比赛，
+      不加判重会把 2 场重复计成 120 场。故按 fid 去重，并在连续 3 轮
+      无新增时提前停止。
+    """
+    out, seen, stale = [], set(), 0
     for r in range(1, max_round + 1):
         d = get("https://liansai.500.com/index.php", f"gm_{stid}_{r}.json",
                 params={"c": "score", "a": "getmatch", "stid": stid, "round": r},
                 as_json=True)
         if not d: break
+        fresh = 0
         for m in d:
             if m.get("status") != 5 or m.get("hscore") is None: continue
+            if m["fid"] in seen: continue
+            seen.add(m["fid"]); fresh += 1
             out.append({
                 "fid": m["fid"], "stid": int(stid), "round": m.get("round"),
                 "日期": (m.get("stime") or "")[:10],
@@ -170,6 +178,8 @@ def season_matches(stid, max_round=60):
                 "主半": m.get("hhalfscore"), "客半": m.get("ghalfscore"),
                 "胜赔": m.get("win"), "平赔": m.get("draw"), "负赔": m.get("lost"),
             })
+        stale = stale + 1 if fresh == 0 else 0
+        if stale >= 3: break        # 连续 3 轮无新增 → 已到赛季末尾
     return out
 
 
