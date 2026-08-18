@@ -866,6 +866,63 @@ function renderLedger(){
 
 
 /* ===== 自媒体文章模块 ===== */
+/* ===== 文章导出：一律走 fetch + Blob =====
+   原先用 <a href="x.md" download>。微信内置浏览器与多数国产手机浏览器
+   不支持 download 属性，会直接导航到文件；遇到 .md 这种不认识的 MIME
+   就给一个空白页或 0 字节文件 —— 这就是「下载的 .md 是空的」的原因。
+   改为把内容取回内存再生成 Blob 下载，与服务端 Content-Type 无关。
+   加 UTF-8 BOM，保证 Windows 记事本/Word 打开中文不乱码。          */
+function dlText(text, filename, mime){
+  var BOM = "﻿";
+  var b = new Blob([BOM + text], {type: (mime||"text/markdown") + ";charset=utf-8"});
+  var u = URL.createObjectURL(b), el = document.createElement("a");
+  el.href = u; el.download = filename;
+  document.body.appendChild(el); el.click(); document.body.removeChild(el);
+  setTimeout(function(){ URL.revokeObjectURL(u); }, 1500);
+}
+function toast(msg, ok){
+  var t = document.createElement("div");
+  t.textContent = msg;
+  t.style.cssText = "position:fixed;left:50%;bottom:56px;transform:translateX(-50%);"
+    + "background:" + (ok===false ? "var(--red)" : "var(--green)") + ";color:#08130c;"
+    + "font-size:13px;font-weight:700;padding:9px 18px;border-radius:20px;z-index:999;"
+    + "box-shadow:0 4px 16px rgba(0,0,0,.4)";
+  document.body.appendChild(t);
+  setTimeout(function(){ t.remove(); }, 2200);
+}
+function withMd(a, fn){
+  fetch(a.md, {cache:"no-store"})
+    .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.text(); })
+    .then(function(md){
+      if(!md || md.trim().length < 20) throw new Error("内容为空");
+      fn(md);
+    })
+    .catch(function(e){ toast("取文章失败：" + e.message, false); });
+}
+function postDownload(a){
+  withMd(a, function(md){
+    dlText(md, (a.file || a.slug + ".md"));
+    toast("已下载 " + (a.file || a.slug + ".md"));
+  });
+}
+function postCopy(a){
+  withMd(a, function(md){
+    var body = md.replace(/^---[\s\S]*?---\s*/, "");   // 去掉 frontmatter，直接可粘贴
+    var done = function(){ toast("正文已复制，可直接粘贴到头条"); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(body).then(done, function(){ fallback(body, done); });
+    } else { fallback(body, done); }
+  });
+  function fallback(t, done){
+    var ta = document.createElement("textarea");
+    ta.value = t; ta.style.cssText = "position:fixed;top:-9999px";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); done(); }
+    catch(e){ toast("复制失败，请用「阅读全文」手动选取", false); }
+    document.body.removeChild(ta);
+  }
+}
+
 function renderPosts(){
   var A=D.articles, list=document.getElementById("postList"), view=document.getElementById("postView");
   if(!A||!list) return;
@@ -883,14 +940,21 @@ function renderPosts(){
         (a.heads&&a.heads.length?'<div style="margin-top:8px;font-size:11px;color:var(--mut2);line-height:1.9">'+
           a.heads.slice(0,4).map(function(h){return '· '+h}).join('<br>')+(a.heads.length>4?'<br>· …':'')+'</div>':'')+
         '<div style="display:flex;gap:7px;margin-top:11px;flex-wrap:wrap">'+
-          '<span class="pbtn" data-i="'+i+'" style="background:var(--gold);color:#12171f;font-weight:700">阅读全文</span>'+
-          '<a class="pbtn" href="'+a.md+'" download>下载 .md</a>'+
-          (a.cover?'<a class="pbtn" href="'+a.cover+'" download>下载封面</a>':'')+
+          '<span class="pbtn act-read" data-i="'+i+'" style="background:var(--gold);color:#12171f;font-weight:700">阅读全文</span>'+
+          '<span class="pbtn act-copy" data-i="'+i+'" style="background:var(--green);color:#08130c;font-weight:700">复制正文</span>'+
+          '<span class="pbtn act-dl" data-i="'+i+'">下载 .md</span>'+
+          (a.cover?'<a class="pbtn" href="'+a.cover+'" target="_blank" rel="noopener">封面图</a>':'')+
           '<a class="pbtn" href="'+a.edit+'" target="_blank" rel="noopener">在 GitHub 编辑</a>'+
         '</div></div></div>';
   }).join("");
-  list.querySelectorAll(".pbtn[data-i]").forEach(function(b){
+  list.querySelectorAll(".act-read").forEach(function(b){
     b.onclick=function(){ openPost(A[+b.dataset.i]); };
+  });
+  list.querySelectorAll(".act-copy").forEach(function(b){
+    b.onclick=function(){ postCopy(A[+b.dataset.i]); };
+  });
+  list.querySelectorAll(".act-dl").forEach(function(b){
+    b.onclick=function(){ postDownload(A[+b.dataset.i]); };
   });
 }
 
@@ -902,8 +966,9 @@ function openPost(a){
     view.innerHTML=
       '<div style="display:flex;gap:7px;margin-bottom:12px;flex-wrap:wrap">'+
         '<span class="pbtn" id="pback">← 返回列表</span>'+
+        '<span class="pbtn" id="pcopy" style="background:var(--green);color:#08130c;font-weight:700">复制正文</span>'+
+        '<span class="pbtn" id="pdl2">下载 .md</span>'+
         '<span class="pbtn" id="pedit">编辑</span>'+
-        '<a class="pbtn" href="'+a.md+'" download>下载 .md</a>'+
         '<a class="pbtn" href="'+a.edit+'" target="_blank" rel="noopener">在 GitHub 保存修改</a>'+
       '</div>'+
       (a.cover?'<img src="'+a.cover+'" style="width:100%;border-radius:8px;margin-bottom:14px">':'')+
@@ -917,6 +982,8 @@ function openPost(a){
       '</div>';
     view.hidden=false; window.scrollTo({top:0,behavior:"smooth"});
     document.getElementById("pback").onclick=function(){ view.hidden=true; list.hidden=false; };
+    document.getElementById("pcopy").onclick=function(){ postCopy(a); };
+    document.getElementById("pdl2").onclick=function(){ postDownload(a); };
     var ta=document.getElementById("pedit-area"), bd=document.getElementById("pbody"), bar=document.getElementById("pedit-bar");
     document.getElementById("pedit").onclick=function(){
       ta.value=md; ta.hidden=false; bar.hidden=false; bd.hidden=true;
