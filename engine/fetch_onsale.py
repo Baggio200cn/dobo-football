@@ -97,8 +97,11 @@ def main():
     start = latest_known()
     out = []
     print(f"从 {start} 起向后探测 {LOOKAHEAD} 期（当前 {now:%Y-%m-%d %H:%M}）\n")
-    # 起点回退 2 期：已截止但未开奖的期次仍要留在看板上
-    for p in range(start - 2, start + LOOKAHEAD):
+    # 起点回退 4 期：
+    #   ① 已截止但未开奖的期次仍要留在看板上
+    #   ② 多期同时在售时（26108/26109/26110/26111 曾同时挂出），最新期号会快速前移，
+    #      回退太少会把仍在售的早期期次挤出探测范围 —— 实测漏掉过 26108。
+    for p in range(start - 4, start + LOOKAHEAD):
         d = parse(p)
         if d is None:
             print(f"  {p}  —— 尚未挂出")
